@@ -6,10 +6,10 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/alarmDetailsTop"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="0.75"
         android:orientation="horizontal">
 
         <ImageView
@@ -17,7 +17,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:clickable="true" />
+            android:clickable="true"
+            android:src="@drawable/alarm"
+            android:contentDescription="@string/image_description"/>
 
         <TimePicker
             android:id="@+id/timePicker"
@@ -26,11 +28,31 @@
             android:layout_weight="0.5"
             android:background="@color/white" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/alarmDetailsBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.85"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/alarmNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/alarm_name"
+            android:textColor="@color/white"
+            android:ems="10"
+
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25" >
+        android:layout_weight="0.15" >
 
         <Button
             android:id="@+id/createAlarmButton"
