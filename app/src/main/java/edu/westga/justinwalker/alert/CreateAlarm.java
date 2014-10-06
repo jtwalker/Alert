@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -30,13 +32,19 @@ public class CreateAlarm extends FragmentActivity {
 	private DBAccess dbAccess;
     private Intent imagePicker;
     private String alarmImage;
+    private SharedPreferences settings;
+    private Editor editor;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.create_alarm);
-		
+
+        this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
+        this.editor = this.settings.edit();
+
+        this.initializeFromSharedPreferences();
 		this.initializeClickables();
 		
 		this.dbAccess = new DBAccess(getBaseContext());
@@ -60,6 +68,17 @@ public class CreateAlarm extends FragmentActivity {
         imageView.setOnClickListener(this.inputClickListener);
 
 	}
+
+    /**
+     *
+     */
+    private void initializeFromSharedPreferences() {
+        if(this.settings.contains("image")) {
+            String picturePath = this.settings.getString("image", "");
+            ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+        }
+    }
 	
 	/**
 	 * 
@@ -128,8 +147,8 @@ public class CreateAlarm extends FragmentActivity {
                     ImageView imageView = (ImageView) findViewById(R.id.alarmImage);
                     imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
                     this.alarmImage = picturePath;
-                    //this.editor.putString("image", picturePath);
-                    //this.editor.commit();
+                    this.editor.putString("image", picturePath);
+                    this.editor.commit();
                 }
                 break;
         }

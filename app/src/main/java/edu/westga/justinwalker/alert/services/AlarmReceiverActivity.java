@@ -43,7 +43,7 @@ public class AlarmReceiverActivity extends Activity {
 		
 		this.initializeClickables();
 		
-		 ringtone = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
+		ringtone = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
 		
 		this.requestCode = getIntent().getExtras().getInt("requestCode");
 		

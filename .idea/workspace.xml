@@ -64,7 +64,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.148148" vertical-offset="0" max-vertical-offset="2193">
+            <state vertical-scroll-proportion="-1.2592592" vertical-offset="51" max-vertical-offset="2193">
               <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding>
                 <element signature="e#903#923#0" expanded="true" />
@@ -84,11 +84,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AlarmReceiverActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44155845" vertical-offset="306" max-vertical-offset="2176">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CreateAlarm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1096" max-vertical-offset="1819">
-              <caret line="127" column="60" selection-start-line="127" selection-start-column="60" selection-end-line="127" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="2108">
+              <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
               <folding>
                 <element signature="method#setAlarm#0;class#CreateAlarm#0" expanded="false" />
               </folding>
@@ -96,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3090909" vertical-offset="0" max-vertical-offset="833">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
               <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
               <folding />
             </state>
@@ -809,8 +819,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw720dp/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw720dp-land/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
       </list>
     </option>
   </component>
@@ -930,6 +941,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1140,7 +1185,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29761904" sideWeight="0.7284418" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29761904" sideWeight="0.7284418" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1248,12 +1293,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="2108">
+          <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
+          <folding>
+            <element signature="method#setAlarm#0;class#CreateAlarm#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.148148" vertical-offset="0" max-vertical-offset="2193">
+        <state vertical-scroll-proportion="-1.2592592" vertical-offset="51" max-vertical-offset="2193">
           <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding>
             <element signature="e#903#923#0" expanded="true" />
@@ -1272,20 +1335,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1096" max-vertical-offset="1819">
-          <caret line="127" column="60" selection-start-line="127" selection-start-column="60" selection-end-line="127" selection-end-column="60" />
-          <folding>
-            <element signature="method#setAlarm#0;class#CreateAlarm#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3090909" vertical-offset="0" max-vertical-offset="833">
-          <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.44155845" vertical-offset="306" max-vertical-offset="2176">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
           <folding />
         </state>
       </provider>
