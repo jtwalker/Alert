@@ -20,8 +20,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -71,10 +72,12 @@ public class CreateAlarm extends FragmentActivity {
 		Button createButton = (Button) this.findViewById(R.id.createAlarmButton);
         ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
         TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
+        Switch repeatingSwitch = (Switch) this.findViewById(R.id.repeatingSwitch);
 
 		createButton.setOnClickListener(this.inputClickListener);
         imageView.setOnClickListener(this.inputClickListener);
         ringtoneView.setOnClickListener(this.inputClickListener);
+        repeatingSwitch.setOnClickListener(this.inputClickListener);
 	}
 
     /**
@@ -167,6 +170,19 @@ public class CreateAlarm extends FragmentActivity {
     /**
      *
      */
+    private void showDaysOfWeek() {
+        LinearLayout daysOfTheWeek = (LinearLayout) this.findViewById(R.id.daysOfTheWeekLayout);
+        if(daysOfTheWeek.getVisibility() != View.GONE) {
+            daysOfTheWeek.setVisibility(View.GONE);
+        }
+        else {
+            daysOfTheWeek.setVisibility(View.VISIBLE);
+        }
+    }
+
+    /**
+     *
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) {
             case RESULT_OK:
@@ -213,18 +229,21 @@ public class CreateAlarm extends FragmentActivity {
 		@Override
 		public void onClick(View view) {
 			switch (view.getId()) {
-			case R.id.createAlarmButton:
-				setAlarm();
-				break;
-            case R.id.alarmImage:
-                showImagePicker();
-                break;
-            case R.id.ringtone:
-                showRingtonePicker();
-                break;
-			default:
-				Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
-				break;
+                case R.id.createAlarmButton:
+                    setAlarm();
+                    break;
+                case R.id.alarmImage:
+                    showImagePicker();
+                    break;
+                case R.id.ringtone:
+                    showRingtonePicker();
+                    break;
+                case R.id.repeatingSwitch:
+                    showDaysOfWeek();
+                    break;
+                default:
+                    Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+                    break;
 			}
 		}
 	};

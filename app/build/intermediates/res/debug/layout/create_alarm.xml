@@ -7,7 +7,9 @@
 
     <LinearLayout
         android:focusable="true" android:focusableInTouchMode="true"
-        android:layout_width="0px" android:layout_height="0px"/>
+        android:layout_width="0px" android:layout_height="0px">
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -85,6 +87,56 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/create_alarm_font_size"
                         android:id="@+id/repeatingSwitch"/>
+
+                    <LinearLayout
+                        android:id="@+id/daysOfTheWeekLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_mon"
+                            android:textOn="@string/day_of_week_mon"
+                            android:id="@+id/monToggleButton"
+                            style="@style/ToggleButton" />
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_tues"
+                            android:textOn="@string/day_of_week_tues"
+                            android:id="@+id/tuesToggleButton"
+                            style="@style/ToggleButton" />
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_wed"
+                            android:textOn="@string/day_of_week_wed"
+                            android:id="@+id/wedToggleButton"
+                            style="@style/ToggleButton" />
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_thurs"
+                            android:textOn="@string/day_of_week_thurs"
+                            android:id="@+id/thursToggleButton"
+                            style="@style/ToggleButton" />
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_fri"
+                            android:textOn="@string/day_of_week_fri"
+                            android:id="@+id/friToggleButton"
+                            style="@style/ToggleButton" />
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_sat"
+                            android:textOn="@string/day_of_week_sat"
+                            android:id="@+id/satToggleButton"
+                            style="@style/ToggleButton" />
+
+                        <ToggleButton
+                            android:textOff="@string/day_of_week_sun"
+                            android:textOn="@string/day_of_week_sun"
+                            android:id="@+id/sunToggleButton"
+                            style="@style/ToggleButton" />
+
+                    </LinearLayout>
 
                     <Switch
                         android:layout_width="wrap_content"

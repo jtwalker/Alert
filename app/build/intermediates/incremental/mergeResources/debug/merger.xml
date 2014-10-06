@@ -4767,16 +4767,16 @@ useLogo|showHome|showTitle
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
+                    name="abc_searchview_description_voice"
+                    msgid="893419373245838918" >"Φωνητική αναζήτηση"
+                </string>
+                <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"Περισσότερες επιλογές"
                 </string>
                 <string
                     name="abc_searchview_description_clear"
                     msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
-                </string>
-                <string
-                    name="abc_searchview_description_voice"
-                    msgid="893419373245838918" >"Φωνητική αναζήτηση"
                 </string>
             </file>
             <file
@@ -6098,16 +6098,16 @@ false
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
+                    name="abc_searchview_description_search"
+                    msgid="8264924765203268293" >"Paieška"
+                </string>
+                <string
                     name="abc_shareactionprovider_share_with_application"
                     msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
                     msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
-                </string>
-                <string
-                    name="abc_searchview_description_search"
-                    msgid="8264924765203268293" >"Paieška"
                 </string>
             </file>
             <file
@@ -8419,6 +8419,21 @@ false
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
                     -->
+                </style>
+
+                <style name="ToggleButton" >
+                    <item name="android:layout_width">
+wrap_content
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_weight">
+1
+                    </item>
+                    <item name="android:textColor">
+@color/white
+                    </item>
                 </style>
 
                 <style name="TimeDateDisplay" >

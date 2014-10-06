@@ -26,7 +26,6 @@
     <layouts>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
@@ -63,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AlarmReceiverActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AlarmReceiverActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4229765" vertical-offset="603" max-vertical-offset="2686">
+            <state vertical-scroll-proportion="0.0" vertical-offset="654" max-vertical-offset="2686">
               <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
               <folding />
             </state>
@@ -76,21 +75,58 @@
       <file leaf-file-name="CreateAlarm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2146" max-vertical-offset="3536">
-              <caret line="157" column="52" selection-start-line="157" selection-start-column="52" selection-end-line="157" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="3842">
+              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_alarm.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="create_alarm.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.2222223" vertical-offset="991" max-vertical-offset="2193">
-              <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+            <state vertical-scroll-proportion="4.06414" vertical-offset="102" max-vertical-offset="3077">
+              <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+              <folding>
+                <element signature="e#923#943#0" expanded="true" />
+                <element signature="e#1190#1221#0" expanded="true" />
+                <element signature="e#1975#2002#0" expanded="true" />
+                <element signature="e#2810#2828#0" expanded="true" />
+                <element signature="e#2919#2950#0" expanded="true" />
+                <element signature="e#3451#3476#0" expanded="true" />
+                <element signature="e#3575#3606#0" expanded="true" />
+                <element signature="e#4019#4044#0" expanded="true" />
+                <element signature="e#4088#4113#0" expanded="true" />
+                <element signature="e#4318#4344#0" expanded="true" />
+                <element signature="e#4388#4414#0" expanded="true" />
+                <element signature="e#4620#4645#0" expanded="true" />
+                <element signature="e#4689#4714#0" expanded="true" />
+                <element signature="e#4919#4946#0" expanded="true" />
+                <element signature="e#4990#5017#0" expanded="true" />
+                <element signature="e#5224#5249#0" expanded="true" />
+                <element signature="e#5293#5318#0" expanded="true" />
+                <element signature="e#5523#5548#0" expanded="true" />
+                <element signature="e#5592#5617#0" expanded="true" />
+                <element signature="e#5822#5847#0" expanded="true" />
+                <element signature="e#5891#5916#0" expanded="true" />
+                <element signature="e#6262#6284#0" expanded="true" />
+                <element signature="e#6383#6414#0" expanded="true" />
+                <element signature="e#6660#6681#0" expanded="true" />
+                <element signature="e#6780#6811#0" expanded="true" />
+                <element signature="e#7334#7356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="637" max-vertical-offset="1105">
+              <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -791,17 +827,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw600dp-land/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw720dp/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw720dp-land/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
       </list>
     </option>
   </component>
@@ -946,7 +982,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1231,7 +1267,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1242,7 +1278,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3010204" sideWeight="0.7284418" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3010204" sideWeight="0.7284418" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1289,14 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="748">
           <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="601" max-vertical-offset="986">
-          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1392,10 +1420,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="654" max-vertical-offset="2686">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2146" max-vertical-offset="3536">
-          <caret line="157" column="52" selection-start-line="157" selection-start-column="52" selection-end-line="157" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="3842">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="637" max-vertical-offset="1105">
+          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1405,17 +1449,36 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2222223" vertical-offset="991" max-vertical-offset="2193">
-          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4229765" vertical-offset="603" max-vertical-offset="2686">
-          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="4.06414" vertical-offset="102" max-vertical-offset="3077">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="e#923#943#0" expanded="true" />
+            <element signature="e#1190#1221#0" expanded="true" />
+            <element signature="e#1975#2002#0" expanded="true" />
+            <element signature="e#2810#2828#0" expanded="true" />
+            <element signature="e#2919#2950#0" expanded="true" />
+            <element signature="e#3451#3476#0" expanded="true" />
+            <element signature="e#3575#3606#0" expanded="true" />
+            <element signature="e#4019#4044#0" expanded="true" />
+            <element signature="e#4088#4113#0" expanded="true" />
+            <element signature="e#4318#4344#0" expanded="true" />
+            <element signature="e#4388#4414#0" expanded="true" />
+            <element signature="e#4620#4645#0" expanded="true" />
+            <element signature="e#4689#4714#0" expanded="true" />
+            <element signature="e#4919#4946#0" expanded="true" />
+            <element signature="e#4990#5017#0" expanded="true" />
+            <element signature="e#5224#5249#0" expanded="true" />
+            <element signature="e#5293#5318#0" expanded="true" />
+            <element signature="e#5523#5548#0" expanded="true" />
+            <element signature="e#5592#5617#0" expanded="true" />
+            <element signature="e#5822#5847#0" expanded="true" />
+            <element signature="e#5891#5916#0" expanded="true" />
+            <element signature="e#6262#6284#0" expanded="true" />
+            <element signature="e#6383#6414#0" expanded="true" />
+            <element signature="e#6660#6681#0" expanded="true" />
+            <element signature="e#6780#6811#0" expanded="true" />
+            <element signature="e#7334#7356#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
