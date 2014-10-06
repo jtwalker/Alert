@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-eeb509dd2b70c7cbb582ec7bbb12c1652fd44758.jar"
+        jar="C:\Program Files\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\classes-ac9470a8f12a7c946cf7cac2e87d9ba7a355642a.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b0cfc70a505a8f3b5a4c57545701206d5140c097.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\classes-b2a24c2c420f9b5075ec621c9ae74062b2d31060.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+
+</pre-dex-items>

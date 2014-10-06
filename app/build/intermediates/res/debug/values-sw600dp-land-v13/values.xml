@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/src/main/res/values-sw600dp-land/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="active_alarm_font_size">45sp</dimen>
+    <dimen name="date_font_size">80sp</dimen>
+    <dimen name="edit_font_size">25sp</dimen>
+    <dimen name="font_size">100sp</dimen>
+
+</resources>
