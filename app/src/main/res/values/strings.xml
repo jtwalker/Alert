@@ -7,6 +7,7 @@
     <string name="create_alarm">Create Alarm</string>
     <string name="view_alarms">View Alarms</string>
     <string name="date">Date</string>
+    <string name="image_description">Image to be used for the alarm</string>
     
     <string name="title_activity_set_alarm">SetAlarm</string>
     <string name="title_activity_alarm_receiver">AlarmReceiverActivity</string>
