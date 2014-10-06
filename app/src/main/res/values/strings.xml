@@ -10,6 +10,18 @@
 
     <string name="image_description">Image to be used for the alarm</string>
     <string name="alarm_name">Alarm Name</string>
+    <string name="ringtone">Click to select ringtone</string>
+    <string name="alarm_snooze">Snooze?</string>
+    <string name="alarm_email">Email?</string>
+    <string name="alarm_repeating">Repeating?</string>
+
+    <string name="day_of_week_mon">Mon</string>
+    <string name="day_of_week_tues">Tues</string>
+    <string name="day_of_week_wed">Wed</string>
+    <string name="day_of_week_thurs">Thurs</string>
+    <string name="day_of_week_fri">Fri</string>
+    <string name="day_of_week_sat">Sat</string>
+    <string name="day_of_week_sun">Sun</string>
     
     <string name="title_activity_set_alarm">SetAlarm</string>
     <string name="title_activity_alarm_receiver">AlarmReceiverActivity</string>

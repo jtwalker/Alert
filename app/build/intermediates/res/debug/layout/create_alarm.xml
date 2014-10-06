@@ -5,12 +5,25 @@
     android:background="@color/gray"
     android:orientation="vertical" >
 
+    <EditText
+        android:id="@+id/alarmNameText"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:text="@string/alarm_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/create_alarm_font_size" />
+
     <LinearLayout
         android:id="@+id/alarmDetailsTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
 
         <ImageView
             android:id="@+id/alarmImage"
@@ -36,16 +49,45 @@
         android:layout_weight="0.85"
         android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/alarmNameText"
+        <TextView
+            android:id="@+id/ringtone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/alarm_name"
+            android:text="@string/ringtone"
             android:textColor="@color/white"
-            android:ems="10"
+            android:textSize="@dimen/create_alarm_font_size"
+            android:layout_gravity="center_horizontal"/>
 
-            android:layout_gravity="center_horizontal" />
+        <LinearLayout
+            android:id="@+id/toggleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarm_repeating"
+                android:textColor="@color/white"
+                android:textSize="@dimen/create_alarm_font_size"
+                android:id="@+id/repeatingSwitch"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarm_snooze"
+                android:textColor="@color/white"
+                android:textSize="@dimen/create_alarm_font_size"
+                android:id="@+id/snoozeSwitch" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarm_email"
+                android:textColor="@color/white"
+                android:textSize="@dimen/create_alarm_font_size"
+                android:id="@+id/emailSwitch"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout

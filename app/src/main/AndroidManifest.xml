@@ -3,10 +3,6 @@
     package="edu.westga.justinwalker.alert"
     android:versionCode="1"
     android:versionName="1.0" >
-
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="20" />
     
     <uses-permission android:name="android.permission.INTERNET" />
 

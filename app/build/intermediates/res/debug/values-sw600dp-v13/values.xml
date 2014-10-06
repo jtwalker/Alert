@@ -15,6 +15,7 @@
     <eat-comment />
 
     <dimen name="active_alarm_font_size">45sp</dimen>
+    <dimen name="create_alarm_font_size">40sp</dimen>
     <dimen name="date_font_size">60sp</dimen>
     <dimen name="edit_font_size">25sp</dimen>
     <dimen name="font_size">80sp</dimen>
