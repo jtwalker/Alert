@@ -75,6 +75,7 @@ public class CreateAlarm extends FragmentActivity {
     private void initializeFromSharedPreferences() {
         if(this.settings.contains("image")) {
             String picturePath = this.settings.getString("image", "");
+            this.alarmImage = this.settings.getString("image", "");
             ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
         }
@@ -97,7 +98,7 @@ public class CreateAlarm extends FragmentActivity {
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
 		requestCode = (int) this.dbAccess.insert(alarmEnabled, "Name", "Date", "Time", 
-				"ringtone", "Image", 0, 0, 0, "Email");
+				"ringtone", this.alarmImage, 0, 0, 0, "Email");
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
@@ -166,7 +167,6 @@ public class CreateAlarm extends FragmentActivity {
 				break;
             case R.id.alarmImage:
                 showImagePicker();
-                Toast.makeText(getApplicationContext(), "IMAGE!", Toast.LENGTH_SHORT).show();
                 break;
 			default:
 				Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();

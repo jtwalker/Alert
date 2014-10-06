@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.text.format.Time;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import edu.westga.justinwalker.alert.R;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
@@ -37,16 +39,17 @@ public class AlarmReceiverActivity extends Activity {
 		setContentView(R.layout.active_alarm_layout);
 		
 		this.dbAccess = new DBAccess(getApplicationContext());
+        this.requestCode = getIntent().getExtras().getInt("requestCode");
 		
 		this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
 		this.editor = this.settings.edit();
 		
 		this.initializeClickables();
+        //this.initializeFromSharedPreferences();
+        this.initializeFromDatabase();
 		
 		ringtone = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
-		
-		this.requestCode = getIntent().getExtras().getInt("requestCode");
-		
+
 		this.silencePressed = this.settings.getBoolean("silenced", false);
 		
 		if (!this.silencePressed) {
@@ -84,6 +87,28 @@ public class AlarmReceiverActivity extends Activity {
 		snoozeButton.setOnClickListener(this.inputClickListener);
 		silenceButton.setOnClickListener(this.inputClickListener);
 	}
+
+    /**
+     *
+     */
+    private void initializeFromSharedPreferences() {
+        if(this.settings.contains("image")) {
+            String picturePath = this.settings.getString("image", "");
+            ImageView imageView = (ImageView) this.findViewById(R.id.alarmEventImageView);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+        }
+    }
+
+    /**
+     *
+     */
+    private void initializeFromDatabase() {
+        String picturePath = this.dbAccess.getAlarmImage(this.requestCode);
+        if (picturePath != null && !picturePath.equals("")) {
+            ImageView imageView = (ImageView) findViewById(R.id.alarmEventImageView);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+        }
+    }
 	
 	/**
 	 * 
