@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.text.format.Time;
 import android.view.Menu;
@@ -20,10 +24,14 @@ import edu.westga.justinwalker.alert.models.SharedConstants;
 import edu.westga.justinwalker.alert.services.AlarmReceiverActivity;
 
 public class CreateAlarm extends FragmentActivity {
-	
-	private DBAccess dbAccess;
 
-	@Override
+    private final int RINGTONE_REQUEST_CODE = 0;
+	private final int IMAGE_REQUEST_CODE = 1;
+	private DBAccess dbAccess;
+    private Intent imagePicker;
+    private String alarmImage;
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -92,6 +100,41 @@ public class CreateAlarm extends FragmentActivity {
 		finish();
 	}
 
+    /**
+     *
+     */
+    private void showImagePicker() {
+        this.imagePicker = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(this.imagePicker, IMAGE_REQUEST_CODE);
+    }
+
+    /**
+     *
+     */
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (resultCode) {
+            case RESULT_OK:
+                if(requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK && null != data) {
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String picturePath = cursor.getString(columnIndex);
+                    cursor.close();
+                    // String picturePath contains the path of selected Image
+                    ImageView imageView = (ImageView) findViewById(R.id.alarmImage);
+                    imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                    this.alarmImage = picturePath;
+                    //this.editor.putString("image", picturePath);
+                    //this.editor.commit();
+                }
+                break;
+        }
+    }
+
 	/**
 	 * 
 	 */
@@ -103,6 +146,7 @@ public class CreateAlarm extends FragmentActivity {
 				setAlarm();
 				break;
             case R.id.alarmImage:
+                showImagePicker();
                 Toast.makeText(getApplicationContext(), "IMAGE!", Toast.LENGTH_SHORT).show();
                 break;
 			default:
