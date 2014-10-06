@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
@@ -45,8 +46,10 @@ public class CreateAlarm extends FragmentActivity {
 	 */
 	private void initializeClickables() {
 		Button createButton = (Button) this.findViewById(R.id.createAlarmButton);
+        ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
 
 		createButton.setOnClickListener(this.inputClickListener);
+        imageView.setOnClickListener(this.inputClickListener);
 
 	}
 	
@@ -99,6 +102,9 @@ public class CreateAlarm extends FragmentActivity {
 			case R.id.createAlarmButton:
 				setAlarm();
 				break;
+            case R.id.alarmImage:
+                Toast.makeText(getApplicationContext(), "IMAGE!", Toast.LENGTH_SHORT).show();
+                break;
 			default:
 				Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
 				break;
