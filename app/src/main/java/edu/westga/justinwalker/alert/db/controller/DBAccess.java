@@ -48,7 +48,7 @@ public class DBAccess {
 	 */
 	public long insert(int alarmEnabled, String alarmName, String alarmDate,
 			String alarmTime, String alarmRingtone, String alarmPicture,
-			int alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
+			String alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
 		long rowID = 0;
 
 		this.adapter.open();
@@ -70,14 +70,14 @@ public class DBAccess {
 	 * @param alarmTime the time of the alarm
 	 * @param alarmRingtone the ringtone to use for the alarm
 	 * @param alarmPicture the image to use for the alarm
-	 * @param alarmRepeat 0 or 1 depending on if the alarm is allowed to repeat
+	 * @param alarmRepeat A string separated by commas representing the days to repeat; Example: "Mon,Fri". "False" if you don't repeat.
 	 * @param alarmSnooze 0 or 1 depending on if snooze is allowed
 	 * @param alarmNotify 0 or 1 depending on if the caretaker should be emailed
 	 * @param alarmEmail the email of the person to notify
 	 */
 	public void update(int alarmID, int alarmEnabled, String alarmName, String alarmDate,
 			String alarmTime, String alarmRingtone, String alarmPicture,
-			int alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
+			String alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
 		this.adapter.open();
 		this.adapter.updateAlarm(alarmID, alarmEnabled, alarmName, alarmDate,
 				alarmTime, alarmRingtone, alarmPicture, alarmRepeat,

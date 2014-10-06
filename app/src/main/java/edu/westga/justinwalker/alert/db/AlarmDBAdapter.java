@@ -42,7 +42,7 @@ public class AlarmDBAdapter {
 		return this.theDB.delete(Alarms.ALARM_TABLE_NAME, Alarms.ID + "=" + alarmID, null) > 0;
 	}
 	
-	public long insertAlarm(int alarmEnabled, String alarmName, String alarmDate, String alarmTime, String alarmRingtone, String alarmPicture, int alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
+	public long insertAlarm(int alarmEnabled, String alarmName, String alarmDate, String alarmTime, String alarmRingtone, String alarmPicture, String alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
 		ContentValues initialValues = new ContentValues();
 		
 		initialValues.put(Alarms.ALARM_ENABLED, alarmEnabled);
@@ -75,7 +75,7 @@ public class AlarmDBAdapter {
 		return cursor;
 	}
 	
-	public boolean updateAlarm(long id, int alarmEnabled, String alarmName, String alarmDate, String alarmTime, String alarmRingtone, String alarmPicture, int alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
+	public boolean updateAlarm(long id, int alarmEnabled, String alarmName, String alarmDate, String alarmTime, String alarmRingtone, String alarmPicture, String alarmRepeat, int alarmSnooze, int alarmNotify, String alarmEmail) {
 		ContentValues args = new ContentValues();
 		
 		args.put(Alarms.ALARM_ENABLED, alarmEnabled);
