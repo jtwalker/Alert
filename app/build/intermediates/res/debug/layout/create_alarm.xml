@@ -9,90 +9,102 @@
         android:focusable="true" android:focusableInTouchMode="true"
         android:layout_width="0px" android:layout_height="0px"/>
 
-    <EditText
-        android:id="@+id/alarmNameText"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:text="@string/alarm_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textSize="@dimen/create_alarm_font_size" />
-
-    <LinearLayout
-        android:id="@+id/alarmDetailsTop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp">
-
-        <ImageView
-            android:id="@+id/alarmImage"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:clickable="true"
-            android:src="@drawable/alarm"
-            android:contentDescription="@string/image_description"/>
-
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:background="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/alarmDetailsBottom"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.85"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/ringtone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ringtone"
-            android:textColor="@color/white"
-            android:textSize="@dimen/create_alarm_font_size"
-            android:layout_gravity="center_horizontal"/>
+        android:layout_weight="0.85">
 
         <LinearLayout
-            android:id="@+id/toggleLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Switch
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/alarmNameText"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:text="@string/alarm_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/alarm_repeating"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
-                android:textSize="@dimen/create_alarm_font_size"
-                android:id="@+id/repeatingSwitch"/>
+                android:textSize="@dimen/create_alarm_font_size" />
 
-            <Switch
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/alarmDetailsTop"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/alarm_snooze"
-                android:textColor="@color/white"
-                android:textSize="@dimen/create_alarm_font_size"
-                android:id="@+id/snoozeSwitch" />
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp">
 
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/alarm_email"
-                android:textColor="@color/white"
-                android:textSize="@dimen/create_alarm_font_size"
-                android:id="@+id/emailSwitch"/>
+                <ImageView
+                    android:id="@+id/alarmImage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:src="@drawable/alarm"
+                    android:contentDescription="@string/image_description"/>
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alarmDetailsBottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.85"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/ringtone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ringtone"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/create_alarm_font_size"
+                    android:layout_gravity="center_horizontal"/>
+
+                <LinearLayout
+                    android:id="@+id/toggleLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarm_repeating"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/create_alarm_font_size"
+                        android:id="@+id/repeatingSwitch"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarm_snooze"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/create_alarm_font_size"
+                        android:id="@+id/snoozeSwitch" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarm_email"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/create_alarm_font_size"
+                        android:id="@+id/emailSwitch"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/buttonLayout"
