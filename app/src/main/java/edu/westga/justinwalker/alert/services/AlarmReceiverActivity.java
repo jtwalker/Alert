@@ -32,8 +32,9 @@ public class AlarmReceiverActivity extends Activity {
 	private SharedPreferences settings;
 	private Editor editor;
 	private MediaPlayer ringtone;
-	
-	@Override
+    private Uri ringtoneUri;
+
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.active_alarm_layout);
@@ -48,7 +49,7 @@ public class AlarmReceiverActivity extends Activity {
         //this.initializeFromSharedPreferences();
         this.initializeFromDatabase();
 		
-		ringtone = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
+		this.ringtone = MediaPlayer.create(this, this.ringtoneUri);
 
 		this.silencePressed = this.settings.getBoolean("silenced", false);
 		
@@ -61,6 +62,7 @@ public class AlarmReceiverActivity extends Activity {
 	protected void onStop() {
 		super.onStop();
 		this.ringtone.stop();
+        this.ringtone.release();
 		this.editor.putBoolean("silenced", this.silencePressed);
 		this.editor.commit();
 	}
@@ -107,6 +109,11 @@ public class AlarmReceiverActivity extends Activity {
         if (picturePath != null && !picturePath.equals("")) {
             ImageView imageView = (ImageView) findViewById(R.id.alarmEventImageView);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+        }
+
+        String ringtone = this.dbAccess.getAlarmRingtone(this.requestCode);
+        if (ringtone != null && !ringtone.equals("")) {
+            this.ringtoneUri = Uri.parse(ringtone);
         }
     }
 	
