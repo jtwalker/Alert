@@ -3,6 +3,7 @@ package edu.westga.justinwalker.alert;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -27,6 +28,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
 import edu.westga.justinwalker.alert.models.SharedConstants;
@@ -142,9 +146,15 @@ public class CreateAlarm extends FragmentActivity {
 			timeOfAlarm.monthDay++;
 			Toast.makeText(getApplicationContext(), timeOfAlarm.month + " " + timeOfAlarm.monthDay + " " + timeOfAlarm.year, Toast.LENGTH_SHORT).show();
 		}
-		
-		alarmManager.set(AlarmManager.RTC_WAKEUP, timeOfAlarm.toMillis(false), pendingIntent);
-		
+
+
+        if(!this.repeatingAlarm.equals(SharedConstants.REPEATING_FALSE)) {
+            alarmManager.set(AlarmManager.RTC_WAKEUP, timeOfAlarm.toMillis(false) + TimeUnit.DAYS.toMillis(this.findHowManyDaysUntilNextAlarm()), pendingIntent);
+        }
+        else {
+            alarmManager.set(AlarmManager.RTC_WAKEUP, timeOfAlarm.toMillis(false), pendingIntent);
+        }
+
 		finish();
 	}
 
@@ -242,7 +252,7 @@ public class CreateAlarm extends FragmentActivity {
 
         if(repeatingSwitch.isChecked() && (!monToggleButton.isChecked() && !tuesToggleButton.isChecked() && !wedToggleButton.isChecked()
                 && !thursToggleButton.isChecked() && !friToggleButton.isChecked() && !satToggleButton.isChecked() && !sunToggleButton.isChecked())) {
-            this.repeatingAlarm = "false";
+            this.repeatingAlarm = SharedConstants.REPEATING_FALSE;
         }
         else if(repeatingSwitch.isChecked()) {
             ToggleButton[] toggleButtons = {monToggleButton, tuesToggleButton, wedToggleButton, thursToggleButton, friToggleButton, satToggleButton, sunToggleButton};
@@ -255,12 +265,90 @@ public class CreateAlarm extends FragmentActivity {
             }
             daysToRepeat = daysToRepeat.substring(0, daysToRepeat.length()-1);
             this.repeatingAlarm = daysToRepeat;
-            Toast.makeText(getApplicationContext(), daysToRepeat, Toast.LENGTH_SHORT).show();
         }
         else {
-            this.repeatingAlarm = "false";
-            Toast.makeText(getApplicationContext(), "Not Check", Toast.LENGTH_SHORT).show();
+            this.repeatingAlarm = SharedConstants.REPEATING_FALSE;
         }
+    }
+
+    /**
+     * Gets the difference in the days of the week. For example, if I pass in Monday and today is Tuesday, -1 should be returned.
+     */
+    private int getDayDifference(String dayOfAlarm) {
+        int dayDifference = 0;
+        Time now = new Time();
+        now.setToNow();
+        dayDifference = this.convertDayIntoInteger(dayOfAlarm) - now.weekDay;
+
+        return dayDifference;
+    }
+
+    /**
+     * This will return an integer value for the dayOfAlarm String
+     */
+    private int convertDayIntoInteger(String dayOfAlarm) {
+        int dayNumber = 0;
+
+        if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_mon))) {
+            dayNumber = 1;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_tues))) {
+            dayNumber = 2;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_wed))) {
+            dayNumber = 3;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_thurs))) {
+            dayNumber = 4;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_fri))) {
+            dayNumber = 5;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_sat))) {
+            dayNumber = 6;
+        }
+
+        return dayNumber;
+    }
+
+    /**
+     *
+     */
+    private int findHowManyDaysUntilNextAlarm() {
+        String[] repeatingDays = this.repeatingAlarm.split(",");
+        ArrayList<Integer> dayDifferenceForAlarms = new ArrayList<Integer>();
+
+        for(String day: repeatingDays) {
+            dayDifferenceForAlarms.add(this.getDayDifference(day));
+        }
+
+        return this.findLowestNonNegativeValue(dayDifferenceForAlarms);
+    }
+
+    /**
+     * Find lowest non negative in the list. If there isn't a non negative, add 7 (number of days in a week) to all the values.
+     * then return the lowest.
+     */
+    private int findLowestNonNegativeValue(ArrayList<Integer> dayDifferences) {
+        int lowestNonNegativeValue = 999;
+        int greatestNegativeValue = -999;
+
+        //This might have unknown problems
+        for(int i = 0; i < dayDifferences.size(); i++) {
+            if(dayDifferences.get(i) >= 0 && (dayDifferences.get(i) < lowestNonNegativeValue)) {
+                lowestNonNegativeValue = dayDifferences.get(i);
+            }
+            else if(dayDifferences.get(i) < 0 && (dayDifferences.get(i) > greatestNegativeValue)) {
+                greatestNegativeValue = dayDifferences.get(i);
+            }
+        }
+
+        if(lowestNonNegativeValue != 999) {
+            return lowestNonNegativeValue;
+        }
+
+        int daysInAWeek = 7;
+        return greatestNegativeValue + daysInAWeek;
     }
 
 	/**
