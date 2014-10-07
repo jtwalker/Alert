@@ -26,6 +26,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
 import edu.westga.justinwalker.alert.models.SharedConstants;
 import edu.westga.justinwalker.alert.services.AlarmReceiverActivity;
@@ -42,6 +44,7 @@ public class CreateAlarm extends FragmentActivity {
     private Editor editor;
     private String ringtoneUri;
     private String alarmRingtone;
+    private String repeatingAlarm;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -117,11 +120,13 @@ public class CreateAlarm extends FragmentActivity {
 		
 		int alarmEnabled = SharedConstants.ALARM_TRUE;
 		int requestCode = 0;
+
+        this.checkForRepeatingAlarms();
 		
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
 		requestCode = (int) this.dbAccess.insert(alarmEnabled, "Name", "Date", "Time", 
-				this.alarmRingtone, this.alarmImage, 0, 0, 0, "Email");
+				this.alarmRingtone, this.alarmImage, "False", 0, 0, "Email");
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
@@ -219,6 +224,42 @@ public class CreateAlarm extends FragmentActivity {
                     this.editor.commit();
                 }
                 break;
+        }
+    }
+
+    /**
+     *
+     */
+    private void checkForRepeatingAlarms() {
+        Switch repeatingSwitch = (Switch) this.findViewById(R.id.repeatingSwitch);
+        ToggleButton monToggleButton = (ToggleButton) this.findViewById(R.id.monToggleButton);
+        ToggleButton tuesToggleButton = (ToggleButton) this.findViewById(R.id.tuesToggleButton);
+        ToggleButton wedToggleButton = (ToggleButton) this.findViewById(R.id.wedToggleButton);
+        ToggleButton thursToggleButton = (ToggleButton) this.findViewById(R.id.thursToggleButton);
+        ToggleButton friToggleButton = (ToggleButton) this.findViewById(R.id.friToggleButton);
+        ToggleButton satToggleButton = (ToggleButton) this.findViewById(R.id.satToggleButton);
+        ToggleButton sunToggleButton = (ToggleButton) this.findViewById(R.id.sunToggleButton);
+
+        if(repeatingSwitch.isChecked() && (!monToggleButton.isChecked() && !tuesToggleButton.isChecked() && !wedToggleButton.isChecked()
+                && !thursToggleButton.isChecked() && !friToggleButton.isChecked() && !satToggleButton.isChecked() && !sunToggleButton.isChecked())) {
+            this.repeatingAlarm = "false";
+        }
+        else if(repeatingSwitch.isChecked()) {
+            ToggleButton[] toggleButtons = {monToggleButton, tuesToggleButton, wedToggleButton, thursToggleButton, friToggleButton, satToggleButton, sunToggleButton};
+            String daysToRepeat = "";
+
+            for(ToggleButton button: toggleButtons) {
+                if(button.isChecked()) {
+                    daysToRepeat += button.getText() + ",";
+                }
+            }
+            daysToRepeat = daysToRepeat.substring(0, daysToRepeat.length()-1);
+            this.repeatingAlarm = daysToRepeat;
+            Toast.makeText(getApplicationContext(), daysToRepeat, Toast.LENGTH_SHORT).show();
+        }
+        else {
+            this.repeatingAlarm = "false";
+            Toast.makeText(getApplicationContext(), "Not Check", Toast.LENGTH_SHORT).show();
         }
     }
 
