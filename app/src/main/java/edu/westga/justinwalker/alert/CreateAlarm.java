@@ -126,7 +126,7 @@ public class CreateAlarm extends FragmentActivity {
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
 		requestCode = (int) this.dbAccess.insert(alarmEnabled, "Name", "Date", "Time", 
-				this.alarmRingtone, this.alarmImage, "False", 0, 0, "Email");
+				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, 0, 0, "Email");
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
