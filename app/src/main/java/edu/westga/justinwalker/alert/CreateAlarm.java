@@ -129,15 +129,15 @@ public class CreateAlarm extends FragmentActivity {
 		
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
-		requestCode = (int) this.dbAccess.insert(alarmEnabled, "Name", "Date", "Time", 
+        String alarmTime = timeOfAlarm.toMillis(false) + "";
+		requestCode = (int) this.dbAccess.insert(alarmEnabled, "Name", "Date", alarmTime,
 				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, 0, 0, "Email");
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
 		PendingIntent pendingIntent = PendingIntent.getActivity(this, requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
-		
-		//If repeating I will have to add more here
+
 		Time now = new Time();
 		now.setToNow();
 		if(timeOfAlarm.before(now)) {

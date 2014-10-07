@@ -107,12 +107,12 @@ public class DBAccess {
 	 * @param id the id fo the alarm
 	 * @return 0 or 1 depending on if repeating is enabled for this alarm
 	 */
-	public int getRepeating(long id) {
-		int repeating = 0;
+	public String getRepeating(long id) {
+		String repeating = "";
 
 		this.adapter.open();
 		Cursor cursor = this.adapter.fetchAlarm(id);
-		repeating = cursor.getInt(this.REPEAT_INDEX);
+		repeating = cursor.getString(this.REPEAT_INDEX);
 		cursor.close();
 		this.adapter.close();
 

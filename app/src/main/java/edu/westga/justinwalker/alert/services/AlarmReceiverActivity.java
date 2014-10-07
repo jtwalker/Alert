@@ -19,6 +19,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import edu.westga.justinwalker.alert.R;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
 import edu.westga.justinwalker.alert.models.SharedConstants;
@@ -35,6 +39,8 @@ public class AlarmReceiverActivity extends Activity {
 	private Editor editor;
 	private MediaPlayer ringtone;
     private Uri ringtoneUri;
+    private String alarmTime;
+    private String repeatingAlarm;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -72,7 +78,7 @@ public class AlarmReceiverActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		/*if(settings.contains("dismiss") && this.dbAccess.getRepeating(this.requestCode) == SharedConstants.ALARM_FALSE) {
+		/*if(settings.contains("dismiss") && this.dbAccess.getRepeating(this.requestCode).equals(SharedConstants.REPEATING_FALSE)) {
 			this.dbAccess.delete(this.requestCode);
 			editor.remove("dismiss");
 			editor.commit();
@@ -117,6 +123,9 @@ public class AlarmReceiverActivity extends Activity {
         if (ringtone != null && !ringtone.equals("")) {
             this.ringtoneUri = Uri.parse(ringtone);
         }
+
+       this.alarmTime = this.dbAccess.getAlarmTime(this.requestCode);
+       this.repeatingAlarm = this.dbAccess.getRepeating(this.requestCode);
     }
 	
 	/**
@@ -140,6 +149,18 @@ public class AlarmReceiverActivity extends Activity {
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
 		alarmManager.set(AlarmManager.RTC_WAKEUP, snoozeTime, pendingIntent);
 	}
+
+    private void checkAndSetRepeatingAlarm() {
+        if(!this.repeatingAlarm.equals(SharedConstants.REPEATING_FALSE)) {
+            long timeOfAlarm = Long.valueOf(alarmTime).longValue();
+
+            Intent intent = new Intent(this, AlarmReceiverActivity.class);
+            intent.putExtra("requestCode", requestCode);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, this.requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, timeOfAlarm + TimeUnit.DAYS.toMillis(this.findHowManyDaysUntilNextAlarm()), pendingIntent);
+        }
+    }
 	
 	/**
 	 * 
@@ -154,6 +175,7 @@ public class AlarmReceiverActivity extends Activity {
 				editor.putBoolean("dismiss", true);
 				editor.commit();
 				//Email
+                checkAndSetRepeatingAlarm();
 				finish();
 				break;
 			case R.id.silenceAlarmButton:
@@ -173,4 +195,87 @@ public class AlarmReceiverActivity extends Activity {
 		}
 	};
 
+    /**
+     * Gets the difference in the days of the week. For example, if I pass in Monday and today is Tuesday, -1 should be returned.
+     */
+    private int getDayDifference(String dayOfAlarm) {
+        int dayDifference = 0;
+        Time now = new Time();
+        now.setToNow();
+        dayDifference = this.convertDayIntoInteger(dayOfAlarm) - now.weekDay;
+
+        return dayDifference;
+    }
+
+    /**
+     * This will return an integer value for the dayOfAlarm String
+     */
+    private int convertDayIntoInteger(String dayOfAlarm) {
+        int dayNumber = 0;
+
+        if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_mon))) {
+            dayNumber = 1;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_tues))) {
+            dayNumber = 2;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_wed))) {
+            dayNumber = 3;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_thurs))) {
+            dayNumber = 4;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_fri))) {
+            dayNumber = 5;
+        }
+        else if(dayOfAlarm.equals(getApplicationContext().getString(R.string.day_of_week_sat))) {
+            dayNumber = 6;
+        }
+
+        return dayNumber;
+    }
+
+    /**
+     *
+     */
+    private int findHowManyDaysUntilNextAlarm() {
+        String[] repeatingDays = this.repeatingAlarm.split(",");
+        ArrayList<Integer> dayDifferenceForAlarms = new ArrayList<Integer>();
+
+        for(String day: repeatingDays) {
+            dayDifferenceForAlarms.add(this.getDayDifference(day));
+        }
+
+        return this.findLowestNonNegativeValue(dayDifferenceForAlarms);
+    }
+
+    /**
+     * Find lowest non negative in the list. If there isn't a non negative, add 7 (number of days in a week) to all the values.
+     * then return the lowest.
+     */
+    private int findLowestNonNegativeValue(ArrayList<Integer> dayDifferences) {
+        int lowestNonNegativeValue = 999;
+        int greatestNegativeValue = -999;
+
+        for(int i = 0; i < dayDifferences.size(); i++) {
+            if(dayDifferences.get(i) >= 0 && (dayDifferences.get(i) < lowestNonNegativeValue)) {
+                lowestNonNegativeValue = dayDifferences.get(i);
+            }
+            else if(dayDifferences.get(i) < 0 && (dayDifferences.get(i) > greatestNegativeValue)) {
+                greatestNegativeValue = dayDifferences.get(i);
+            }
+        }
+
+        //This if statement is not in create alarm because 0 can exist there. In this class, it cannot.
+        int daysInAWeek = 7;
+        if(lowestNonNegativeValue == 0) {
+            return daysInAWeek;
+        }
+
+        if(lowestNonNegativeValue != 999) {
+            return lowestNonNegativeValue;
+        }
+
+        return greatestNegativeValue + daysInAWeek;
+    }
 }

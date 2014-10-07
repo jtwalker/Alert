@@ -65,19 +65,18 @@
       <file leaf-file-name="CreateAlarm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1693" max-vertical-offset="4930">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2989" max-vertical-offset="5049">
+              <caret line="275" column="7" selection-start-line="275" selection-start-column="7" selection-end-line="275" selection-end-column="7" />
               <folding>
                 <element signature="method#checkForRepeatingAlarms#0;class#CreateAlarm#0" expanded="false" />
-                <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
                 <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-                <element signature="e#11529#11588#0" expanded="true" />
-                <element signature="e#11664#11724#0" expanded="true" />
-                <element signature="e#11800#11859#0" expanded="true" />
-                <element signature="e#11935#11996#0" expanded="true" />
-                <element signature="e#12072#12131#0" expanded="true" />
-                <element signature="e#12207#12266#0" expanded="true" />
-                <element signature="e#12545#12554#0" expanded="true" />
+                <element signature="e#11544#11603#0" expanded="true" />
+                <element signature="e#11679#11739#0" expanded="true" />
+                <element signature="e#11815#11874#0" expanded="true" />
+                <element signature="e#11950#12011#0" expanded="true" />
+                <element signature="e#12087#12146#0" expanded="true" />
+                <element signature="e#12222#12281#0" expanded="true" />
+                <element signature="e#12560#12569#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,29 +85,22 @@
       <file leaf-file-name="AlarmReceiverActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7083333" vertical-offset="918" max-vertical-offset="2686">
-              <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Toast.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-20/android/widget/Toast.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3646" max-vertical-offset="6715">
-              <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SharedConstants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/models/SharedConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-              <folding />
+            <state vertical-scroll-proportion="0.24719101" vertical-offset="2139" max-vertical-offset="3791">
+              <caret line="156" column="53" selection-start-line="156" selection-start-column="53" selection-end-line="156" selection-end-column="53" />
+              <folding>
+                <element signature="e#5632#6297#0" expanded="true" />
+                <element signature="e#6293#6294#0" expanded="true" />
+                <element signature="method#getDayDifference#0;class#AlarmReceiverActivity#0" expanded="false" />
+                <element signature="method#convertDayIntoInteger#0;class#AlarmReceiverActivity#0" expanded="false" />
+                <element signature="e#6901#6960#0" expanded="true" />
+                <element signature="e#7036#7096#0" expanded="true" />
+                <element signature="e#7172#7231#0" expanded="true" />
+                <element signature="e#7307#7368#0" expanded="true" />
+                <element signature="e#7444#7503#0" expanded="true" />
+                <element signature="e#7579#7638#0" expanded="true" />
+                <element signature="method#findHowManyDaysUntilNextAlarm#0;class#AlarmReceiverActivity#0" expanded="false" />
+                <element signature="e#7917#7926#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -817,12 +809,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/AlarmDBHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/AlarmDBAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/controller/DBAccess.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/models/SharedConstants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/controller/DBAccess.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
       </list>
     </option>
   </component>
@@ -1034,6 +1026,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1265,7 +1329,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21768707" sideWeight="0.7284418" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32482994" sideWeight="0.7284418" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1309,15 +1373,14 @@
           <caret line="251" column="78" selection-start-line="251" selection-start-column="78" selection-end-line="251" selection-end-column="78" />
           <folding>
             <element signature="method#checkForRepeatingAlarms#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#11529#11588#0" expanded="true" />
-            <element signature="e#11664#11724#0" expanded="true" />
-            <element signature="e#11800#11859#0" expanded="true" />
-            <element signature="e#11935#11996#0" expanded="true" />
-            <element signature="e#12072#12131#0" expanded="true" />
-            <element signature="e#12207#12266#0" expanded="true" />
-            <element signature="e#12545#12554#0" expanded="true" />
+            <element signature="e#11544#11603#0" expanded="true" />
+            <element signature="e#11679#11739#0" expanded="true" />
+            <element signature="e#11815#11874#0" expanded="true" />
+            <element signature="e#11950#12011#0" expanded="true" />
+            <element signature="e#12087#12146#0" expanded="true" />
+            <element signature="e#12222#12281#0" expanded="true" />
+            <element signature="e#12560#12569#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1328,15 +1391,14 @@
           <caret line="206" column="47" selection-start-line="206" selection-start-column="47" selection-end-line="206" selection-end-column="47" />
           <folding>
             <element signature="method#checkForRepeatingAlarms#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#11529#11588#0" expanded="true" />
-            <element signature="e#11664#11724#0" expanded="true" />
-            <element signature="e#11800#11859#0" expanded="true" />
-            <element signature="e#11935#11996#0" expanded="true" />
-            <element signature="e#12072#12131#0" expanded="true" />
-            <element signature="e#12207#12266#0" expanded="true" />
-            <element signature="e#12545#12554#0" expanded="true" />
+            <element signature="e#11544#11603#0" expanded="true" />
+            <element signature="e#11679#11739#0" expanded="true" />
+            <element signature="e#11815#11874#0" expanded="true" />
+            <element signature="e#11950#12011#0" expanded="true" />
+            <element signature="e#12087#12146#0" expanded="true" />
+            <element signature="e#12222#12281#0" expanded="true" />
+            <element signature="e#12560#12569#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1502,13 +1564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/controller/DBAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5378377" vertical-offset="1458" max-vertical-offset="5253">
-          <caret line="147" column="52" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/models/SharedConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
@@ -1525,30 +1580,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/controller/DBAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1611" max-vertical-offset="5253">
+          <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1693" max-vertical-offset="4930">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2989" max-vertical-offset="5049">
+          <caret line="275" column="7" selection-start-line="275" selection-start-column="7" selection-end-line="275" selection-end-column="7" />
           <folding>
             <element signature="method#checkForRepeatingAlarms#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#11529#11588#0" expanded="true" />
-            <element signature="e#11664#11724#0" expanded="true" />
-            <element signature="e#11800#11859#0" expanded="true" />
-            <element signature="e#11935#11996#0" expanded="true" />
-            <element signature="e#12072#12131#0" expanded="true" />
-            <element signature="e#12207#12266#0" expanded="true" />
-            <element signature="e#12545#12554#0" expanded="true" />
+            <element signature="e#11544#11603#0" expanded="true" />
+            <element signature="e#11679#11739#0" expanded="true" />
+            <element signature="e#11815#11874#0" expanded="true" />
+            <element signature="e#11950#12011#0" expanded="true" />
+            <element signature="e#12087#12146#0" expanded="true" />
+            <element signature="e#12222#12281#0" expanded="true" />
+            <element signature="e#12560#12569#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7083333" vertical-offset="918" max-vertical-offset="2686">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="0.24719101" vertical-offset="2139" max-vertical-offset="3791">
+          <caret line="156" column="53" selection-start-line="156" selection-start-column="53" selection-end-line="156" selection-end-column="53" />
+          <folding>
+            <element signature="e#5632#6297#0" expanded="true" />
+            <element signature="e#6293#6294#0" expanded="true" />
+            <element signature="method#getDayDifference#0;class#AlarmReceiverActivity#0" expanded="false" />
+            <element signature="method#convertDayIntoInteger#0;class#AlarmReceiverActivity#0" expanded="false" />
+            <element signature="e#6901#6960#0" expanded="true" />
+            <element signature="e#7036#7096#0" expanded="true" />
+            <element signature="e#7172#7231#0" expanded="true" />
+            <element signature="e#7307#7368#0" expanded="true" />
+            <element signature="e#7444#7503#0" expanded="true" />
+            <element signature="e#7579#7638#0" expanded="true" />
+            <element signature="method#findHowManyDaysUntilNextAlarm#0;class#AlarmReceiverActivity#0" expanded="false" />
+            <element signature="e#7917#7926#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
