@@ -2,6 +2,7 @@ package edu.westga.justinwalker.alert.services;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.support.v4.app.NotificationCompat;
 import android.text.format.Time;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 import edu.westga.justinwalker.alert.R;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
@@ -52,6 +55,8 @@ public class AlarmReceiverActivity extends Activity {
 		
 		this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
 		this.editor = this.settings.edit();
+
+        this.fireNotification();
 		
 		this.initializeClickables();
         //this.initializeFromSharedPreferences();
@@ -126,6 +131,24 @@ public class AlarmReceiverActivity extends Activity {
 
        this.alarmTime = this.dbAccess.getAlarmTime(this.requestCode);
        this.repeatingAlarm = this.dbAccess.getRepeating(this.requestCode);
+    }
+
+    private void fireNotification() {
+        Time alarmTime = new Time();
+        alarmTime.setToNow();
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 1;
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setContentTitle("ALARM!!")
+                        .setContentText(alarmTime.hour + ":" + alarmTime.minute)
+                        .setLargeIcon(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(this.requestCode), options))
+                        .setVibrate(new long[]{0, 1000, 200, 250, 150, 150, 75, 150, 75, 150});
+
+        int mNotificationId = 001;
+        NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mNotifyMgr.notify(mNotificationId, mBuilder.build());
     }
 	
 	/**
