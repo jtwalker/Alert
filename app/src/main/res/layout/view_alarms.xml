@@ -3,7 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/green" >
+    android:background="@color/gray" >
+
+    <TextView
+        android:id="@+id/viewAlarmsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alarms"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_size" />
+
+    <ListView
+        android:id="@+id/alarmListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     
 
 </LinearLayout>

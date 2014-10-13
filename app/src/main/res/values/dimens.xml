@@ -6,6 +6,8 @@
     <dimen name="font_size">25sp</dimen>
     <dimen name="zero_dp">0dp</dimen>
 
+    <dimen name="title_size">25sp</dimen>
+
     <dimen name="create_alarm_font_size">25sp</dimen>
 
 </resources>

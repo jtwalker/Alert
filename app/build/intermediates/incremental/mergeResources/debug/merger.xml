@@ -6742,16 +6742,16 @@ false
                     msgid="3588849162933574182" >"Več možnosti"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Končano"
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deljenje z"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Pokaži vse"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deljenje z"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Končano"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
@@ -6770,12 +6770,12 @@ false
                     msgid="8264924765203268293" >"Iskanje"
                 </string>
                 <string
-                    name="abc_searchview_description_query"
-                    msgid="2550479030709304392" >"Iskalna poizvedba"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Pošiljanje poizvedbe"
+                </string>
+                <string
+                    name="abc_searchview_description_query"
+                    msgid="2550479030709304392" >"Iskalna poizvedba"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -8319,6 +8319,8 @@ false
             <file
                 path="C:\Users\Family\Documents\Justin\Alert\app\src\main\res\values\dimens.xml"
                 qualifiers="" >
+                <dimen name="title_size" >25sp
+                </dimen>
                 <dimen name="activity_horizontal_margin" >16dp
                 </dimen>
                 <dimen name="font_size" >25sp
@@ -8381,6 +8383,8 @@ false
                 <color name="gray" >#333333
                 </color>
 
+                <string name="alarms" >Alarms
+                </string>
                 <string name="alarm_snooze" >Snooze?
                 </string>
                 <string name="title_activity_alarm_receiver" >AlarmReceiverActivity
@@ -8512,6 +8516,8 @@ center
             <file
                 path="C:\Users\Family\Documents\Justin\Alert\app\src\main\res\values-sw600dp\dimens.xml"
                 qualifiers="sw600dp-v13" >
+                <dimen name="title_size" >50sp
+                </dimen>
                 <dimen name="date_font_size" >60sp
                 </dimen>
                 <dimen name="active_alarm_font_size" >45sp
@@ -8520,12 +8526,14 @@ center
                 </dimen>
                 <dimen name="edit_font_size" >25sp
                 </dimen>
-                <dimen name="create_alarm_font_size" >40sp
+                <dimen name="create_alarm_font_size" >30sp
                 </dimen>
             </file>
             <file
                 path="C:\Users\Family\Documents\Justin\Alert\app\src\main\res\values-sw600dp-land\dimens.xml"
                 qualifiers="sw600dp-land-v13" >
+                <dimen name="title_size" >50sp
+                </dimen>
                 <dimen name="edit_font_size" >25sp
                 </dimen>
                 <dimen name="active_alarm_font_size" >45sp
@@ -8534,12 +8542,14 @@ center
                 </dimen>
                 <dimen name="font_size" >100sp
                 </dimen>
-                <dimen name="create_alarm_font_size" >50sp
+                <dimen name="create_alarm_font_size" >40sp
                 </dimen>
             </file>
             <file
                 path="C:\Users\Family\Documents\Justin\Alert\app\src\main\res\values-sw720dp\dimens.xml"
                 qualifiers="sw720dp-v13" >
+                <dimen name="title_size" >50sp
+                </dimen>
                 <dimen name="active_alarm_font_size" >65sp
                 </dimen>
                 <dimen name="create_alarm_font_size" >55sp
@@ -8559,6 +8569,8 @@ center
                 <dimen name="font_size" >85sp
                 </dimen>
                 <dimen name="create_alarm_font_size" >65sp
+                </dimen>
+                <dimen name="title_size" >50sp
                 </dimen>
                 <dimen name="activity_horizontal_margin" >128dp
                 </dimen>
@@ -8597,6 +8609,16 @@ center
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
+            <file
+                name="alarm_details_layout"
+                path="C:\Users\Family\Documents\Justin\Alert\app\src\main\res\layout\alarm_details_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="view_alarms_listview"
+                path="C:\Users\Family\Documents\Justin\Alert\app\src\main\res\layout\view_alarms_listview.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Family\Documents\Justin\Alert\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Family\Documents\Justin\Alert\app\build\generated\res\generated\debug" />

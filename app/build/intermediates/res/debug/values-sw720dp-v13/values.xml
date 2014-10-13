@@ -10,5 +10,6 @@
     <dimen name="date_font_size">55sp</dimen>
     <dimen name="edit_font_size">35sp</dimen>
     <dimen name="font_size">65sp</dimen>
+    <dimen name="title_size">50sp</dimen>
 
 </resources>

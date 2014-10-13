@@ -1,9 +1,10 @@
 package edu.westga.justinwalker.alert.db.controller;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.database.Cursor;
+
+import java.util.ArrayList;
+
 import edu.westga.justinwalker.alert.db.AlarmDBAdapter;
 
 /**
@@ -304,6 +305,18 @@ public class DBAccess {
 
 		return nextAutoIncID;
 	}
+
+    /**
+     *
+     * @return
+     */
+    public Cursor fetchAllAlarms() {
+        this.adapter.open();
+        Cursor allAlarms = this.adapter.fetchAllAlarms();
+        //this.adapter.close();
+
+        return allAlarms;
+    }
 
 }
 
