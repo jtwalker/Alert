@@ -50,6 +50,8 @@ public class CreateAlarm extends FragmentActivity {
     private String alarmRingtone;
     private String repeatingAlarm;
     private String alarmName;
+    private String alarmEmail;
+    private int alarmEmailEnabled, alarmSnoozeEnabled;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +134,7 @@ public class CreateAlarm extends FragmentActivity {
 		//Will also have random other options but not yet
         String alarmTime = timeOfAlarm.toMillis(false) + "";
 		requestCode = (int) this.dbAccess.insert(alarmEnabled, this.alarmName, "Date", alarmTime,
-				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, 0, 0, "Email");
+				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, this.alarmSnoozeEnabled, this.alarmEmailEnabled, "Email");
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
@@ -277,13 +279,24 @@ public class CreateAlarm extends FragmentActivity {
     private void setAlarmDetails() {
         EditText alarmNameText = (EditText) this.findViewById(R.id.alarmNameText);
         this.alarmName = alarmNameText.getText().toString();
-    }
 
-    /**
-     *
-     */
-    private void clearAlarmDetails() {
-        //Blank for now
+        Switch snooze = (Switch) this.findViewById(R.id.snoozeSwitch);
+        if(snooze.isChecked()) {
+            this.alarmSnoozeEnabled = 1;
+        }
+
+        else {
+            this.alarmSnoozeEnabled = 0;
+        }
+
+        Switch email = (Switch) this.findViewById(R.id.emailSwitch);
+        if(email.isChecked()) {
+            this.alarmEmailEnabled = SharedConstants.ALARM_TRUE;
+        }
+
+        else {
+            this.alarmEmailEnabled = SharedConstants.ALARM_FALSE;
+        }
     }
 
     /**
@@ -376,7 +389,6 @@ public class CreateAlarm extends FragmentActivity {
                 case R.id.createAlarmButton:
                     setAlarmDetails();
                     setAlarm();
-                    clearAlarmDetails();
                     break;
                 case R.id.alarmImage:
                     showImagePicker();
