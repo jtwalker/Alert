@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -12,8 +11,6 @@ import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PowerManager;
-import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.text.format.Time;
 import android.view.View;
@@ -24,7 +21,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
 
 import edu.westga.justinwalker.alert.R;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
@@ -61,6 +57,7 @@ public class AlarmReceiverActivity extends Activity {
 		this.initializeClickables();
         //this.initializeFromSharedPreferences();
         this.initializeFromDatabase();
+        this.checkShouldSnoozeBeEnabled();
 		
 		this.ringtone = MediaPlayer.create(this, this.ringtoneUri);
 
@@ -131,6 +128,18 @@ public class AlarmReceiverActivity extends Activity {
 
        this.alarmTime = this.dbAccess.getAlarmTime(this.requestCode);
        this.repeatingAlarm = this.dbAccess.getRepeating(this.requestCode);
+    }
+
+    /**
+     *
+     */
+    private void checkShouldSnoozeBeEnabled() {
+        Button snooze = (Button) this.findViewById(R.id.snoozeAlarmButton);
+        int snoozeEnabled = this.dbAccess.getSnooze(this.requestCode);
+
+        if(snoozeEnabled == SharedConstants.ALARM_FALSE) {
+            snooze.setVisibility(View.GONE);
+        }
     }
 
     private void fireNotification() {

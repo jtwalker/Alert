@@ -87,89 +87,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ViewAlarms.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="901">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CreateAlarm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.647929" vertical-offset="1821" max-vertical-offset="5950">
-              <caret line="154" column="92" selection-start-line="154" selection-start-column="92" selection-end-line="154" selection-end-column="92" />
+            <state vertical-scroll-proportion="0.3964497" vertical-offset="2263" max-vertical-offset="5865">
+              <caret line="175" column="27" selection-start-line="175" selection-start-column="27" selection-end-line="175" selection-end-column="27" />
               <folding>
                 <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
                 <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
                 <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-                <element signature="e#13907#13966#0" expanded="true" />
-                <element signature="e#14042#14102#0" expanded="true" />
-                <element signature="e#14178#14237#0" expanded="true" />
-                <element signature="e#14313#14374#0" expanded="true" />
-                <element signature="e#14450#14509#0" expanded="true" />
-                <element signature="e#14585#14644#0" expanded="true" />
                 <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-                <element signature="e#14923#14932#0" expanded="true" />
+                <element signature="e#14829#14838#0" expanded="true" />
                 <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-                <element signature="e#16186#17018#0" expanded="true" />
-                <element signature="e#17014#17015#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_alarm.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.296296" vertical-offset="2618" max-vertical-offset="3281">
-              <caret line="164" column="52" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
-              <folding>
-                <element signature="e#923#943#0" expanded="true" />
-                <element signature="e#1190#1221#0" expanded="true" />
-                <element signature="e#1975#2002#0" expanded="true" />
-                <element signature="e#2810#2828#0" expanded="true" />
-                <element signature="e#2919#2950#0" expanded="true" />
-                <element signature="e#3451#3476#0" expanded="true" />
-                <element signature="e#3575#3606#0" expanded="true" />
-                <element signature="e#4019#4044#0" expanded="true" />
-                <element signature="e#4088#4113#0" expanded="true" />
-                <element signature="e#4318#4344#0" expanded="true" />
-                <element signature="e#4388#4414#0" expanded="true" />
-                <element signature="e#4620#4645#0" expanded="true" />
-                <element signature="e#4689#4714#0" expanded="true" />
-                <element signature="e#4919#4946#0" expanded="true" />
-                <element signature="e#4990#5017#0" expanded="true" />
-                <element signature="e#5224#5249#0" expanded="true" />
-                <element signature="e#5293#5318#0" expanded="true" />
-                <element signature="e#5523#5548#0" expanded="true" />
-                <element signature="e#5592#5617#0" expanded="true" />
-                <element signature="e#5822#5847#0" expanded="true" />
-                <element signature="e#5891#5916#0" expanded="true" />
-                <element signature="e#6262#6284#0" expanded="true" />
-                <element signature="e#6383#6414#0" expanded="true" />
-                <element signature="e#6660#6681#0" expanded="true" />
-                <element signature="e#6780#6811#0" expanded="true" />
-                <element signature="e#7095#7116#0" expanded="true" />
-                <element signature="e#7403#7434#0" expanded="true" />
-                <element signature="e#7954#7976#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="782">
-              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1361,7 +1291,6 @@
         <option value="$PROJECT_DIR$/Wear/build.gradle" />
         <option value="$PROJECT_DIR$/Wear/src/main/res/layout/round_activity_main.xml" />
         <option value="$PROJECT_DIR$/Wear/src/main/res/layout/rect_activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw600dp-land/dimens.xml" />
@@ -1376,6 +1305,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
       </list>
     </option>
@@ -1847,7 +1777,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35544217" sideWeight="0.59228444" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35544217" sideWeight="0.59228444" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1893,17 +1823,9 @@
             <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#13907#13966#0" expanded="true" />
-            <element signature="e#14042#14102#0" expanded="true" />
-            <element signature="e#14178#14237#0" expanded="true" />
-            <element signature="e#14313#14374#0" expanded="true" />
-            <element signature="e#14450#14509#0" expanded="true" />
-            <element signature="e#14585#14644#0" expanded="true" />
             <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#14923#14932#0" expanded="true" />
+            <element signature="e#14829#14838#0" expanded="true" />
             <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#16186#17018#0" expanded="true" />
-            <element signature="e#17014#17015#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1944,17 +1866,9 @@
             <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#13907#13966#0" expanded="true" />
-            <element signature="e#14042#14102#0" expanded="true" />
-            <element signature="e#14178#14237#0" expanded="true" />
-            <element signature="e#14313#14374#0" expanded="true" />
-            <element signature="e#14450#14509#0" expanded="true" />
-            <element signature="e#14585#14644#0" expanded="true" />
             <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#14923#14932#0" expanded="true" />
+            <element signature="e#14829#14838#0" expanded="true" />
             <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#16186#17018#0" expanded="true" />
-            <element signature="e#17014#17015#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2019,17 +1933,9 @@
             <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#13907#13966#0" expanded="true" />
-            <element signature="e#14042#14102#0" expanded="true" />
-            <element signature="e#14178#14237#0" expanded="true" />
-            <element signature="e#14313#14374#0" expanded="true" />
-            <element signature="e#14450#14509#0" expanded="true" />
-            <element signature="e#14585#14644#0" expanded="true" />
             <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#14923#14932#0" expanded="true" />
+            <element signature="e#14829#14838#0" expanded="true" />
             <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#16186#17018#0" expanded="true" />
-            <element signature="e#17014#17015#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2050,17 +1956,9 @@
             <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#13907#13966#0" expanded="true" />
-            <element signature="e#14042#14102#0" expanded="true" />
-            <element signature="e#14178#14237#0" expanded="true" />
-            <element signature="e#14313#14374#0" expanded="true" />
-            <element signature="e#14450#14509#0" expanded="true" />
-            <element signature="e#14585#14644#0" expanded="true" />
             <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#14923#14932#0" expanded="true" />
+            <element signature="e#14829#14838#0" expanded="true" />
             <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#16186#17018#0" expanded="true" />
-            <element signature="e#17014#17015#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2073,17 +1971,9 @@
             <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#13907#13966#0" expanded="true" />
-            <element signature="e#14042#14102#0" expanded="true" />
-            <element signature="e#14178#14237#0" expanded="true" />
-            <element signature="e#14313#14374#0" expanded="true" />
-            <element signature="e#14450#14509#0" expanded="true" />
-            <element signature="e#14585#14644#0" expanded="true" />
             <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#14923#14932#0" expanded="true" />
+            <element signature="e#14829#14838#0" expanded="true" />
             <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#16186#17018#0" expanded="true" />
-            <element signature="e#17014#17015#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2092,17 +1982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81785715" vertical-offset="494" max-vertical-offset="1122">
           <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/active_alarm_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14868805" vertical-offset="51" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2214,14 +2093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1752" max-vertical-offset="4743">
-          <caret line="146" column="54" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2348,14 +2219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="901">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/controller/DBAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="497" max-vertical-offset="5457">
@@ -2420,25 +2283,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/active_alarm_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8888888" vertical-offset="51" max-vertical-offset="969">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="4964">
+          <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="901">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.647929" vertical-offset="1821" max-vertical-offset="5950">
-          <caret line="154" column="92" selection-start-line="154" selection-start-column="92" selection-end-line="154" selection-end-column="92" />
+        <state vertical-scroll-proportion="0.3964497" vertical-offset="2263" max-vertical-offset="5865">
+          <caret line="175" column="27" selection-start-line="175" selection-start-column="27" selection-end-line="175" selection-end-column="27" />
           <folding>
             <element signature="method#setAlarmDetails#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#getDayDifference#0;class#CreateAlarm#0" expanded="false" />
             <element signature="method#convertDayIntoInteger#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#13907#13966#0" expanded="true" />
-            <element signature="e#14042#14102#0" expanded="true" />
-            <element signature="e#14178#14237#0" expanded="true" />
-            <element signature="e#14313#14374#0" expanded="true" />
-            <element signature="e#14450#14509#0" expanded="true" />
-            <element signature="e#14585#14644#0" expanded="true" />
             <element signature="method#findHowManyDaysUntilNextAlarm#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#14923#14932#0" expanded="true" />
+            <element signature="e#14829#14838#0" expanded="true" />
             <element signature="method#findLowestNonNegativeValue#0;class#CreateAlarm#0" expanded="false" />
-            <element signature="e#16186#17018#0" expanded="true" />
-            <element signature="e#17014#17015#0" expanded="true" />
           </folding>
         </state>
       </provider>

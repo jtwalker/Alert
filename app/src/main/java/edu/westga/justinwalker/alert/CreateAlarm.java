@@ -151,8 +151,6 @@ public class CreateAlarm extends FragmentActivity {
 
         this.checkForRepeatingAlarms();
         this.checkForEmail();
-
-        Toast.makeText(getApplicationContext(), this.alarmEmail, Toast.LENGTH_SHORT).show();
 		
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
