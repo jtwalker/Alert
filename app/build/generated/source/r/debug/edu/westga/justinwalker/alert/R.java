@@ -950,32 +950,33 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f070023;
         public static final int action_bar_title=0x7f070022;
         public static final int action_context_bar=0x7f07001d;
-        public static final int action_create_alarm=0x7f07005f;
+        public static final int action_create_alarm=0x7f070060;
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070061;
-        public static final int action_view_alarms=0x7f070060;
+        public static final int action_settings=0x7f070062;
+        public static final int action_view_alarms=0x7f070061;
         public static final int activeAlarmMainLinearLayout=0x7f07003c;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int alarmDetailsBottom=0x7f070049;
         public static final int alarmDetailsTop=0x7f070046;
+        public static final int alarmEmailText=0x7f070057;
         public static final int alarmEventImageView=0x7f07003d;
         public static final int alarmImage=0x7f070047;
-        public static final int alarmListView=0x7f07005d;
+        public static final int alarmListView=0x7f07005e;
         public static final int alarmNameText=0x7f070045;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
-        public static final int buttonLayout=0x7f070057;
+        public static final int buttonLayout=0x7f070058;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
         public static final int container=0x7f070042;
-        public static final int createAlarmButton=0x7f070058;
-        public static final int dateDisplay=0x7f07005b;
+        public static final int createAlarmButton=0x7f070059;
+        public static final int dateDisplay=0x7f07005c;
         public static final int daysOfTheWeekLayout=0x7f07004d;
         public static final int default_activity_button=0x7f070028;
         public static final int dialog=0x7f070012;
-        public static final int digitalClock=0x7f07005a;
+        public static final int digitalClock=0x7f07005b;
         public static final int disableHome=0x7f070008;
         public static final int dismissAlarmButton=0x7f070041;
         public static final int dropdown=0x7f070013;
@@ -994,7 +995,7 @@ containing a value of this type.
         public static final int linearLayoutAlarmControls=0x7f07003f;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070029;
-        public static final int listview=0x7f07005e;
+        public static final int listview=0x7f07005f;
         public static final int middle=0x7f07000b;
         public static final int monToggleButton=0x7f07004e;
         public static final int never=0x7f07000d;
@@ -1004,7 +1005,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f070019;
         public static final int radio=0x7f07002f;
         public static final int repeatingSwitch=0x7f07004c;
-        public static final int rightContainer=0x7f070059;
+        public static final int rightContainer=0x7f07005a;
         public static final int ringtone=0x7f07004a;
         public static final int satToggleButton=0x7f070053;
         public static final int search_badge=0x7f070032;
@@ -1037,7 +1038,7 @@ containing a value of this type.
         public static final int tuesToggleButton=0x7f07004f;
         public static final int up=0x7f070021;
         public static final int useLogo=0x7f070003;
-        public static final int viewAlarmsTitle=0x7f07005c;
+        public static final int viewAlarmsTitle=0x7f07005d;
         public static final int wedToggleButton=0x7f070050;
         public static final int withText=0x7f070010;
     }
@@ -1113,14 +1114,15 @@ containing a value of this type.
         public static final int day_of_week_tues=0x7f0a001c;
         public static final int day_of_week_wed=0x7f0a001d;
         public static final int dismiss=0x7f0a001e;
-        public static final int hello_world=0x7f0a001f;
-        public static final int image_description=0x7f0a0020;
-        public static final int ringtone=0x7f0a0021;
-        public static final int silence=0x7f0a0022;
-        public static final int snooze=0x7f0a0023;
-        public static final int title_activity_alarm_receiver=0x7f0a0024;
-        public static final int title_activity_set_alarm=0x7f0a0025;
-        public static final int view_alarms=0x7f0a0026;
+        public static final int enter_email=0x7f0a001f;
+        public static final int hello_world=0x7f0a0020;
+        public static final int image_description=0x7f0a0021;
+        public static final int ringtone=0x7f0a0022;
+        public static final int silence=0x7f0a0023;
+        public static final int snooze=0x7f0a0024;
+        public static final int title_activity_alarm_receiver=0x7f0a0025;
+        public static final int title_activity_set_alarm=0x7f0a0026;
+        public static final int view_alarms=0x7f0a0027;
     }
     public static final class style {
         /** 

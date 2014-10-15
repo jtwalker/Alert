@@ -75,6 +75,21 @@ public class CreateAlarm extends FragmentActivity {
 		return true;
 	}
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.setSharedPreferences();
+    }
+
+    /**
+     *
+     */
+    private void setSharedPreferences() {
+        EditText alarmEmailText = (EditText) this.findViewById(R.id.alarmEmailText);
+        this.editor.putString("email", alarmEmailText.getText().toString());
+        this.editor.commit();
+    }
+
 	/**
 	 * 
 	 */
@@ -83,17 +98,23 @@ public class CreateAlarm extends FragmentActivity {
         ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
         TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
         Switch repeatingSwitch = (Switch) this.findViewById(R.id.repeatingSwitch);
+        Switch emailSwitch = (Switch) this.findViewById(R.id.emailSwitch);
 
 		createButton.setOnClickListener(this.inputClickListener);
         imageView.setOnClickListener(this.inputClickListener);
         ringtoneView.setOnClickListener(this.inputClickListener);
         repeatingSwitch.setOnClickListener(this.inputClickListener);
+        emailSwitch.setOnClickListener(this.inputClickListener);
 	}
 
     /**
      *
      */
     private void initializeFromSharedPreferences() {
+        if(this.settings.contains("email")) {
+            this.alarmEmail = this.settings.getString("email", "");
+        }
+
         if(this.settings.contains("image")) {
             String picturePath = this.settings.getString("image", "");
             this.alarmImage = this.settings.getString("image", "");
@@ -129,12 +150,15 @@ public class CreateAlarm extends FragmentActivity {
 		int requestCode = 0;
 
         this.checkForRepeatingAlarms();
+        this.checkForEmail();
+
+        Toast.makeText(getApplicationContext(), this.alarmEmail, Toast.LENGTH_SHORT).show();
 		
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
         String alarmTime = timeOfAlarm.toMillis(false) + "";
 		requestCode = (int) this.dbAccess.insert(alarmEnabled, this.alarmName, "Date", alarmTime,
-				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, this.alarmSnoozeEnabled, this.alarmEmailEnabled, "Email");
+				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, this.alarmSnoozeEnabled, this.alarmEmailEnabled, this.alarmEmail);
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
@@ -187,13 +211,23 @@ public class CreateAlarm extends FragmentActivity {
     /**
      *
      */
-    private void showDaysOfWeek() {
+    private void toggleDaysOfWeek() {
         LinearLayout daysOfTheWeek = (LinearLayout) this.findViewById(R.id.daysOfTheWeekLayout);
         if(daysOfTheWeek.getVisibility() != View.GONE) {
             daysOfTheWeek.setVisibility(View.GONE);
         }
         else {
             daysOfTheWeek.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void toggleEmailTextField() {
+        EditText alarmEmailText = (EditText) this.findViewById(R.id.alarmEmailText);
+        if(alarmEmailText.getVisibility() != View.GONE) {
+            alarmEmailText.setVisibility(View.GONE);
+        }
+        else {
+            alarmEmailText.setVisibility(View.VISIBLE);
         }
     }
 
@@ -270,6 +304,18 @@ public class CreateAlarm extends FragmentActivity {
         }
         else {
             this.repeatingAlarm = SharedConstants.REPEATING_FALSE;
+        }
+    }
+
+    private void checkForEmail() {
+        Switch emailSwitch = (Switch) this.findViewById(R.id.emailSwitch);
+        EditText alarmEmailText = (EditText) this.findViewById(R.id.alarmEmailText);
+
+        if(emailSwitch.isChecked()) {
+            this.alarmEmail = alarmEmailText.getText().toString();
+        }
+        else {
+            this.alarmEmail = "";
         }
     }
 
@@ -397,7 +443,10 @@ public class CreateAlarm extends FragmentActivity {
                     showRingtonePicker();
                     break;
                 case R.id.repeatingSwitch:
-                    showDaysOfWeek();
+                    toggleDaysOfWeek();
+                    break;
+                case R.id.emailSwitch:
+                    toggleEmailTextField();
                     break;
                 default:
                     Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();

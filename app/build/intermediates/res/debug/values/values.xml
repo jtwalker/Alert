@@ -582,6 +582,7 @@
     <string name="day_of_week_tues">Tues</string>
     <string name="day_of_week_wed">Wed</string>
     <string name="dismiss">Dismiss</string>
+    <string name="enter_email">Please enter an Email Address</string>
     <string name="hello_world">Hello world!</string>
     <string name="image_description">Image to be used for the alarm</string>
     <string name="ringtone">Click to select ringtone</string>
