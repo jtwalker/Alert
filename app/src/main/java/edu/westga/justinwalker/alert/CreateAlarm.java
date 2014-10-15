@@ -92,12 +92,6 @@ public class CreateAlarm extends FragmentActivity {
      *
      */
     private void initializeFromSharedPreferences() {
-        if(this.settings.contains("name")) {
-            this.alarmName = this.settings.getString("name", "Untitled");
-            EditText alarmNameText = (EditText) this.findViewById(R.id.alarmNameText);
-            alarmNameText.setText(this.alarmName);
-        }
-
         if(this.settings.contains("image")) {
             String picturePath = this.settings.getString("image", "");
             this.alarmImage = this.settings.getString("image", "");
@@ -283,19 +277,13 @@ public class CreateAlarm extends FragmentActivity {
     private void setAlarmDetails() {
         EditText alarmNameText = (EditText) this.findViewById(R.id.alarmNameText);
         this.alarmName = alarmNameText.getText().toString();
-        this.editor.putString("name", this.alarmName);
-
-        this.editor.commit();
     }
 
     /**
      *
      */
     private void clearAlarmDetails() {
-        this.editor.remove("name");
-
-
-        this.editor.commit();
+        //Blank for now
     }
 
     /**
