@@ -38,7 +38,7 @@ public class ViewAlarms extends Activity {
         Cursor cursor = this.dbAccess.fetchAllAlarms();
 
         String columns[] = new String[] {
-                Alarms.ALARM_PICTURE,
+                Alarms.ALARM_NAME,
                 Alarms.ALARM_TIME,
         };
 
@@ -53,31 +53,4 @@ public class ViewAlarms extends Activity {
 
         listView.setAdapter(dataAdapter);
     }
-
-    /**
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        
-        this.dbAccess = new DBAccess(getBaseContext());
-        
-        this.populateData();
-        
-        ViewAlarmsAdapter adapter = new ViewAlarmsAdapter(this, this.times, this.days, this.pictures);
-        setListAdapter(adapter);
-    }
-
-    private void populateData() {
-        ArrayList<Integer> alarmsIDs =  this.dbAccess.getAllAlarmIDs();
-
-        this.times = new String[alarmsIDs.size()];
-        this.days = new String[alarmsIDs.size()];
-        this.pictures = new String[alarmsIDs.size()];
-
-        for(int i=0; i<alarmsIDs.size(); i++) {
-            this.times[i] = this.dbAccess.getAlarmTime(alarmsIDs.get(i));
-            this.days[i] = this.dbAccess.getRepeating(alarmsIDs.get(i));
-            this.pictures[i] = this.dbAccess.getAlarmImage(alarmsIDs.get(i));
-        }
-    }
-     */
 }

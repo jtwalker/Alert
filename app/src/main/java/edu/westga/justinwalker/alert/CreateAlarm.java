@@ -2,8 +2,6 @@ package edu.westga.justinwalker.alert;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,13 +14,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NotificationCompat;
 import android.text.format.Time;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -30,10 +28,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.app.NotificationCompat.WearableExtender;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -55,6 +49,7 @@ public class CreateAlarm extends FragmentActivity {
     private String ringtoneUri;
     private String alarmRingtone;
     private String repeatingAlarm;
+    private String alarmName;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +92,12 @@ public class CreateAlarm extends FragmentActivity {
      *
      */
     private void initializeFromSharedPreferences() {
+        if(this.settings.contains("name")) {
+            this.alarmName = this.settings.getString("name", "Untitled");
+            EditText alarmNameText = (EditText) this.findViewById(R.id.alarmNameText);
+            alarmNameText.setText(this.alarmName);
+        }
+
         if(this.settings.contains("image")) {
             String picturePath = this.settings.getString("image", "");
             this.alarmImage = this.settings.getString("image", "");
@@ -136,7 +137,7 @@ public class CreateAlarm extends FragmentActivity {
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
         String alarmTime = timeOfAlarm.toMillis(false) + "";
-		requestCode = (int) this.dbAccess.insert(alarmEnabled, "Name", "Date", alarmTime,
+		requestCode = (int) this.dbAccess.insert(alarmEnabled, this.alarmName, "Date", alarmTime,
 				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, 0, 0, "Email");
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
@@ -152,7 +153,6 @@ public class CreateAlarm extends FragmentActivity {
 			timeOfAlarm.monthDay++;
 			Toast.makeText(getApplicationContext(), timeOfAlarm.month + " " + timeOfAlarm.monthDay + " " + timeOfAlarm.year, Toast.LENGTH_SHORT).show();
 		}
-
 
         if(!this.repeatingAlarm.equals(SharedConstants.REPEATING_FALSE)) {
             alarmManager.set(AlarmManager.RTC_WAKEUP, timeOfAlarm.toMillis(false) + TimeUnit.DAYS.toMillis(this.findHowManyDaysUntilNextAlarm()), pendingIntent);
@@ -278,6 +278,27 @@ public class CreateAlarm extends FragmentActivity {
     }
 
     /**
+     *
+     */
+    private void setAlarmDetails() {
+        EditText alarmNameText = (EditText) this.findViewById(R.id.alarmNameText);
+        this.alarmName = alarmNameText.getText().toString();
+        this.editor.putString("name", this.alarmName);
+
+        this.editor.commit();
+    }
+
+    /**
+     *
+     */
+    private void clearAlarmDetails() {
+        this.editor.remove("name");
+
+
+        this.editor.commit();
+    }
+
+    /**
      * Gets the difference in the days of the week. For example, if I pass in Monday and today is Tuesday, -1 should be returned.
      */
     private int getDayDifference(String dayOfAlarm) {
@@ -365,7 +386,9 @@ public class CreateAlarm extends FragmentActivity {
 		public void onClick(View view) {
 			switch (view.getId()) {
                 case R.id.createAlarmButton:
+                    setAlarmDetails();
                     setAlarm();
+                    clearAlarmDetails();
                     break;
                 case R.id.alarmImage:
                     showImagePicker();
