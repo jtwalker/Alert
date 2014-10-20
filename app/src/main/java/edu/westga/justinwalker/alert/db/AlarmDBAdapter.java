@@ -36,6 +36,50 @@ public class AlarmDBAdapter {
 			this.theDB.close();
 		}
 	}
+
+    /**
+     *
+     * @param historyID
+     * @return
+     */
+    public boolean deleteHistory(long historyID) {
+        return this.theDB.delete(Alarms.HISTORY_TABLE_NAME, Alarms.ID + "=" + historyID, null) > 0;
+    }
+
+    /**
+     *
+     * @param alarmNumber
+     * @param historyTime
+     * @param historyDate
+     * @param historyAction
+     * @return
+     */
+    public long insertHistory(int alarmNumber, String historyTime, String historyDate, String historyAction) {
+        ContentValues initialValues = new ContentValues();
+
+        initialValues.put(Alarms.ALARM_ID, alarmNumber);
+        initialValues.put(Alarms.HISTORY_TIME, historyTime);
+        initialValues.put(Alarms.HISTORY_DATE, historyDate);
+        initialValues.put(Alarms.HISTORY_ACTION, historyAction);
+
+        return this.theDB.insert(Alarms.HISTORY_TABLE_NAME, null, initialValues);
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Cursor fetchAllHistory() {
+        String[] columns = new String[] { Alarms.ID, Alarms.ALARM_ID, Alarms.HISTORY_TIME, Alarms.HISTORY_DATE, Alarms.HISTORY_ACTION };
+        return this.theDB.query(Alarms.HISTORY_TABLE_NAME, columns, null, null, null, null, null);
+    }
+
+    /**
+     *
+     */
+    public void deleteAllHistory() {
+        this.theDB.delete(Alarms.HISTORY_TABLE_NAME, "1", null);
+    }
 	
 	//Check here if any errors arise
 	public boolean deleteAlarm(long alarmID) {

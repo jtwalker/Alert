@@ -26,6 +26,12 @@ public final class AlarmContract {
 		public static final String ALARM_SNOOZE = "snooze";
 		public static final String ALARM_EMAIL = "email";
 		public static final String ALARM_NOTIFY = "notify";
+
+        public static final String HISTORY_TABLE_NAME = "history";
+        public static final String ALARM_ID = "alarmid";
+        public static final String HISTORY_TIME = "time";
+        public static final String HISTORY_DATE = "date";
+        public static final String HISTORY_ACTION = "action";
 		
 		private Alarms() {
 		}

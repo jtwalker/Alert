@@ -1,9 +1,5 @@
 package edu.westga.justinwalker.alert.db;
 
-import java.util.Arrays;
-import java.util.HashSet;
-
-import edu.westga.justinwalker.alert.db.AlarmContract.Alarms;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
@@ -12,6 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
+
+import java.util.Arrays;
+import java.util.HashSet;
+
+import edu.westga.justinwalker.alert.db.AlarmContract.Alarms;
 
 /**
  * Retrieves data from the database
@@ -22,6 +23,7 @@ public class AlarmContentProviderDB extends ContentProvider {
 	
 	private static final int ALL_ALARMS = 1;
 	private static final int ALARM_ID = 2;
+    private static final int HISTORY_ID = 3;
 	
 	private static final String AUTHORITY = "edu.uwg.justinwalker.visualalarm.alarmsdbprovider";
 	private static final String BASE_PATH = "alarms";
@@ -67,6 +69,21 @@ public class AlarmContentProviderDB extends ContentProvider {
 								+ selection, selectionArgs);
 			}
 			break;
+        /**
+        case HISTORY_ID:
+            String historyid = uri.getLastPathSegment();
+            if (TextUtils.isEmpty(selection)) {
+                rowsDeleted = sqlDB.delete(
+                    AlarmContract.Alarms.HISTORY_TABLE_NAME,
+                    AlarmContract.Alarms.ID + "=" + historyid, null);
+            } else {
+                rowsDeleted = sqlDB.delete(
+                    AlarmContract.Alarms.HISTORY_TABLE_NAME,
+                    AlarmContract.Alarms.ID + "=" + historyid + " and "
+                            + selection, selectionArgs);
+            }
+            break;
+         */
 		default:
 			throw new IllegalArgumentException("Unknown URI: " + uri);
 		}

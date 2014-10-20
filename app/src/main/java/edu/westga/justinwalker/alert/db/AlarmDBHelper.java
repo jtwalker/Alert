@@ -18,7 +18,7 @@ public class AlarmDBHelper extends SQLiteOpenHelper {
 	private static final String TEXT_TYPE = " TEXT";
 	private static final String INTEGER_TYPE = " INTEGER";
 	//Friendly reminder so I don't spend another 2 hours on this; don't put a comma after the last attribute field
-	private static final String SQL_CREATE_DATABASE = "CREATE TABLE "
+	private static final String SQL_CREATE_TABLE_ALARMS = "CREATE TABLE "
 			+ Alarms.ALARM_TABLE_NAME + " (" + Alarms.ID + " INTEGER PRIMARY KEY AUTOINCREMENT" + COMMA_SEP
 			+ Alarms.ALARM_ENABLED + INTEGER_TYPE + COMMA_SEP
 			+ Alarms.ALARM_NAME + TEXT_TYPE + COMMA_SEP
@@ -31,13 +31,22 @@ public class AlarmDBHelper extends SQLiteOpenHelper {
 			+ Alarms.ALARM_NOTIFY + INTEGER_TYPE + COMMA_SEP
 			+ Alarms.ALARM_EMAIL + TEXT_TYPE
 			+ ");";
+
+    private static final String SQL_CREATE_TABLE_HISTORYS = "CREATE TABLE "
+            + Alarms.HISTORY_TABLE_NAME + " (" + Alarms.ID + " INTEGER PRIMARY KEY AUTOINCREMENT" + COMMA_SEP
+            + Alarms.ALARM_ID + INTEGER_TYPE + COMMA_SEP
+            + Alarms.HISTORY_TIME + TEXT_TYPE + COMMA_SEP
+            + Alarms.HISTORY_DATE + TEXT_TYPE + COMMA_SEP
+            + Alarms.HISTORY_ACTION + TEXT_TYPE
+            + ");";
 	
 	public AlarmDBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 	
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(SQL_CREATE_DATABASE);
+		db.execSQL(SQL_CREATE_TABLE_ALARMS);
+        db.execSQL(SQL_CREATE_TABLE_HISTORYS);
 	}
 	
 	public void onUpgrade(SQLiteDatabase arg0, int arg1, int arg2) {

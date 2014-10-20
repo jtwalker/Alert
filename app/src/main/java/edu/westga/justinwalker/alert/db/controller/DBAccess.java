@@ -27,11 +27,65 @@ public class DBAccess {
 	private final int NOTIFY_INDEX = 9;
 	private final int EMAIL_INDEX = 10;
 
+    private final int ALARM_NUMBER_INDEX = 1;
+    private final int HISTORY_TIME_INDEX = 2;
+    private final int HISTORY_DATE_INDEX = 3;
+    private final int HISTORY_ACTION_INDEX = 4;
+
 	private AlarmDBAdapter adapter;
 
 	public DBAccess(Context context) {
 		this.adapter = new AlarmDBAdapter(context);
 	}
+
+    /**
+     *
+     * @param alarmNumber
+     * @param historyTime
+     * @param historyDate
+     * @param historyAction
+     * @return
+     */
+    private long insertHistory(int alarmNumber, String historyTime, String historyDate, String historyAction) {
+        long rowID = 0;
+
+        this.adapter.open();
+        rowID = this.adapter.insertHistory(alarmNumber, historyTime, historyDate, historyAction);
+        this.adapter.close();
+
+        return rowID;
+    }
+
+    /**
+     * Deletes a history
+     * @param historyID the id of the alarm
+     */
+    public void deleteHistory(int historyID) {
+        this.adapter.open();
+        this.adapter.deleteHistory(historyID);
+        this.adapter.close();
+    }
+
+    /**
+     * Deletes all history
+     */
+    public void deleteAllHistory() {
+        this.adapter.open();
+        this.adapter.deleteAllHistory();
+        this.adapter.close();
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Cursor fetchAllHistory() {
+        this.adapter.open();
+        Cursor allHistory = this.adapter.fetchAllHistory();
+        //this.adapter.close();
+
+        return allHistory;
+    }
 
 	/**
 	 * Inserts an alarm into the database
