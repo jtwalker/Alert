@@ -9,7 +9,7 @@
     <string name="view_history">View Alarm History</string>
     <string name="date">Date</string>
     <string name="alarms">Alarms</string>
-    <string name="history">History</string>
+    <string name="history">Alarm History</string>
 
     <string name="image_description">Image to be used for the alarm</string>
     <string name="alarm_name">Alarm Name</string>

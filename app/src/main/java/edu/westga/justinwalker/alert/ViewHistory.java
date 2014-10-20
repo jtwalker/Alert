@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.Window;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -21,7 +20,6 @@ public class ViewHistory extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.view_history);
 
         this.dbAccess = new DBAccess(getBaseContext());

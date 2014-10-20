@@ -15,11 +15,14 @@ import android.support.v4.app.NotificationCompat;
 import android.text.format.Time;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import edu.westga.justinwalker.alert.R;
@@ -46,7 +49,9 @@ public class AlarmReceiverActivity extends Activity {
     @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.active_alarm_layout);
+
 		
 		this.dbAccess = new DBAccess(getApplicationContext());
         this.requestCode = getIntent().getExtras().getInt("requestCode");
@@ -212,6 +217,18 @@ public class AlarmReceiverActivity extends Activity {
             mailer.sendMail(this.userEmailAddress, SharedConstants.ALERT_UPDATE, message);
         }
     }
+
+    /**
+     *
+     */
+    private void updateHistory(String actionTaken) {
+        Calendar cal = Calendar.getInstance();
+
+        String timeString = new SimpleDateFormat("HH:mm").format(cal.getTime());
+        String dateString = new SimpleDateFormat("MMM dd").format(cal.getTime());
+
+        this.dbAccess.insertHistory(this.requestCode, timeString, dateString, actionTaken);
+    }
 	
 	/**
 	 * 
@@ -225,6 +242,7 @@ public class AlarmReceiverActivity extends Activity {
 				editor.putBoolean("dismiss", true);
 				editor.commit();
 				sendEmail(SharedConstants.DISMISS_PRESSED);
+                updateHistory(SharedConstants.DISMISS_PRESSED);
                 checkAndSetRepeatingAlarm();
 				finish();
 				break;
@@ -236,6 +254,7 @@ public class AlarmReceiverActivity extends Activity {
 				ringtone.stop();
 				silencePressed = false;
                 sendEmail(SharedConstants.SNOOZE_PRESSED);
+                updateHistory(SharedConstants.SNOOZE_PRESSED);
 				snooze();
 				finish();
 				break;

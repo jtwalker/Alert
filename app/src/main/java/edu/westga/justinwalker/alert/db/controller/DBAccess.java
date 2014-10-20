@@ -46,7 +46,7 @@ public class DBAccess {
      * @param historyAction
      * @return
      */
-    private long insertHistory(int alarmNumber, String historyTime, String historyDate, String historyAction) {
+    public long insertHistory(int alarmNumber, String historyTime, String historyDate, String historyAction) {
         long rowID = 0;
 
         this.adapter.open();
