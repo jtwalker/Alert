@@ -575,6 +575,7 @@
     <string name="alarm_snooze">Snooze?</string>
     <string name="alarms">Alarms</string>
     <string name="app_name">Alert</string>
+    <string name="clear_history">Clear History</string>
     <string name="create_alarm">Create Alarm</string>
     <string name="date">Date</string>
     <string name="day_of_week_fri">Fri</string>
@@ -584,6 +585,7 @@
     <string name="day_of_week_thurs">Thurs</string>
     <string name="day_of_week_tues">Tues</string>
     <string name="day_of_week_wed">Wed</string>
+    <string name="delete_alarms">Delete All Alarms</string>
     <string name="dismiss">Dismiss</string>
     <string name="enter_email">Please enter an Email Address</string>
     <string name="hello_world">Hello world!</string>

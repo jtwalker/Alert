@@ -944,7 +944,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020058;
     }
     public static final class id {
-        public static final int action_alarm_history=0x7f070067;
+        public static final int action_alarm_history=0x7f070069;
         public static final int action_bar=0x7f07001c;
         public static final int action_bar_activity_content=0x7f070014;
         public static final int action_bar_container=0x7f07001b;
@@ -952,13 +952,15 @@ containing a value of this type.
         public static final int action_bar_root=0x7f07001a;
         public static final int action_bar_subtitle=0x7f070023;
         public static final int action_bar_title=0x7f070022;
+        public static final int action_clear_history=0x7f070066;
         public static final int action_context_bar=0x7f07001d;
-        public static final int action_create_alarm=0x7f070065;
+        public static final int action_create_alarm=0x7f070067;
+        public static final int action_delete_alarms=0x7f070065;
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070068;
-        public static final int action_view_alarms=0x7f070066;
+        public static final int action_settings=0x7f07006a;
+        public static final int action_view_alarms=0x7f070068;
         public static final int activeAlarmMainLinearLayout=0x7f07003c;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int alarmDetailsBottom=0x7f070049;
@@ -1090,7 +1092,9 @@ containing a value of this type.
         public static final int view_history=0x7f030021;
     }
     public static final class menu {
-        public static final int main=0x7f0c0000;
+        public static final int alarm_menu=0x7f0c0000;
+        public static final int history_menu=0x7f0c0001;
+        public static final int main=0x7f0c0002;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;
@@ -1115,27 +1119,29 @@ containing a value of this type.
         public static final int alarm_snooze=0x7f0a0013;
         public static final int alarms=0x7f0a0014;
         public static final int app_name=0x7f0a0015;
-        public static final int create_alarm=0x7f0a0016;
-        public static final int date=0x7f0a0017;
-        public static final int day_of_week_fri=0x7f0a0018;
-        public static final int day_of_week_mon=0x7f0a0019;
-        public static final int day_of_week_sat=0x7f0a001a;
-        public static final int day_of_week_sun=0x7f0a001b;
-        public static final int day_of_week_thurs=0x7f0a001c;
-        public static final int day_of_week_tues=0x7f0a001d;
-        public static final int day_of_week_wed=0x7f0a001e;
-        public static final int dismiss=0x7f0a001f;
-        public static final int enter_email=0x7f0a0020;
-        public static final int hello_world=0x7f0a0021;
-        public static final int history=0x7f0a0022;
-        public static final int image_description=0x7f0a0023;
-        public static final int ringtone=0x7f0a0024;
-        public static final int silence=0x7f0a0025;
-        public static final int snooze=0x7f0a0026;
-        public static final int title_activity_alarm_receiver=0x7f0a0027;
-        public static final int title_activity_set_alarm=0x7f0a0028;
-        public static final int view_alarms=0x7f0a0029;
-        public static final int view_history=0x7f0a002a;
+        public static final int clear_history=0x7f0a0016;
+        public static final int create_alarm=0x7f0a0017;
+        public static final int date=0x7f0a0018;
+        public static final int day_of_week_fri=0x7f0a0019;
+        public static final int day_of_week_mon=0x7f0a001a;
+        public static final int day_of_week_sat=0x7f0a001b;
+        public static final int day_of_week_sun=0x7f0a001c;
+        public static final int day_of_week_thurs=0x7f0a001d;
+        public static final int day_of_week_tues=0x7f0a001e;
+        public static final int day_of_week_wed=0x7f0a001f;
+        public static final int delete_alarms=0x7f0a0020;
+        public static final int dismiss=0x7f0a0021;
+        public static final int enter_email=0x7f0a0022;
+        public static final int hello_world=0x7f0a0023;
+        public static final int history=0x7f0a0024;
+        public static final int image_description=0x7f0a0025;
+        public static final int ringtone=0x7f0a0026;
+        public static final int silence=0x7f0a0027;
+        public static final int snooze=0x7f0a0028;
+        public static final int title_activity_alarm_receiver=0x7f0a0029;
+        public static final int title_activity_set_alarm=0x7f0a002a;
+        public static final int view_alarms=0x7f0a002b;
+        public static final int view_history=0x7f0a002c;
     }
     public static final class style {
         /** 
