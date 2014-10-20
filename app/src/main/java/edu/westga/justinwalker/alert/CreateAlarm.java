@@ -305,6 +305,9 @@ public class CreateAlarm extends FragmentActivity {
         }
     }
 
+    /**
+     *
+     */
     private void checkForEmail() {
         Switch emailSwitch = (Switch) this.findViewById(R.id.emailSwitch);
         EditText alarmEmailText = (EditText) this.findViewById(R.id.alarmEmailText);

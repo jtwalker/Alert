@@ -42,7 +42,6 @@ public class AlarmReceiverActivity extends Activity {
     private String alarmTime;
     private String repeatingAlarm;
     private String userEmailAddress;
-    private Mailer mailer;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,8 +53,6 @@ public class AlarmReceiverActivity extends Activity {
 		
 		this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
 		this.editor = this.settings.edit();
-
-        this.mailer = new Mailer();
 
         this.fireNotification();
 		
@@ -133,7 +130,7 @@ public class AlarmReceiverActivity extends Activity {
 
        this.alarmTime = this.dbAccess.getAlarmTime(this.requestCode);
        this.repeatingAlarm = this.dbAccess.getRepeating(this.requestCode);
-       this.userEmailAddress = "saintsline@gmail.com";
+       this.userEmailAddress = this.dbAccess.getAlarmEmail(this.requestCode);
     }
 
     /**
@@ -148,6 +145,9 @@ public class AlarmReceiverActivity extends Activity {
         }
     }
 
+    /**
+     *
+     */
     private void fireNotification() {
         Time alarmTime = new Time();
         alarmTime.setToNow();
@@ -182,7 +182,7 @@ public class AlarmReceiverActivity extends Activity {
 		long snoozeTime = timeOfAlarm.toMillis(false) + (this.SNOOZE_TIME_IN_MINUTE * this.MINUTE_IN_MILLISECOND);
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
-		intent.putExtra("requestCode", requestCode);
+		intent.putExtra("requestCode", this.requestCode);
 		PendingIntent pendingIntent = PendingIntent.getActivity(this, this.requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
 		alarmManager.set(AlarmManager.RTC_WAKEUP, snoozeTime, pendingIntent);
@@ -193,13 +193,23 @@ public class AlarmReceiverActivity extends Activity {
      */
     private void checkAndSetRepeatingAlarm() {
         if(!this.repeatingAlarm.equals(SharedConstants.REPEATING_FALSE)) {
-            long timeOfAlarm = Long.valueOf(alarmTime).longValue();
+            long timeOfAlarm = Long.valueOf(this.alarmTime).longValue();
 
             Intent intent = new Intent(this, AlarmReceiverActivity.class);
-            intent.putExtra("requestCode", requestCode);
+            intent.putExtra("requestCode", this.requestCode);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, this.requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
             alarmManager.set(AlarmManager.RTC_WAKEUP, timeOfAlarm + TimeUnit.DAYS.toMillis(this.findHowManyDaysUntilNextAlarm()), pendingIntent);
+        }
+    }
+
+    /**
+     *
+     */
+    private void sendEmail(String message) {
+        Mailer mailer = new Mailer();
+        if(!this.userEmailAddress.equals("")) {
+            mailer.sendMail(this.userEmailAddress, SharedConstants.ALERT_UPDATE, message);
         }
     }
 	
@@ -214,7 +224,7 @@ public class AlarmReceiverActivity extends Activity {
 				silencePressed = false;
 				editor.putBoolean("dismiss", true);
 				editor.commit();
-				mailer.sendMail(userEmailAddress, "Alert Test", "Dismiss Pressed");
+				sendEmail(SharedConstants.DISMISS_PRESSED);
                 checkAndSetRepeatingAlarm();
 				finish();
 				break;
@@ -225,7 +235,7 @@ public class AlarmReceiverActivity extends Activity {
 			case R.id.snoozeAlarmButton:
 				ringtone.stop();
 				silencePressed = false;
-                mailer.sendMail(userEmailAddress, "Alert Test", "Snooze Pressed");
+                sendEmail(SharedConstants.SNOOZE_PRESSED);
 				snooze();
 				finish();
 				break;

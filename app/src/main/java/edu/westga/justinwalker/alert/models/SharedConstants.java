@@ -22,6 +22,10 @@ public class SharedConstants {
     public static final String SATURDAY = "Sat";
     public static final String SUNDAY = "Sun";
 
+    public static final String SNOOZE_PRESSED = "Snooze Pressed";
+    public static final String DISMISS_PRESSED = "Dismiss Pressed";
+    public static final String ALERT_UPDATE = "Alert Update";
+
 	private SharedConstants() {
 
 	}
