@@ -1,10 +1,9 @@
 package edu.westga.justinwalker.alert;
 
-import edu.westga.justinwalker.alert.services.AlarmReceiverActivity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +14,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	private final int CREATE_ALARM = 1;
 	private final int VIEW_ALARMS = 2;
+    private final int VIEW_HISTORY = 3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,9 @@ public class MainActivity extends ActionBarActivity {
 		case R.id.action_view_alarms:
 			this.invokeActivityToViewAlarms();
 			return true;
+        case R.id.action_alarm_history:
+            this.invokeActivityToViewHistory();
+            return true;
 		case R.id.action_settings:
 			return true;
 		default:
@@ -76,4 +79,9 @@ public class MainActivity extends ActionBarActivity {
 		Intent intent = new Intent(getApplicationContext(), ViewAlarms.class);
 		startActivityForResult(intent, this.VIEW_ALARMS);
 	}
+
+    private void invokeActivityToViewHistory() {
+        Intent intent = new Intent(getApplicationContext(), ViewHistory.class);
+        startActivityForResult(intent, this.VIEW_HISTORY);
+    }
 }

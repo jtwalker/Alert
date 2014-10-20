@@ -584,6 +584,7 @@
     <string name="dismiss">Dismiss</string>
     <string name="enter_email">Please enter an Email Address</string>
     <string name="hello_world">Hello world!</string>
+    <string name="history">History</string>
     <string name="image_description">Image to be used for the alarm</string>
     <string name="ringtone">Click to select ringtone</string>
     <string name="silence">Silence</string>
@@ -591,6 +592,7 @@
     <string name="title_activity_alarm_receiver">AlarmReceiverActivity</string>
     <string name="title_activity_set_alarm">SetAlarm</string>
     <string name="view_alarms">View Alarms</string>
+    <string name="view_history">View Alarm History</string>
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/src/main/res/values/styles.xml -->
     <eat-comment />
 

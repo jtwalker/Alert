@@ -6,8 +6,10 @@
     <string name="action_settings">Settings</string>
     <string name="create_alarm">Create Alarm</string>
     <string name="view_alarms">View Alarms</string>
+    <string name="view_history">View Alarm History</string>
     <string name="date">Date</string>
     <string name="alarms">Alarms</string>
+    <string name="history">History</string>
 
     <string name="image_description">Image to be used for the alarm</string>
     <string name="alarm_name">Alarm Name</string>
@@ -31,7 +33,7 @@
     <string name="silence">Silence</string>
     <string name="snooze">Snooze</string>
     <string name="dismiss">Dismiss</string>
-    
+
     <color name="gray">#333333</color>
     <color name="green">#00FF00</color>
     <color name="white">#FFFFFF</color>
