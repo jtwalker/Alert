@@ -21,7 +21,6 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="@dimen/details_large"
-                android:text="Time"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -30,7 +29,6 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="@dimen/details_regular"
-                android:text="Date"
                 android:layout_gravity="center"/>
 
         </LinearLayout>
@@ -42,7 +40,6 @@
             android:layout_weight="0.50"
             android:textColor="@color/white"
             android:textSize="@dimen/details_large"
-            android:text="ACTION TAKEN!"
             android:gravity="center"/>
 
         <LinearLayout
@@ -57,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="@dimen/details_regular"
-                android:text="Alarm #"
+                android:text="@string/alarm_number"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -66,7 +63,6 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="@dimen/details_regular"
-                android:text="12"
                 android:layout_gravity="center" />
 
         </LinearLayout>

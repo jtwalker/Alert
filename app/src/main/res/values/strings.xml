@@ -11,6 +11,8 @@
     <string name="alarms">Alarms</string>
     <string name="history">Alarm History</string>
 
+    <string name="alarm_number">Alarm #</string>
+
     <string name="image_description">Image to be used for the alarm</string>
     <string name="alarm_name">Alarm Name</string>
     <string name="ringtone">Click to select ringtone</string>

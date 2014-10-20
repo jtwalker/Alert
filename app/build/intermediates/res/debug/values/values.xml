@@ -570,6 +570,7 @@
     <string name="alarm_email">Email?</string>
     <string name="alarm_event">Alarm Event</string>
     <string name="alarm_name">Alarm Name</string>
+    <string name="alarm_number">Alarm #</string>
     <string name="alarm_repeating">Repeating?</string>
     <string name="alarm_snooze">Snooze?</string>
     <string name="alarms">Alarms</string>
