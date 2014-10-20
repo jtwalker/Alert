@@ -26,6 +26,9 @@ public class SharedConstants {
     public static final String DISMISS_PRESSED = "Dismiss Pressed";
     public static final String ALERT_UPDATE = "Alert Update";
 
+    public static final String ALERT_USERNAME = "alert.update.noreply@gmail.com";
+    public static final String ALERT_PASSWORD = "1800alertme";
+
 	private SharedConstants() {
 
 	}

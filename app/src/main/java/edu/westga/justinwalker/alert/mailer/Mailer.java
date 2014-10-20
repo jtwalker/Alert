@@ -15,6 +15,8 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import edu.westga.justinwalker.alert.models.SharedConstants;
+
 /**
  * Sets up a mailer session, creates a message, and sends the email through an async task.
  *
@@ -56,7 +58,7 @@ public class Mailer {
 
         return Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("alert.update.noreply", "1800alertme");
+                return new PasswordAuthentication(SharedConstants.ALERT_USERNAME, SharedConstants.ALERT_PASSWORD);
             }
         });
     }
@@ -73,7 +75,7 @@ public class Mailer {
      */
     private Message createMessage(String email, String subject, String messageBody, Session session) throws MessagingException, UnsupportedEncodingException {
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("Alert@noreply.com", "Alert Update"));
+        message.setFrom(new InternetAddress(SharedConstants.ALERT_USERNAME, SharedConstants.ALERT_UPDATE));
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(email, email));
         message.setSubject(subject);
         message.setText(messageBody);
