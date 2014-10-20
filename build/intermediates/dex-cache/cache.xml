@@ -2,41 +2,17 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-eeb509dd2b70c7cbb582ec7bbb12c1652fd44758.jar"
-        jar="C:\Program Files\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
-    <item
         dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\classes-938bb01feecd7409aa5201d9b75bf8b511fc56fe.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.google.android.support\wearable\1.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="6804efbb78d7facc2e1aa107c7342bee83afae45"/>
     <item
-        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\classes-ac9470a8f12a7c946cf7cac2e87d9ba7a355642a.jar"
-        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
-    <item
-        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b0cfc70a505a8f3b5a4c57545701206d5140c097.jar"
-        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
-    <item
         dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\classes-37868cb3066ddbe62ff6ef91433a9e01130e166b.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\5.0.77\classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="80a6f6f2d0dfcfae8c424cf81dcdf7157e7bf4b8"/>
-    <item
-        dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b2fd12f9ae6bb301fa3ee5497d861bf63f0cd619.jar"
-        jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
     <item
         dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\classes-92a53522903c31d31e52aabdfe19672dd9ea66e4.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\classes.jar"
@@ -49,6 +25,48 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-eeb509dd2b70c7cbb582ec7bbb12c1652fd44758.jar"
+        jar="C:\Program Files\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\classes-ac9470a8f12a7c946cf7cac2e87d9ba7a355642a.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\activation-964a2a399eb559bf1423b72efb26c21ed908b4cf.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\libs\activation.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b0cfc70a505a8f3b5a4c57545701206d5140c097.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\additionnal-b372e2a9a83177a6fb035881b25b5b5febaf1060.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\libs\additionnal.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b2fd12f9ae6bb301fa3ee5497d861bf63f0cd619.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\mail-4e9495d2fd1789858e959b308b129dfe8a5713c0.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\libs\mail.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="428e267abff0d10802ccde86b915da2c20471160"/>
     <item
         dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-1848cb821f1683e40acab7165e4d54c8db7c3075.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"

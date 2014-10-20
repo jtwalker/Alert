@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 import edu.westga.justinwalker.alert.R;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
+import edu.westga.justinwalker.alert.mailer.Mailer;
 import edu.westga.justinwalker.alert.models.SharedConstants;
 
 public class AlarmReceiverActivity extends Activity {
@@ -40,6 +41,8 @@ public class AlarmReceiverActivity extends Activity {
     private Uri ringtoneUri;
     private String alarmTime;
     private String repeatingAlarm;
+    private String userEmailAddress;
+    private Mailer mailer;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,8 @@ public class AlarmReceiverActivity extends Activity {
 		
 		this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
 		this.editor = this.settings.edit();
+
+        this.mailer = new Mailer();
 
         this.fireNotification();
 		
@@ -128,6 +133,7 @@ public class AlarmReceiverActivity extends Activity {
 
        this.alarmTime = this.dbAccess.getAlarmTime(this.requestCode);
        this.repeatingAlarm = this.dbAccess.getRepeating(this.requestCode);
+       this.userEmailAddress = "saintsline@gmail.com";
     }
 
     /**
@@ -182,6 +188,9 @@ public class AlarmReceiverActivity extends Activity {
 		alarmManager.set(AlarmManager.RTC_WAKEUP, snoozeTime, pendingIntent);
 	}
 
+    /**
+     *
+     */
     private void checkAndSetRepeatingAlarm() {
         if(!this.repeatingAlarm.equals(SharedConstants.REPEATING_FALSE)) {
             long timeOfAlarm = Long.valueOf(alarmTime).longValue();
@@ -203,10 +212,9 @@ public class AlarmReceiverActivity extends Activity {
 			switch (view.getId()) {
 			case R.id.dismissAlarmButton:
 				silencePressed = false;
-				//Image removal from settings
 				editor.putBoolean("dismiss", true);
 				editor.commit();
-				//Email
+				mailer.sendMail(userEmailAddress, "Alert Test", "Dismiss Pressed");
                 checkAndSetRepeatingAlarm();
 				finish();
 				break;
@@ -217,6 +225,7 @@ public class AlarmReceiverActivity extends Activity {
 			case R.id.snoozeAlarmButton:
 				ringtone.stop();
 				silencePressed = false;
+                mailer.sendMail(userEmailAddress, "Alert Test", "Snooze Pressed");
 				snooze();
 				finish();
 				break;
