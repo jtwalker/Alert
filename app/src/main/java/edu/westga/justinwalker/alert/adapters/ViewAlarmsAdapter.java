@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import edu.westga.justinwalker.alert.R;
 
@@ -33,11 +32,11 @@ public class ViewAlarmsAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.alarm_details_layout, parent, false);
 
-        TextView firstTextView = (TextView) rowView.findViewById(R.id.firstLine);
+        //TextView firstTextView = (TextView) rowView.findViewById(R.id.firstLine);
         //TextView textView = (TextView) rowView.findViewById(R.id.secondLine);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 
-        firstTextView.setText(this.days[position]);
+        //firstTextView.setText(this.days[position]);
         //textView.setText(times[position]);
 
         imageView.setImageBitmap(BitmapFactory.decodeFile(this.pictures[position]));;

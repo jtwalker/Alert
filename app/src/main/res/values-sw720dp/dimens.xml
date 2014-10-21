@@ -10,6 +10,7 @@
     <dimen name="active_alarm_font_size">65sp</dimen>
     <dimen name="edit_font_size">35sp</dimen>
 
+    <dimen name="details_small">20sp</dimen>
     <dimen name="details_regular">25sp</dimen>
     <dimen name="details_large">35sp</dimen>
 

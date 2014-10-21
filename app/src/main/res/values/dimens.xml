@@ -6,6 +6,7 @@
     <dimen name="font_size">25sp</dimen>
     <dimen name="zero_dp">0dp</dimen>
 
+    <dimen name="details_small">5sp</dimen>
     <dimen name="details_regular">10sp</dimen>
     <dimen name="details_large">15sp</dimen>
 

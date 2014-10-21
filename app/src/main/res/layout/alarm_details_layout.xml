@@ -1,25 +1,138 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_height="wrap_content"
     android:padding="6dip" >
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25" />
+        android:layout_height="match_parent"
+        android:layout_weight="0.20" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.75">
+        android:layout_weight="0.80">
 
-        <TextView
-            android:id="@+id/firstLine"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/white" />
+            android:layout_weight="0.30"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/alarmTimeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/details_large"
+                android:textColor="@color/white"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/alarmDaysView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/details_regular"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/alarmRingtoneSet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/white"
+                    android:text="@string/alarm_ringtone" />
+
+                <TextView
+                    android:id="@+id/alarmSnoozeSet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/white"
+                    android:text="@string/alarm_snooze" />
+
+                <TextView
+                    android:id="@+id/alarmEmailSet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/white"
+                    android:text="@string/alarm_email" />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/alarmRingtoneView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/white"
+                    android:gravity="right"
+                    android:text="RINGTONE" />
+
+                <TextView
+                    android:id="@+id/alarmSnoozeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/white"
+                    android:gravity="right"
+                    android:text="Snooze"/>
+
+                <TextView
+                    android:id="@+id/alarmEmailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/white"
+                    android:gravity="right"
+                    android:text="Email"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--<ImageView-->
+                <!--android:id="@+id/deleteAlarmImage"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:src="@drawable/alarm"/>-->
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

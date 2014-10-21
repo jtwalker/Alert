@@ -52,7 +52,7 @@ public class ViewAlarms extends Activity {
 
 
         ListView listView = (ListView) findViewById(R.id.alarmListView);
-        listView.setAdapter(new CustomAdapter(this, name, image));
+        listView.setAdapter(new CustomAdapter(this, image, name, name));
     }
 
     @Override
@@ -71,7 +71,7 @@ public class ViewAlarms extends Activity {
         };
 
         int[] viewsToBoundTo = new int[] {
-                R.id.firstLine,
+                //R.id.firstLine,
                 //R.id.secondLine,
         };
 

@@ -525,6 +525,7 @@
     <dimen name="create_alarm_font_size">25sp</dimen>
     <dimen name="details_large">15sp</dimen>
     <dimen name="details_regular">10sp</dimen>
+    <dimen name="details_small">5sp</dimen>
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
@@ -572,6 +573,7 @@
     <string name="alarm_name">Alarm Name</string>
     <string name="alarm_number">Alarm #</string>
     <string name="alarm_repeating">Repeating?</string>
+    <string name="alarm_ringtone">Ringtone:</string>
     <string name="alarm_snooze">Snooze?</string>
     <string name="alarms">Alarms</string>
     <string name="app_name">Alert</string>
