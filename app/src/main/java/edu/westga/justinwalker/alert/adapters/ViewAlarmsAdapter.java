@@ -34,11 +34,11 @@ public class ViewAlarmsAdapter extends ArrayAdapter<String> {
         View rowView = inflater.inflate(R.layout.alarm_details_layout, parent, false);
 
         TextView firstTextView = (TextView) rowView.findViewById(R.id.firstLine);
-        TextView textView = (TextView) rowView.findViewById(R.id.secondLine);
+        //TextView textView = (TextView) rowView.findViewById(R.id.secondLine);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 
         firstTextView.setText(this.days[position]);
-        textView.setText(times[position]);
+        //textView.setText(times[position]);
 
         imageView.setImageBitmap(BitmapFactory.decodeFile(this.pictures[position]));;
 

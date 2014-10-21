@@ -78,6 +78,7 @@ public class CreateAlarm extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //Cannot inherit because of this
         this.setSharedPreferences();
     }
 

@@ -13,6 +13,8 @@ import android.widget.SimpleCursorAdapter;
 
 import java.util.ArrayList;
 
+import edu.westga.justinwalker.alert.adapters.CustomAdapter;
+import edu.westga.justinwalker.alert.adapters.ImageCursorAdapter;
 import edu.westga.justinwalker.alert.db.AlarmContract.Alarms;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
 import edu.westga.justinwalker.alert.services.AlarmReceiverActivity;
@@ -21,6 +23,7 @@ public class ViewAlarms extends Activity {
 
     private DBAccess dbAccess;
     private SimpleCursorAdapter dataAdapter;
+    private ImageCursorAdapter ica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,27 @@ public class ViewAlarms extends Activity {
 
         this.dbAccess = new DBAccess(getBaseContext());
 
-        displayListView();
+        //displayListView();
+
+        Cursor cursor = this.dbAccess.fetchAllAlarms();
+        cursor.moveToFirst();
+
+        String[] image = new String[cursor.getCount()];
+        String[] name = new String[cursor.getCount()];
+        int counter = 0;
+
+        if (cursor.moveToFirst()){
+            do{
+                image[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_PICTURE));
+                name[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_NAME));
+                counter++;
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+
+
+        ListView listView = (ListView) findViewById(R.id.alarmListView);
+        listView.setAdapter(new CustomAdapter(this, name, image));
     }
 
     @Override
@@ -49,7 +72,7 @@ public class ViewAlarms extends Activity {
 
         int[] viewsToBoundTo = new int[] {
                 R.id.firstLine,
-                R.id.secondLine,
+                //R.id.secondLine,
         };
 
         this.dataAdapter = new SimpleCursorAdapter(this, R.layout.alarm_details_layout, cursor, columns, viewsToBoundTo, 0);
