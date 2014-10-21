@@ -13,6 +13,8 @@ public class SharedConstants {
 			Alarms.ALARM_REPEAT, Alarms.ALARM_SNOOZE, Alarms.ALARM_NOTIFY,
 			Alarms.ALARM_EMAIL };
     public static final String REPEATING_FALSE = "false";
+    public static final String ENABLED = "Enabled";
+    public static final String DISABLED = "Disabled";
 
     public static final String MONDAY = "Mon";
     public static final String TUESDAY = "Tues";

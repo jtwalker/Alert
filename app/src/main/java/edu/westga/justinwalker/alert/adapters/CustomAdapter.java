@@ -17,17 +17,19 @@ import edu.westga.justinwalker.alert.R;
  * Created by Family on 10/21/2014.
  */
 public class CustomAdapter extends BaseAdapter {
-    private final String[] alarmDays;
-    private String [] alarmTimes;
     private Context context;
-    private String [] alarmImages;
+    private String[] alarmImages, alarmTimes, alarmDays, alarmEmails, alarmRingtones, alarmSnooze;
     private static LayoutInflater inflater;
 
-    public CustomAdapter(Activity activity, String[] images, String[] times, String[] days) {
-        this.alarmTimes = times;
+    public CustomAdapter(Activity activity, String[] images, String[] times, String[] days, String[] emails, String[] ringtones, String[] snooze) {
         this.context = activity;
         this.alarmImages = images;
+        this.alarmTimes = times;
         this.alarmDays = days;
+        this.alarmEmails = emails;
+        this.alarmRingtones = ringtones;
+        this.alarmSnooze = snooze;
+
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
@@ -48,13 +50,20 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View rowView = inflater.inflate(R.layout.alarm_details_layout, parent, false);
+
+        ImageView image = (ImageView) rowView.findViewById(R.id.icon);
         TextView alarmTimeView = (TextView) rowView.findViewById(R.id.alarmTimeView);
         TextView alarmDaysView = (TextView) rowView.findViewById(R.id.alarmDaysView);
-        ImageView image = (ImageView) rowView.findViewById(R.id.icon);
+        TextView alarmEmailsView = (TextView) rowView.findViewById(R.id.alarmEmailView);
+        TextView alarmRingtonesView = (TextView) rowView.findViewById(R.id.alarmRingtoneView);
+        TextView alarmSnoozeView = (TextView) rowView.findViewById(R.id.alarmSnoozeView);
 
-        alarmTimeView.setText(this.alarmTimes[position]);
-        alarmDaysView.setText(this.alarmTimes[position]);
         image.setImageBitmap(BitmapFactory.decodeFile(this.alarmImages[position]));
+        alarmTimeView.setText(this.alarmTimes[position]);
+        alarmDaysView.setText(this.alarmDays[position]);
+        alarmEmailsView.setText(this.alarmEmails[position]);
+        alarmRingtonesView.setText(this.alarmRingtones[position]);
+        alarmSnoozeView.setText(this.alarmSnooze[position]);
 
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override

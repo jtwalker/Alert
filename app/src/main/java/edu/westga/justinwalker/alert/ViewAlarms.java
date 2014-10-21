@@ -5,25 +5,29 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import edu.westga.justinwalker.alert.adapters.CustomAdapter;
-import edu.westga.justinwalker.alert.adapters.ImageCursorAdapter;
 import edu.westga.justinwalker.alert.db.AlarmContract.Alarms;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
+import edu.westga.justinwalker.alert.models.SharedConstants;
 import edu.westga.justinwalker.alert.services.AlarmReceiverActivity;
 
 public class ViewAlarms extends Activity {
 
     private DBAccess dbAccess;
     private SimpleCursorAdapter dataAdapter;
-    private ImageCursorAdapter ica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +41,25 @@ public class ViewAlarms extends Activity {
         Cursor cursor = this.dbAccess.fetchAllAlarms();
         cursor.moveToFirst();
 
-        String[] image = new String[cursor.getCount()];
-        String[] name = new String[cursor.getCount()];
+        String[] images = new String[cursor.getCount()];
+        String[] times = new String[cursor.getCount()];
+        String[] days = new String[cursor.getCount()];
+        String[] emails = new String[cursor.getCount()];
+        String[] ringtones = new String[cursor.getCount()];
+        String[] snooze = new String[cursor.getCount()];
+
+
+
         int counter = 0;
 
         if (cursor.moveToFirst()){
             do{
-                image[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_PICTURE));
-                name[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_NAME));
+                images[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_PICTURE));
+                times[counter] = this.convertMillisecondsToTime(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_TIME)));
+                days[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_DATE));
+                emails[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_EMAIL));
+                ringtones[counter] = this.getRingtoneName(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_RINGTONE)));
+                snooze[counter] = this.getWhetherSnoozeEnabled(cursor.getInt(cursor.getColumnIndex(Alarms.ALARM_SNOOZE)));
                 counter++;
             }while(cursor.moveToNext());
         }
@@ -52,7 +67,7 @@ public class ViewAlarms extends Activity {
 
 
         ListView listView = (ListView) findViewById(R.id.alarmListView);
-        listView.setAdapter(new CustomAdapter(this, image, name, name));
+        listView.setAdapter(new CustomAdapter(this, images, times, days, emails, ringtones, snooze));
     }
 
     @Override
@@ -60,6 +75,29 @@ public class ViewAlarms extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.alarm_menu, menu);
         return true;
+    }
+
+    private String convertMillisecondsToTime(String millisecondsString) {
+        long milliseconds = Long.valueOf(millisecondsString).longValue();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(milliseconds);
+
+        return new SimpleDateFormat("HH:mm").format(calendar.getTime());
+    }
+
+    private String getRingtoneName(String ringtone) {
+        Uri ringtoneUri = Uri.parse(ringtone);
+        Ringtone ringtoneTitle = RingtoneManager.getRingtone(this, ringtoneUri);
+
+        return ringtoneTitle.getTitle(this);
+    }
+
+    private String getWhetherSnoozeEnabled(int snooze) {
+        if (snooze == SharedConstants.ALARM_FALSE) {
+            return SharedConstants.DISABLED;
+        }
+
+        return SharedConstants.ENABLED;
     }
 
     private void displayListView() {
