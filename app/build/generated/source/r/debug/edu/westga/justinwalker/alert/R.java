@@ -1144,16 +1144,17 @@ containing a value of this type.
         public static final int dismiss=0x7f0a0024;
         public static final int edit_alarm=0x7f0a0025;
         public static final int enter_email=0x7f0a0026;
-        public static final int hello_world=0x7f0a0027;
-        public static final int history=0x7f0a0028;
-        public static final int image_description=0x7f0a0029;
-        public static final int ringtone=0x7f0a002a;
-        public static final int silence=0x7f0a002b;
-        public static final int snooze=0x7f0a002c;
-        public static final int title_activity_alarm_receiver=0x7f0a002d;
-        public static final int title_activity_set_alarm=0x7f0a002e;
-        public static final int view_alarms=0x7f0a002f;
-        public static final int view_history=0x7f0a0030;
+        public static final int everyday=0x7f0a0027;
+        public static final int hello_world=0x7f0a0028;
+        public static final int history=0x7f0a0029;
+        public static final int image_description=0x7f0a002a;
+        public static final int ringtone=0x7f0a002b;
+        public static final int silence=0x7f0a002c;
+        public static final int snooze=0x7f0a002d;
+        public static final int title_activity_alarm_receiver=0x7f0a002e;
+        public static final int title_activity_set_alarm=0x7f0a002f;
+        public static final int view_alarms=0x7f0a0030;
+        public static final int view_history=0x7f0a0031;
     }
     public static final class style {
         /** 

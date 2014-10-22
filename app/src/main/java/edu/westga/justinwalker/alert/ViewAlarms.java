@@ -60,7 +60,7 @@ public class ViewAlarms extends Activity {
             do{
                 images[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_PICTURE));
                 times[counter] = this.convertMillisecondsToTime(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_TIME)));
-                days[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_DATE));
+                days[counter] = this.modifyRepeatingDaysString(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_REPEAT)));
                 emails[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_EMAIL));
                 ringtones[counter] = this.getRingtoneName(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_RINGTONE)));
                 snooze[counter] = this.getWhetherSnoozeEnabled(cursor.getInt(cursor.getColumnIndex(Alarms.ALARM_SNOOZE)));
@@ -127,6 +127,20 @@ public class ViewAlarms extends Activity {
         }
 
         return SharedConstants.ENABLED;
+    }
+
+    private String modifyRepeatingDaysString(String repeating) {
+        String everyday = getString(R.string.day_of_week_mon) + "," + getString(R.string.day_of_week_tues) + "," +
+                getString(R.string.day_of_week_wed) + "," + getString(R.string.day_of_week_thurs) + "," +
+                getString(R.string.day_of_week_fri) + "," + getString(R.string.day_of_week_sat) + "," + getString(R.string.day_of_week_sun);
+        if(repeating.equals(SharedConstants.REPEATING_FALSE)) {
+            return "";
+        }
+        else if(repeating.equals(everyday)) {
+            return getString(R.string.everyday);
+        }
+
+        return repeating.replace(",", ", ");
     }
 
     private void displayListView() {

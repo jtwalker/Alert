@@ -31,6 +31,7 @@
     <string name="day_of_week_fri">Fri</string>
     <string name="day_of_week_sat">Sat</string>
     <string name="day_of_week_sun">Sun</string>
+    <string name="everyday">Everyday</string>
     
     <string name="title_activity_set_alarm">SetAlarm</string>
     <string name="title_activity_alarm_receiver">AlarmReceiverActivity</string>

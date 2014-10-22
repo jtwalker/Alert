@@ -33,7 +33,7 @@
                 android:id="@+id/alarmDaysView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/details_regular"
+                android:textSize="@dimen/details_small"
                 android:textColor="@color/white"
                 android:gravity="center"/>
 
