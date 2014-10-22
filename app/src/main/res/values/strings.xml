@@ -39,6 +39,10 @@
     <string name="snooze">Snooze</string>
     <string name="dismiss">Dismiss</string>
 
+    <string name="context_menu">What would you like to do?</string>
+    <string name="edit_alarm">Edit Alarm</string>
+    <string name="delete_alarm">Delete Alarm</string>
+
     <color name="gray">#333333</color>
     <color name="green">#00FF00</color>
     <color name="white">#FFFFFF</color>

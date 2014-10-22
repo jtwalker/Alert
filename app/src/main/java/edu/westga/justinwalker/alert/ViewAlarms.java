@@ -9,10 +9,14 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -67,6 +71,7 @@ public class ViewAlarms extends Activity {
 
 
         ListView listView = (ListView) findViewById(R.id.alarmListView);
+        registerForContextMenu(listView);
         listView.setAdapter(new CustomAdapter(this, images, times, days, emails, ringtones, snooze));
     }
 
@@ -75,6 +80,30 @@ public class ViewAlarms extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.alarm_menu, menu);
         return true;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle(R.string.context_menu);
+        getMenuInflater().inflate(R.menu.view_alarm_context, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.editAlarm:
+                Toast.makeText(getApplicationContext(), "Edit Alarm", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.deleteAlarm:
+                ArrayList<Integer> alarmIDs = this.dbAccess.getAllAlarmIDs();
+                this.deleteAlarm(alarmIDs.get(info.position));
+                this.refreshActivity();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     private String convertMillisecondsToTime(String millisecondsString) {
@@ -125,28 +154,36 @@ public class ViewAlarms extends Activity {
         switch (item.getItemId()) {
 
             case R.id.action_delete_alarms:
-                invokeCommandToDeleteAlarms();
-                Intent intent = getIntent();
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                finish();
-                startActivity(intent);
+                this.deleteAllAlarms();
+                this.refreshActivity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    private void invokeCommandToDeleteAlarms() {
+    private void refreshActivity() {
+        Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        startActivity(intent);
+    }
+
+    private void deleteAllAlarms() {
         ArrayList<Integer> alarmIDs = this.dbAccess.getAllAlarmIDs();
 
         for(int id: alarmIDs) {
-            Intent intent = new Intent(this, AlarmReceiverActivity.class);
-            intent.putExtra("requestCode", id);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-            AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
-            alarmManager.cancel(pendingIntent);
+            this.deleteAlarm(id);
         }
+    }
 
-        this.dbAccess.deleteAllAlarms();
+    private void deleteAlarm(int alarmID) {
+        Intent intent = new Intent(this, AlarmReceiverActivity.class);
+        intent.putExtra("requestCode", alarmID);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, alarmID, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
+
+        this.dbAccess.delete(alarmID);
     }
 }

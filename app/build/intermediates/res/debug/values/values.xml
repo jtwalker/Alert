@@ -578,6 +578,7 @@
     <string name="alarms">Alarms</string>
     <string name="app_name">Alert</string>
     <string name="clear_history">Clear History</string>
+    <string name="context_menu">What would you like to do?</string>
     <string name="create_alarm">Create Alarm</string>
     <string name="date">Date</string>
     <string name="day_of_week_fri">Fri</string>
@@ -587,8 +588,10 @@
     <string name="day_of_week_thurs">Thurs</string>
     <string name="day_of_week_tues">Tues</string>
     <string name="day_of_week_wed">Wed</string>
+    <string name="delete_alarm">Delete Alarm</string>
     <string name="delete_alarms">Delete All Alarms</string>
     <string name="dismiss">Dismiss</string>
+    <string name="edit_alarm">Edit Alarm</string>
     <string name="enter_email">Please enter an Email Address</string>
     <string name="hello_world">Hello world!</string>
     <string name="history">Alarm History</string>
@@ -1074,7 +1077,7 @@
     </style>
 
     <style name="TimePicker">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
     <style name="ToggleButton">
