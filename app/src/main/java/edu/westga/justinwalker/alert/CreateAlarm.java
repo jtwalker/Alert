@@ -30,6 +30,8 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
@@ -137,6 +139,7 @@ public class CreateAlarm extends FragmentActivity {
             String ringtoneName = tempRingtone.getTitle(this);
             TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
             ringtoneView.setText(ringtoneName);
+            tempRingtone.stop();
         }
         else {
             this.alarmRingtone = RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI.toString();
@@ -147,9 +150,41 @@ public class CreateAlarm extends FragmentActivity {
         int requestCode = getIntent().getExtras().getInt("requestCode");
         EditText alarmName = (EditText) this.findViewById(R.id.alarmNameText);
         ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
+        TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
+        Switch repeatingSwitch = (Switch) this.findViewById(R.id.repeatingSwitch);
+        Switch snoozeSwitch = (Switch) this.findViewById(R.id.snoozeSwitch);
+        Switch emailSwitch = (Switch) this.findViewById(R.id.emailSwitch);
+        EditText emailText = (EditText) this.findViewById(R.id.alarmEmailText);
 
         alarmName.setText(this.dbAccess.getAlarmName(requestCode));
-        imageView.setImageBitmap(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(requestCode)));
+
+        this.alarmImage = this.dbAccess.getAlarmImage(requestCode);
+        imageView.setImageBitmap(BitmapFactory.decodeFile(this.alarmImage));
+
+        this.alarmRingtone = this.dbAccess.getAlarmRingtone(requestCode);
+        Uri uri = Uri.parse(this.alarmRingtone);
+        Ringtone tempRingtone = RingtoneManager.getRingtone(this, uri);
+        String ringtoneName = tempRingtone.getTitle(this);
+        ringtoneView.setText(ringtoneName);
+        tempRingtone.stop();
+
+        if(!this.dbAccess.getRepeating(requestCode).equals(SharedConstants.REPEATING_FALSE)) {
+            repeatingSwitch.setChecked(true);
+            this.toggleDaysOfWeek();
+            this.setDaysFromDatabase(requestCode);
+        }
+
+
+        if(this.dbAccess.getSnooze(requestCode) == SharedConstants.ALARM_TRUE) {
+            snoozeSwitch.setChecked(true);
+        }
+
+        String email = this.dbAccess.getAlarmEmail(requestCode);
+        if(!email.equals("")) {
+            emailSwitch.setChecked(true);
+            this.toggleEmailTextField();
+            emailText.setText(email);
+        }
     }
 	
 	/**
@@ -172,8 +207,15 @@ public class CreateAlarm extends FragmentActivity {
 		//Should be an if statement once edit alarms is enabled
 		//Will also have random other options but not yet
         String alarmTime = timeOfAlarm.toMillis(false) + "";
-		requestCode = (int) this.dbAccess.insert(alarmEnabled, this.alarmName, "Date", alarmTime,
-				this.alarmRingtone, this.alarmImage, this.repeatingAlarm, this.alarmSnoozeEnabled, this.alarmEmailEnabled, this.alarmEmail);
+        if(getIntent().getExtras().getBoolean("edit")) {
+            requestCode = getIntent().getExtras().getInt("requestCode");
+            this.dbAccess.update(requestCode, alarmEnabled, this.alarmName, "Date", alarmTime,
+                    this.alarmRingtone, this.alarmImage, this.repeatingAlarm, this.alarmSnoozeEnabled, this.alarmEmailEnabled, this.alarmEmail);
+        }
+        else {
+            requestCode = (int) this.dbAccess.insert(alarmEnabled, this.alarmName, "Date", alarmTime,
+                    this.alarmRingtone, this.alarmImage, this.repeatingAlarm, this.alarmSnoozeEnabled, this.alarmEmailEnabled, this.alarmEmail);
+        }
 		
 		Intent intent = new Intent(this, AlarmReceiverActivity.class);
 		intent.putExtra("requestCode", requestCode);
@@ -233,6 +275,28 @@ public class CreateAlarm extends FragmentActivity {
         }
         else {
             daysOfTheWeek.setVisibility(View.VISIBLE);
+        }
+    }
+
+    /**
+     *
+     */
+    private void setDaysFromDatabase(int requestCode) {
+        String[] days = this.dbAccess.getRepeating(requestCode).split(",");
+        List<String> daysList = Arrays.asList(days);
+        ToggleButton monToggleButton = (ToggleButton) this.findViewById(R.id.monToggleButton);
+        ToggleButton tuesToggleButton = (ToggleButton) this.findViewById(R.id.tuesToggleButton);
+        ToggleButton wedToggleButton = (ToggleButton) this.findViewById(R.id.wedToggleButton);
+        ToggleButton thursToggleButton = (ToggleButton) this.findViewById(R.id.thursToggleButton);
+        ToggleButton friToggleButton = (ToggleButton) this.findViewById(R.id.friToggleButton);
+        ToggleButton satToggleButton = (ToggleButton) this.findViewById(R.id.satToggleButton);
+        ToggleButton sunToggleButton = (ToggleButton) this.findViewById(R.id.sunToggleButton);
+        ToggleButton[] toggleButtons = {monToggleButton, tuesToggleButton, wedToggleButton, thursToggleButton, friToggleButton, satToggleButton, sunToggleButton};
+
+        for(ToggleButton dayButton: toggleButtons) {
+            if(daysList.contains(dayButton.getTextOn())) {
+                dayButton.setChecked(true);
+            }
         }
     }
 

@@ -90,6 +90,7 @@ public class ViewAlarms extends Activity {
         switch (item.getItemId()) {
             case R.id.editAlarm:
                 this.invokeActivityToEditAlarm(alarmIDs.get(info.position));
+                //this.refreshActivity(); //Doesn't work here. Refreshes before activity finishes.
                 return true;
             case R.id.deleteAlarm:
                 this.deleteAlarm(alarmIDs.get(info.position));
