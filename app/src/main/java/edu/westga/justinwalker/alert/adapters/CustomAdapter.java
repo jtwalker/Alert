@@ -2,6 +2,7 @@ package edu.westga.justinwalker.alert.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import edu.westga.justinwalker.alert.R;
 
@@ -58,7 +64,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView alarmRingtonesView = (TextView) rowView.findViewById(R.id.alarmRingtoneView);
         TextView alarmSnoozeView = (TextView) rowView.findViewById(R.id.alarmSnoozeView);
 
-        image.setImageBitmap(BitmapFactory.decodeFile(this.alarmImages[position]));
+        image.setImageBitmap(convertBitmap(this.alarmImages[position]));
         alarmTimeView.setText(this.alarmTimes[position]);
         alarmDaysView.setText(this.alarmDays[position]);
         alarmEmailsView.setText(this.alarmEmails[position]);
@@ -73,6 +79,72 @@ public class CustomAdapter extends BaseAdapter {
         });
 
         return rowView;
+    }
+
+    private Bitmap shrinkmethod(String file,int width,int height){
+        BitmapFactory.Options bitopt=new BitmapFactory.Options();
+        bitopt.inJustDecodeBounds=true;
+        Bitmap bit=BitmapFactory.decodeFile(file, bitopt);
+
+        int h=(int) Math.ceil(bitopt.outHeight/(float)height);
+        int w=(int) Math.ceil(bitopt.outWidth/(float)width);
+
+        if(h>1 || w>1){
+            if(h>w){
+                bitopt.inSampleSize=h;
+
+            }else{
+                bitopt.inSampleSize=w;
+            }
+        }
+        bitopt.inJustDecodeBounds=false;
+        bit=BitmapFactory.decodeFile(file, bitopt);
+
+
+
+        return bit;
+
+    }
+
+    public static Bitmap convertBitmap(String path)   {
+
+        Bitmap bitmap=null;
+        BitmapFactory.Options bfOptions=new BitmapFactory.Options();
+        bfOptions.inDither=false;                     //Disable Dithering mode
+        bfOptions.inPurgeable=true;                   //Tell to gc that whether it needs free memory, the Bitmap can be cleared
+        bfOptions.inInputShareable=true;              //Which kind of reference will be used to recover the Bitmap data after being clear, when it will be used in the future
+        bfOptions.inTempStorage=new byte[32 * 1024];
+        //bfOptions.inJustDecodeBounds=true;
+        bfOptions.inSampleSize = 20;
+
+        File file=new File(path);
+        FileInputStream fs=null;
+        try {
+            fs = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if(fs!=null)
+            {
+                bitmap=BitmapFactory.decodeFileDescriptor(fs.getFD(), null, bfOptions);
+            }
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        } finally{
+            if(fs!=null) {
+                try {
+                    fs.close();
+                } catch (IOException e) {
+
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return bitmap;
     }
 
 }

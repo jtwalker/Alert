@@ -13,10 +13,8 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.ListView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,8 +28,9 @@ import edu.westga.justinwalker.alert.services.AlarmReceiverActivity;
 
 public class ViewAlarms extends Activity {
 
+    private final int CREATE_ALARM = 1;
     private DBAccess dbAccess;
-    private SimpleCursorAdapter dataAdapter;
+    private String[] images, times, days, emails, ringtones, snooze;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,39 +39,34 @@ public class ViewAlarms extends Activity {
 
         this.dbAccess = new DBAccess(getBaseContext());
 
-        //displayListView();
-
         Cursor cursor = this.dbAccess.fetchAllAlarms();
         cursor.moveToFirst();
 
-        String[] images = new String[cursor.getCount()];
-        String[] times = new String[cursor.getCount()];
-        String[] days = new String[cursor.getCount()];
-        String[] emails = new String[cursor.getCount()];
-        String[] ringtones = new String[cursor.getCount()];
-        String[] snooze = new String[cursor.getCount()];
-
-
+        this.images = new String[cursor.getCount()];
+        this.times = new String[cursor.getCount()];
+        this.days = new String[cursor.getCount()];
+        this.emails = new String[cursor.getCount()];
+        this.ringtones = new String[cursor.getCount()];
+        this.snooze = new String[cursor.getCount()];
 
         int counter = 0;
 
         if (cursor.moveToFirst()){
             do{
-                images[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_PICTURE));
-                times[counter] = this.convertMillisecondsToTime(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_TIME)));
-                days[counter] = this.modifyRepeatingDaysString(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_REPEAT)));
-                emails[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_EMAIL));
-                ringtones[counter] = this.getRingtoneName(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_RINGTONE)));
-                snooze[counter] = this.getWhetherSnoozeEnabled(cursor.getInt(cursor.getColumnIndex(Alarms.ALARM_SNOOZE)));
+                this.images[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_PICTURE));
+                this.times[counter] = this.convertMillisecondsToTime(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_TIME)));
+                this.days[counter] = this.modifyRepeatingDaysString(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_REPEAT)));
+                this.emails[counter] = cursor.getString(cursor.getColumnIndex(Alarms.ALARM_EMAIL));
+                this.ringtones[counter] = this.getRingtoneName(cursor.getString(cursor.getColumnIndex(Alarms.ALARM_RINGTONE)));
+                this.snooze[counter] = this.getWhetherSnoozeEnabled(cursor.getInt(cursor.getColumnIndex(Alarms.ALARM_SNOOZE)));
                 counter++;
             }while(cursor.moveToNext());
         }
         cursor.close();
 
-
         ListView listView = (ListView) findViewById(R.id.alarmListView);
         registerForContextMenu(listView);
-        listView.setAdapter(new CustomAdapter(this, images, times, days, emails, ringtones, snooze));
+        listView.setAdapter(new CustomAdapter(this, this.images, this.times, this.days, this.emails, this.ringtones, this.snooze));
     }
 
     @Override
@@ -92,12 +86,12 @@ public class ViewAlarms extends Activity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        ArrayList<Integer> alarmIDs = this.dbAccess.getAllAlarmIDs();
         switch (item.getItemId()) {
             case R.id.editAlarm:
-                Toast.makeText(getApplicationContext(), "Edit Alarm", Toast.LENGTH_SHORT).show();
+                this.invokeActivityToEditAlarm(alarmIDs.get(info.position));
                 return true;
             case R.id.deleteAlarm:
-                ArrayList<Integer> alarmIDs = this.dbAccess.getAllAlarmIDs();
                 this.deleteAlarm(alarmIDs.get(info.position));
                 this.refreshActivity();
                 return true;
@@ -117,8 +111,10 @@ public class ViewAlarms extends Activity {
     private String getRingtoneName(String ringtone) {
         Uri ringtoneUri = Uri.parse(ringtone);
         Ringtone ringtoneTitle = RingtoneManager.getRingtone(this, ringtoneUri);
+        String ringtoneName = ringtoneTitle.getTitle(this);
+        ringtoneTitle.stop();
 
-        return ringtoneTitle.getTitle(this);
+        return ringtoneName;
     }
 
     private String getWhetherSnoozeEnabled(int snooze) {
@@ -141,26 +137,6 @@ public class ViewAlarms extends Activity {
         }
 
         return repeating.replace(",", ", ");
-    }
-
-    private void displayListView() {
-        Cursor cursor = this.dbAccess.fetchAllAlarms();
-
-        String columns[] = new String[] {
-                Alarms.ALARM_NAME,
-                Alarms.ALARM_TIME,
-        };
-
-        int[] viewsToBoundTo = new int[] {
-                //R.id.firstLine,
-                //R.id.secondLine,
-        };
-
-        this.dataAdapter = new SimpleCursorAdapter(this, R.layout.alarm_details_layout, cursor, columns, viewsToBoundTo, 0);
-
-        ListView listView = (ListView) findViewById(R.id.alarmListView);
-
-        listView.setAdapter(dataAdapter);
     }
 
     @Override
@@ -199,5 +175,12 @@ public class ViewAlarms extends Activity {
         alarmManager.cancel(pendingIntent);
 
         this.dbAccess.delete(alarmID);
+    }
+
+    private void invokeActivityToEditAlarm(int alarmID) {
+        Intent intent = new Intent(getApplicationContext(), CreateAlarm.class);
+        intent.putExtra("edit", true);
+        intent.putExtra("requestCode", alarmID);
+        startActivityForResult(intent, this.CREATE_ALARM);
     }
 }

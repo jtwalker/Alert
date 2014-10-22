@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:exported="true"
+    android:allowEmbedded="true"
+    android:taskAffinity=""
+    android:theme="@android:style/Theme.DeviceDefault.Light"
     android:orientation="vertical"
     tools:context=".MainActivity"
     tools:deviceIds="wear_square">

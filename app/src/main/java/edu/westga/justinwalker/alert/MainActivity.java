@@ -72,6 +72,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	private void invokeActivityToCreateAlarm() {
 		Intent intent = new Intent(getApplicationContext(), CreateAlarm.class);
+        intent.putExtra("edit", false);
 		startActivityForResult(intent, this.CREATE_ALARM);
 	}
 	

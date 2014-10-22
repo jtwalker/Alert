@@ -44,6 +44,12 @@
         revision="20.0.0"
         sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
     <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\android-smart-image-view-1.0.0-4e1c17477d1e57eafea0a7daac47a1df5e803595.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\libs\android-smart-image-view-1.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d76ea8c3e9a60101244d6d04aff8cc75888570f0"/>
+    <item
         dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b0cfc70a505a8f3b5a4c57545701206d5140c097.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
         jumboMode="false"

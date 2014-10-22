@@ -59,13 +59,20 @@ public class CreateAlarm extends FragmentActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.create_alarm);
 
+        this.dbAccess = new DBAccess(getBaseContext());
+
         this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
         this.editor = this.settings.edit();
 
-        this.initializeFromSharedPreferences();
+        if(getIntent().getExtras().getBoolean("edit")) {
+            this.initializeFromDatabase();
+            Toast.makeText(getApplicationContext(), "Ooops", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            this.initializeFromSharedPreferences();
+        }
+
 		this.initializeClickables();
-		
-		this.dbAccess = new DBAccess(getBaseContext());
 	}
 
 	@Override
@@ -134,6 +141,15 @@ public class CreateAlarm extends FragmentActivity {
         else {
             this.alarmRingtone = RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI.toString();
         }
+    }
+
+    private void initializeFromDatabase() {
+        int requestCode = getIntent().getExtras().getInt("requestCode");
+        EditText alarmName = (EditText) this.findViewById(R.id.alarmNameText);
+        ImageView imageView = (ImageView) this.findViewById(R.id.alarmImage);
+
+        alarmName.setText(this.dbAccess.getAlarmName(requestCode));
+        imageView.setImageBitmap(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(requestCode)));
     }
 	
 	/**
