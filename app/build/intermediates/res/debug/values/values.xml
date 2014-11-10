@@ -577,6 +577,7 @@
     <string name="alarm_snooze">Snooze?</string>
     <string name="alarms">Alarms</string>
     <string name="app_name">Alert</string>
+    <string name="auto_sync">Synchronize Automatically</string>
     <string name="clear_history">Clear History</string>
     <string name="context_menu">What would you like to do?</string>
     <string name="create_alarm">Create Alarm</string>
@@ -647,7 +648,7 @@
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">2dp</item>
-        <item name="android:background">?android:attr/listDivider</item>
+        <item name="android:background">@color/white</item>
     </style>
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />

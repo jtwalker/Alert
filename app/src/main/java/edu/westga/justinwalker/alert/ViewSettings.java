@@ -44,19 +44,26 @@ public class ViewSettings extends Activity {
 
     private void setCheckBoxBorderColor() {
         CheckBox syncCheckBox = (CheckBox) this.findViewById(R.id.syncCheckBox);
+        CheckBox autoSyncCheckBox = (CheckBox) this.findViewById(R.id.autoSyncCheckBox);
         int id = Resources.getSystem().getIdentifier("btn_check_holo_dark", "drawable", "android");
         syncCheckBox.setButtonDrawable(id);
+        autoSyncCheckBox.setButtonDrawable(id);
     }
 
     private void initializeClickables() {
         LinearLayout syncLayout = (LinearLayout) this.findViewById(R.id.syncWithCalendarLayout);
+        LinearLayout autoSyncLayout = (LinearLayout) this.findViewById(R.id.autoSyncLayout);
 
         syncLayout.setOnClickListener(this.inputClickListener);
+        autoSyncLayout.setOnClickListener(this.inputClickListener);
     }
 
     private void initializeFromSharedPreferences() {
         CheckBox syncCheckBox = (CheckBox) this.findViewById(R.id.syncCheckBox);
         syncCheckBox.setChecked(this.settings.getBoolean("sync", false));
+
+        CheckBox autoSyncCheckBox = (CheckBox) this.findViewById(R.id.autoSyncCheckBox);
+        autoSyncCheckBox.setChecked(this.settings.getBoolean("autosync", false));
 
         LinearLayout syncDetailsLayout = (LinearLayout) this.findViewById(R.id.syncDetailsLayout);
         if(syncCheckBox.isChecked()) {
@@ -83,6 +90,9 @@ public class ViewSettings extends Activity {
                 case R.id.syncWithCalendarLayout:
                     changeCheckBoxCheck();
                     break;
+                case R.id.autoSyncLayout:
+                    changeAutoSyncCheckBoxCheck();
+                    break;
                 default:
                     Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
                     break;
@@ -103,6 +113,19 @@ public class ViewSettings extends Activity {
         }
 
         this.editor.putBoolean("sync", checkBox.isChecked());
+        this.editor.commit();
+    }
+
+    private void changeAutoSyncCheckBoxCheck() {
+        CheckBox checkBox = (CheckBox) this.findViewById(R.id.autoSyncCheckBox);
+        if(checkBox.isChecked()) {
+            checkBox.setChecked(false);
+        }
+        else {
+            checkBox.setChecked(true);
+        }
+
+        this.editor.putBoolean("autosync", checkBox.isChecked());
         this.editor.commit();
     }
 }

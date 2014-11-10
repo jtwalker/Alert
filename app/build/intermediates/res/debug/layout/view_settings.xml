@@ -67,6 +67,36 @@
                 <View style="@style/Divider"/>
 
                 <LinearLayout
+                    android:id="@+id/autoSyncLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/autoSyncText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.90"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/auto_sync"
+                        android:textSize="@dimen/details_regular"
+                        android:textColor="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/autoSyncCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_gravity="center"
+                        android:clickable="false"/>
+
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">

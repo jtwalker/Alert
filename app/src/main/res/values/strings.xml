@@ -49,6 +49,7 @@
     <string name="sync_button">Sync Now</string>
     <string name="sync_with_calendar">Sync Alarms with Calendar?</string>
     <string name="sync_email">Email to Sync With</string>
+    <string name="auto_sync">Synchronize Automatically</string>
 
     <color name="gray">#333333</color>
     <color name="green">#00FF00</color>
