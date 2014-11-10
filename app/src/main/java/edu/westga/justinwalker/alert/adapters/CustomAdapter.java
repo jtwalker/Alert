@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.ThumbnailUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView alarmRingtonesView = (TextView) rowView.findViewById(R.id.alarmRingtoneView);
         TextView alarmSnoozeView = (TextView) rowView.findViewById(R.id.alarmSnoozeView);
 
-        image.setImageBitmap(convertBitmap(this.alarmImages[position]));
+        image.setImageBitmap(this.convertToThumbnail(this.alarmImages[position], 64, 64));
         alarmTimeView.setText(this.alarmTimes[position]);
         alarmDaysView.setText(this.alarmDays[position]);
         alarmEmailsView.setText(this.alarmEmails[position]);
@@ -104,6 +105,19 @@ public class CustomAdapter extends BaseAdapter {
 
         return bit;
 
+    }
+
+    private Bitmap convertToThumbnail(String imagePath, int width, int height) {
+        BitmapFactory.Options bfOptions=new BitmapFactory.Options();
+        bfOptions.inDither=false;                     //Disable Dithering mode
+        bfOptions.inPurgeable=true;                   //Tell to gc that whether it needs free memory, the Bitmap can be cleared
+        bfOptions.inInputShareable=true;              //Which kind of reference will be used to recover the Bitmap data after being clear, when it will be used in the future
+        bfOptions.inTempStorage=new byte[32 * 1024];
+        //bfOptions.outWidth = width;
+        //bfOptions.outHeight = height;
+        //bfOptions.inJustDecodeBounds=true;
+        bfOptions.inSampleSize = 20;
+        return ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(imagePath, bfOptions), width, height);
     }
 
     public static Bitmap convertBitmap(String path)   {

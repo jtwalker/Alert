@@ -183,5 +183,6 @@ public class ViewAlarms extends Activity {
         intent.putExtra("edit", true);
         intent.putExtra("requestCode", alarmID);
         startActivityForResult(intent, this.CREATE_ALARM);
+        this.refreshActivity();
     }
 }
