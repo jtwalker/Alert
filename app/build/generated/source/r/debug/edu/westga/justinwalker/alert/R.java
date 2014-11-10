@@ -945,7 +945,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020058;
     }
     public static final class id {
-        public static final int action_alarm_history=0x7f070072;
+        public static final int action_alarm_history=0x7f070073;
         public static final int action_bar=0x7f07001c;
         public static final int action_bar_activity_content=0x7f070014;
         public static final int action_bar_container=0x7f07001b;
@@ -953,15 +953,15 @@ containing a value of this type.
         public static final int action_bar_root=0x7f07001a;
         public static final int action_bar_subtitle=0x7f070023;
         public static final int action_bar_title=0x7f070022;
-        public static final int action_clear_history=0x7f07006f;
+        public static final int action_clear_history=0x7f070070;
         public static final int action_context_bar=0x7f07001d;
-        public static final int action_create_alarm=0x7f070070;
-        public static final int action_delete_alarms=0x7f07006e;
+        public static final int action_create_alarm=0x7f070071;
+        public static final int action_delete_alarms=0x7f07006f;
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070073;
-        public static final int action_view_alarms=0x7f070071;
+        public static final int action_settings=0x7f070074;
+        public static final int action_view_alarms=0x7f070072;
         public static final int activeAlarmMainLinearLayout=0x7f07003c;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int alarmDaysView=0x7f070044;
@@ -986,13 +986,13 @@ containing a value of this type.
         public static final int dateDisplay=0x7f070060;
         public static final int daysOfTheWeekLayout=0x7f070050;
         public static final int default_activity_button=0x7f070028;
-        public static final int deleteAlarm=0x7f070075;
+        public static final int deleteAlarm=0x7f070076;
         public static final int dialog=0x7f070012;
         public static final int digitalClock=0x7f07005f;
         public static final int disableHome=0x7f070008;
         public static final int dismissAlarmButton=0x7f070041;
         public static final int dropdown=0x7f070013;
-        public static final int editAlarm=0x7f070074;
+        public static final int editAlarm=0x7f070075;
         public static final int edit_query=0x7f070030;
         public static final int emailSwitch=0x7f070059;
         public static final int end=0x7f07000c;
@@ -1046,10 +1046,11 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001e;
         public static final int submit_area=0x7f070039;
         public static final int sunToggleButton=0x7f070057;
-        public static final int syncButton=0x7f07006d;
+        public static final int syncButton=0x7f07006e;
         public static final int syncCheckBox=0x7f07006a;
         public static final int syncDetailsLayout=0x7f07006b;
-        public static final int syncTextView=0x7f07006c;
+        public static final int syncEmailEditText=0x7f07006c;
+        public static final int syncTextView=0x7f07006d;
         public static final int syncWithCalendarLayout=0x7f070068;
         public static final int syncWithCalendarText=0x7f070069;
         public static final int tabMode=0x7f070002;
@@ -1159,11 +1160,12 @@ containing a value of this type.
         public static final int snooze=0x7f0a002e;
         public static final int sync_alarms=0x7f0a002f;
         public static final int sync_button=0x7f0a0030;
-        public static final int sync_with_calendar=0x7f0a0031;
-        public static final int title_activity_alarm_receiver=0x7f0a0032;
-        public static final int title_activity_set_alarm=0x7f0a0033;
-        public static final int view_alarms=0x7f0a0034;
-        public static final int view_history=0x7f0a0035;
+        public static final int sync_email=0x7f0a0031;
+        public static final int sync_with_calendar=0x7f0a0032;
+        public static final int title_activity_alarm_receiver=0x7f0a0033;
+        public static final int title_activity_set_alarm=0x7f0a0034;
+        public static final int view_alarms=0x7f0a0035;
+        public static final int view_history=0x7f0a0036;
     }
     public static final class style {
         /** 

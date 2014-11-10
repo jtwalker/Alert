@@ -4,6 +4,10 @@
     android:layout_height="match_parent"
     android:background="@color/gray">
 
+    <LinearLayout
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -49,7 +53,18 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
                 android:orientation="vertical">
-                
+
+                <EditText
+                    android:id="@+id/syncEmailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/details_regular"
+                    android:textColor="@color/white"
+                    android:hint="@string/sync_email"
+                    android:ems="10"/>
+
+                <View style="@style/Divider"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -35,6 +36,12 @@ public class ViewSettings extends Activity {
         this.initializeFromSharedPreferences();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.storeSyncEmail();
+    }
+
     private void setCheckBoxBorderColor() {
         CheckBox syncCheckBox = (CheckBox) this.findViewById(R.id.syncCheckBox);
         int id = Resources.getSystem().getIdentifier("btn_check_holo_dark", "drawable", "android");
@@ -58,6 +65,15 @@ public class ViewSettings extends Activity {
         else {
             syncDetailsLayout.setVisibility(View.GONE);
         }
+
+        EditText syncEmail = (EditText) this.findViewById(R.id.syncEmailEditText);
+        syncEmail.setText(this.settings.getString("syncemail", ""));
+    }
+
+    private void storeSyncEmail() {
+        EditText syncEmail = (EditText) this.findViewById(R.id.syncEmailEditText);
+        this.editor.putString("syncemail", syncEmail.getText().toString());
+        this.editor.commit();
     }
 
     private View.OnClickListener inputClickListener = new View.OnClickListener() {
