@@ -42,6 +42,10 @@
             android:name="edu.westga.justinwalker.alert.services.AlarmReceiverActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="edu.westga.justinwalker.alert.ViewSettings"
+            android:label="@string/settings" >
+        </activity>
         
         <provider 
             android:name="edu.westga.justinwalker.alert.db.AlarmContentProviderDB"

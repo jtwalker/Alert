@@ -10,6 +10,7 @@
     <string name="date">Date</string>
     <string name="alarms">Alarms</string>
     <string name="history">Alarm History</string>
+    <string name="settings">User Settings</string>
 
     <string name="alarm_number">Alarm #</string>
     <string name="clear_history">Clear History</string>
@@ -43,6 +44,10 @@
     <string name="context_menu">What would you like to do?</string>
     <string name="edit_alarm">Edit Alarm</string>
     <string name="delete_alarm">Delete Alarm</string>
+
+    <string name="sync_alarms">Sync Calendar Alarms</string>
+    <string name="sync_button">Sync Now</string>
+    <string name="sync_with_calendar">Sync Alarms with Calendar?</string>
 
     <color name="gray">#333333</color>
     <color name="green">#00FF00</color>

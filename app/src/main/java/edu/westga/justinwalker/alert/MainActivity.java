@@ -15,6 +15,7 @@ public class MainActivity extends ActionBarActivity {
 	private final int CREATE_ALARM = 1;
 	private final int VIEW_ALARMS = 2;
     private final int VIEW_HISTORY = 3;
+    private final int VIEW_SETTINGS = 4;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class MainActivity extends ActionBarActivity {
             this.invokeActivityToViewHistory();
             return true;
 		case R.id.action_settings:
+            this.invokeActivityToViewSettings();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -84,5 +86,10 @@ public class MainActivity extends ActionBarActivity {
     private void invokeActivityToViewHistory() {
         Intent intent = new Intent(getApplicationContext(), ViewHistory.class);
         startActivityForResult(intent, this.VIEW_HISTORY);
+    }
+
+    private void invokeActivityToViewSettings() {
+        Intent intent = new Intent(getApplicationContext(), ViewSettings.class);
+        startActivityForResult(intent, this.VIEW_SETTINGS);
     }
 }
