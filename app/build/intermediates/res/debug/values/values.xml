@@ -81,10 +81,8 @@
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
-    <color name="black">#000000</color>
-    <color name="gray">#333333</color>
-    <color name="green">#00FF00</color>
-    <color name="white">#FFFFFF</color>
+    <color name="background_color">#333333</color>
+    <color name="text_color">#FFFFFF</color>
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
@@ -213,6 +211,15 @@
         -->
         <attr name="expandActivityOverflowButtonDrawable" format="reference" />
     </declare-styleable>
+    <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/Alert/ambilWarna/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="AmbilWarnaPreference">
+        <attr name="supportsAlpha" format="boolean" />
+    </declare-styleable>
+    <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <eat-comment />
+
     <declare-styleable name="CompatTextView">
 
         <!-- Present the text in ALL CAPS. This may use a small-caps form when available. -->
@@ -522,6 +529,16 @@
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/Alert/ambilWarna/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <dimen name="ambilwarna_hsvHeight">240dp</dimen>
+    <dimen name="ambilwarna_hsvWidth">240dp</dimen>
+    <dimen name="ambilwarna_hueWidth">30dp</dimen>
+    <dimen name="ambilwarna_spacer">8dp</dimen>
+    <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
     <dimen name="create_alarm_font_size">25sp</dimen>
     <dimen name="details_large">15sp</dimen>
     <dimen name="details_regular">10sp</dimen>
@@ -578,9 +595,13 @@
     <string name="alarms">Alarms</string>
     <string name="app_name">Alert</string>
     <string name="auto_sync">Synchronize Automatically</string>
+    <string name="change_background">Change Background Color</string>
+    <string name="change_font">Change Font Color</string>
     <string name="clear_history">Clear History</string>
     <string name="context_menu">What would you like to do?</string>
     <string name="create_alarm">Create Alarm</string>
+    <string name="customize_color">Customize</string>
+    <string name="customize_theme">Customize Theme</string>
     <string name="date">Date</string>
     <string name="day_of_week_fri">Fri</string>
     <string name="day_of_week_mon">Mon</string>
@@ -598,6 +619,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="history">Alarm History</string>
     <string name="image_description">Image to be used for the alarm</string>
+    <string name="reset">Reset</string>
+    <string name="reset_theme">Reset to Default Theme</string>
     <string name="ringtone">Click to select ringtone</string>
     <string name="settings">User Settings</string>
     <string name="silence">Silence</string>
@@ -647,8 +670,9 @@
 
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">2dp</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/text_color</item>
+        <!-- <item name="android:background">?android:attr/listDivider</item> -->
     </style>
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
@@ -1078,7 +1102,7 @@
     <style name="TimeDateDisplay">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/text_color</item>
         <item name="android:textSize">@dimen/font_size</item>
         <item name="android:gravity">center</item>
     </style>
@@ -1091,7 +1115,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/text_color</item>
     </style>
     <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />

@@ -50,10 +50,14 @@
     <string name="sync_with_calendar">Sync Alarms with Calendar?</string>
     <string name="sync_email">Email to Sync With</string>
     <string name="auto_sync">Synchronize Automatically</string>
+    <string name="customize_theme">Customize Theme</string>
+    <string name="customize_color">Customize</string>
+    <string name="change_background">Change Background Color</string>
+    <string name="change_font">Change Font Color</string>
+    <string name="reset_theme">Reset to Default Theme</string>
+    <string name="reset">Reset</string>
 
-    <color name="gray">#333333</color>
-    <color name="green">#00FF00</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
+    <color name="background_color">#333333</color>
+    <color name="text_color">#FFFFFF</color>
 
 </resources>

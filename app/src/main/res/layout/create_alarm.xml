@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/background_color"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/create_alarm_font_size" />
 
             <LinearLayout
@@ -55,7 +55,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:background="@color/white" />
+                    android:background="@color/text_color" />
             </LinearLayout>
 
             <LinearLayout
@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ringtone"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/create_alarm_font_size"
                     android:layout_gravity="center_horizontal"/>
 
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/alarm_repeating"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="@dimen/create_alarm_font_size"
                         android:id="@+id/repeatingSwitch"/>
 
@@ -142,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/alarm_snooze"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="@dimen/create_alarm_font_size"
                         android:id="@+id/snoozeSwitch" />
 
@@ -150,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/alarm_email"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="@dimen/create_alarm_font_size"
                         android:id="@+id/emailSwitch"/>
 
@@ -162,7 +162,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="@dimen/create_alarm_font_size"
                         android:visibility="gone" />
                 </LinearLayout>
@@ -181,7 +181,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/create_alarm"
-            android:textColor="@color/white" />
+            android:textColor="@color/text_color" />
 
     </LinearLayout>
 

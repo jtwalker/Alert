@@ -15,5 +15,10 @@
     <dimen name="abc_action_bar_subtitle_text_size">12dp</dimen>
     <dimen name="abc_action_bar_subtitle_top_margin">-2dp</dimen>
     <dimen name="abc_action_bar_title_text_size">16dp</dimen>
+    <!-- From: file:/C:/Users/Family/Documents/Justin/Alert/app/build/intermediates/exploded-aar/Alert/ambilWarna/unspecified/res/values-land/values.xml -->
+    <eat-comment />
+
+    <dimen name="ambilwarna_hsvHeight">120dp</dimen>
+    <dimen name="ambilwarna_hsvWidth">240dp</dimen>
 
 </resources>

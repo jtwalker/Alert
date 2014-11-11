@@ -8,6 +8,12 @@
         revision="20.0.0"
         sha1="6804efbb78d7facc2e1aa107c7342bee83afae45"/>
     <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\classes-73d2da69c4dcc34af35b1e862209dcbc08507afd.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\Alert\ambilWarna\unspecified\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f8470ce791da39178a8a3f69b48e9435a5f0e8b8"/>
+    <item
         dex="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\pre-dexed\debug\classes-37868cb3066ddbe62ff6ef91433a9e01130e166b.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\Wear\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\5.0.77\classes.jar"
         jumboMode="false"
@@ -38,17 +44,17 @@
         revision="20.0.0"
         sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
     <item
-        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\activation-964a2a399eb559bf1423b72efb26c21ed908b4cf.jar"
-        jar="C:\Users\Family\Documents\Justin\Alert\app\libs\activation.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
-    <item
         dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\android-smart-image-view-1.0.0-4e1c17477d1e57eafea0a7daac47a1df5e803595.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\app\libs\android-smart-image-view-1.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="d76ea8c3e9a60101244d6d04aff8cc75888570f0"/>
+    <item
+        dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\activation-964a2a399eb559bf1423b72efb26c21ed908b4cf.jar"
+        jar="C:\Users\Family\Documents\Justin\Alert\app\libs\activation.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
     <item
         dex="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-b0cfc70a505a8f3b5a4c57545701206d5140c097.jar"
         jar="C:\Users\Family\Documents\Justin\Alert\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"

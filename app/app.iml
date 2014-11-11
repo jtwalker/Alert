@@ -90,6 +90,7 @@
     <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="activation" level="project" />
     <orderEntry type="library" exported="" name="1_activation" level="project" />
+    <orderEntry type="module" module-name="ambilWarna" exported="" />
   </component>
 </module>
 

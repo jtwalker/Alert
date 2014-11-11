@@ -19,7 +19,7 @@
                 android:id="@+id/historyTimeView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/details_large"
                 android:layout_gravity="center"/>
 
@@ -27,7 +27,7 @@
                 android:id="@+id/historyDateView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/details_regular"
                 android:layout_gravity="center"/>
 
@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.50"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/details_large"
             android:gravity="center"/>
 
@@ -52,7 +52,7 @@
                 android:id="@+id/historyAlarmNumberViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/details_regular"
                 android:text="@string/alarm_number"
                 android:layout_gravity="center"/>
@@ -61,7 +61,7 @@
                 android:id="@+id/historyAlarmNumberView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="@dimen/details_regular"
                 android:layout_gravity="center" />
 

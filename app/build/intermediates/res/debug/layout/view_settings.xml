@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@color/background_color">
 
     <LinearLayout
         android:focusable="true" android:focusableInTouchMode="true"
@@ -32,7 +32,7 @@
                     android:layout_weight="0.90"
                     android:text="@string/sync_with_calendar"
                     android:textSize="@dimen/details_regular"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/text_color"/>
 
                 <CheckBox
                     android:id="@+id/syncCheckBox"
@@ -59,8 +59,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:textSize="@dimen/details_regular"
-                    android:textColor="@color/white"
+                    android:textSize="@dimen/details_small"
+                    android:textColor="@color/text_color"
                     android:hint="@string/sync_email"
                     android:ems="10"/>
 
@@ -80,8 +80,8 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:text="@string/auto_sync"
-                        android:textSize="@dimen/details_regular"
-                        android:textColor="@color/white"/>
+                        android:textSize="@dimen/details_small"
+                        android:textColor="@color/text_color"/>
 
                     <CheckBox
                         android:id="@+id/autoSyncCheckBox"
@@ -106,8 +106,8 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.80"
-                        android:textSize="@dimen/details_regular"
-                        android:textColor="@color/white"
+                        android:textSize="@dimen/details_small"
+                        android:textColor="@color/text_color"
                         android:text="@string/sync_alarms"
                         android:gravity="center_vertical"/>
 
@@ -116,13 +116,123 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/details_small"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:text="@string/sync_button"
                         android:gravity="center"/>
                 </LinearLayout>
 
                 <View style="@style/Divider"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/details_regular"
+                    android:text="@string/customize_theme"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"/>
+
+                <View style="@style/Divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/backgroundColorTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.80"
+                            android:textSize="@dimen/details_small"
+                            android:textColor="@color/text_color"
+                            android:text="@string/change_background"
+                            android:gravity="center_vertical"/>
+
+                        <Button
+                            android:id="@+id/backgroundColorButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/details_small"
+                            android:textColor="@color/text_color"
+                            android:text="@string/customize_color"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/fontColorTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.80"
+                            android:textSize="@dimen/details_small"
+                            android:textColor="@color/text_color"
+                            android:text="@string/change_font"
+                            android:gravity="center_vertical"/>
+
+                        <Button
+                            android:id="@+id/fontColorButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/details_small"
+                            android:textColor="@color/text_color"
+                            android:text="@string/customize_color"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/resetColorTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.80"
+                            android:textSize="@dimen/details_small"
+                            android:textColor="@color/text_color"
+                            android:text="@string/reset_theme"
+                            android:gravity="center_vertical"/>
+
+                        <Button
+                            android:id="@+id/resetColorButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/details_small"
+                            android:textColor="@color/text_color"
+                            android:text="@string/reset"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         </ScrollView>

@@ -25,4 +25,5 @@ dependencies {
     compile files('activation.jar')
     compile files('additionnal.jar')
     compile files('mail.jar')
+    compile project(':ambilWarna')
 }
