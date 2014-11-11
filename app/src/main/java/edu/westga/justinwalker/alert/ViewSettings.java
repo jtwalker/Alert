@@ -1,6 +1,7 @@
 package edu.westga.justinwalker.alert;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
@@ -85,6 +86,9 @@ public class ViewSettings extends Activity {
 
         EditText syncEmail = (EditText) this.findViewById(R.id.syncEmailEditText);
         syncEmail.setText(this.settings.getString("syncemail", ""));
+
+        LinearLayout background = (LinearLayout) this.findViewById(R.id.settingsLayout);
+        background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
     }
 
     private void storeSyncEmail() {
@@ -162,6 +166,7 @@ public class ViewSettings extends Activity {
             public void onOk(AmbilWarnaDialog dialog, int color) {
                 editor.putInt("backgroundcolor", color);
                 editor.commit();
+                refreshActivity();
                 Toast.makeText(getApplicationContext(), "" + color, Toast.LENGTH_LONG).show();
             }
 
@@ -181,6 +186,7 @@ public class ViewSettings extends Activity {
             public void onOk(AmbilWarnaDialog dialog, int color) {
                 editor.putInt("fontcolor", color);
                 editor.commit();
+                refreshActivity();
                 Toast.makeText(getApplicationContext(), "" + color, Toast.LENGTH_LONG).show();
             }
 
@@ -197,6 +203,14 @@ public class ViewSettings extends Activity {
         editor.putInt("backgroundcolor", getResources().getColor(R.color.background_color));
         editor.putInt("fontcolor", getResources().getColor(R.color.text_color));
         editor.commit();
+        this.refreshActivity();
         Toast.makeText(getApplicationContext(), "Theme Reset", Toast.LENGTH_SHORT).show();
+    }
+
+    private void refreshActivity() {
+        Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        startActivity(intent);
     }
 }

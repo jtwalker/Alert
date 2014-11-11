@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -14,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.text.SimpleDateFormat;
@@ -31,6 +34,8 @@ public class ViewAlarms extends Activity {
     private final int CREATE_ALARM = 1;
     private DBAccess dbAccess;
     private String[] images, times, days, emails, ringtones, snooze;
+    private SharedPreferences settings;
+    private Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,11 @@ public class ViewAlarms extends Activity {
         setContentView(R.layout.view_alarms);
 
         this.dbAccess = new DBAccess(getBaseContext());
+
+        this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
+        this.editor = this.settings.edit();
+
+        this.initializeFromSharedPreferences();
 
         Cursor cursor = this.dbAccess.fetchAllAlarms();
         cursor.moveToFirst();
@@ -99,6 +109,11 @@ public class ViewAlarms extends Activity {
             default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    private void initializeFromSharedPreferences() {
+        LinearLayout background = (LinearLayout) this.findViewById(R.id.viewAlarmsLayout);
+        background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
     }
 
     private String convertMillisecondsToTime(String millisecondsString) {

@@ -628,7 +628,7 @@
     <string name="sync_alarms">Sync Calendar Alarms</string>
     <string name="sync_button">Sync Now</string>
     <string name="sync_email">Email to Sync With</string>
-    <string name="sync_with_calendar">Sync Alarms with Calendar?</string>
+    <string name="sync_with_calendar">Sync Alarms with Calendar</string>
     <string name="title_activity_alarm_receiver">AlarmReceiverActivity</string>
     <string name="title_activity_set_alarm">SetAlarm</string>
     <string name="view_alarms">View Alarms</string>

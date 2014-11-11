@@ -18,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -62,7 +63,7 @@ public class AlarmReceiverActivity extends Activity {
         this.fireNotification();
 		
 		this.initializeClickables();
-        //this.initializeFromSharedPreferences();
+        this.initializeFromSharedPreferences();
         this.initializeFromDatabase();
         this.checkShouldSnoozeBeEnabled();
 		
@@ -111,11 +112,8 @@ public class AlarmReceiverActivity extends Activity {
      *
      */
     private void initializeFromSharedPreferences() {
-        if(this.settings.contains("image")) {
-            String picturePath = this.settings.getString("image", "");
-            ImageView imageView = (ImageView) this.findViewById(R.id.alarmEventImageView);
-            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-        }
+        LinearLayout background = (LinearLayout) this.findViewById(R.id.activeAlarmMainLinearLayout);
+        background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
     }
 
     /**

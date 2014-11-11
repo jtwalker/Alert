@@ -2,15 +2,19 @@ package edu.westga.justinwalker.alert;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import edu.westga.justinwalker.alert.db.AlarmContract;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
+import edu.westga.justinwalker.alert.models.SharedConstants;
 
 /**
  * Created by Family on 10/20/2014.
@@ -18,6 +22,8 @@ import edu.westga.justinwalker.alert.db.controller.DBAccess;
 public class ViewHistory extends Activity {
     private DBAccess dbAccess;
     private SimpleCursorAdapter dataAdapter;
+    private SharedPreferences settings;
+    private Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,11 @@ public class ViewHistory extends Activity {
         setContentView(R.layout.view_history);
 
         this.dbAccess = new DBAccess(getBaseContext());
+
+        this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
+        this.editor = this.settings.edit();
+
+        this.initializeFromSharedPreferences();
 
         displayListView();
     }
@@ -74,5 +85,10 @@ public class ViewHistory extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void initializeFromSharedPreferences() {
+        LinearLayout background = (LinearLayout) this.findViewById(R.id.viewHistoryLayout);
+        background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
     }
 }

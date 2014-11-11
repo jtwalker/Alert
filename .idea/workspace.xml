@@ -96,8 +96,8 @@
       <file leaf-file-name="ViewSettings.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.5022762" vertical-offset="1632" max-vertical-offset="3485">
-              <caret line="196" column="89" selection-start-line="196" selection-start-column="89" selection-end-line="196" selection-end-column="89" />
+            <state vertical-scroll-proportion="0.30349013" vertical-offset="2605" max-vertical-offset="3723">
+              <caret line="168" column="34" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,47 +105,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateAlarm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
+      <file leaf-file-name="view_alarms.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_alarms.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="8619">
-              <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+            <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="374">
+              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_settings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_settings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.481482" vertical-offset="3417" max-vertical-offset="4182">
-              <caret line="224" column="52" selection-start-line="224" selection-start-column="52" selection-end-line="224" selection-end-column="52" />
-              <folding>
-                <element signature="e#1275#1303#0" expanded="true" />
-                <element signature="e#1341#1365#0" expanded="true" />
-                <element signature="e#2514#2536#0" expanded="true" />
-                <element signature="e#2628#2648#0" expanded="true" />
-                <element signature="e#3388#3407#0" expanded="true" />
-                <element signature="e#3449#3471#0" expanded="true" />
-                <element signature="e#4538#4560#0" expanded="true" />
-                <element signature="e#4660#4681#0" expanded="true" />
-                <element signature="e#4986#5008#0" expanded="true" />
-                <element signature="e#5108#5129#0" expanded="true" />
-                <element signature="e#5704#5728#0" expanded="true" />
-                <element signature="e#5762#5787#0" expanded="true" />
-                <element signature="e#6842#6864#0" expanded="true" />
-                <element signature="e#6972#6999#0" expanded="true" />
-                <element signature="e#7339#7361#0" expanded="true" />
-                <element signature="e#7469#7494#0" expanded="true" />
-                <element signature="e#8173#8195#0" expanded="true" />
-                <element signature="e#8303#8324#0" expanded="true" />
-                <element signature="e#8658#8680#0" expanded="true" />
-                <element signature="e#8788#8813#0" expanded="true" />
-                <element signature="e#9493#9515#0" expanded="true" />
-                <element signature="e#9623#9644#0" expanded="true" />
-                <element signature="e#9979#10001#0" expanded="true" />
-                <element signature="e#10109#10124#0" expanded="true" />
-              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer">
@@ -153,13 +118,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <file leaf-file-name="CreateAlarm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="412" max-vertical-offset="1173">
-              <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8670">
+              <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="66" selection-end-column="43" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1585" max-vertical-offset="2244">
+              <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="124" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditAlarm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/EditAlarm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewAlarms.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2690" max-vertical-offset="3553">
+              <caret line="170" column="5" selection-start-line="170" selection-start-column="4" selection-end-line="175" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_history.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_history.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="340">
+              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -1834,14 +1846,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/AlarmContentProviderDB.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/AlarmDBAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/AlarmDBHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/view_history.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/history_details_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/history_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/alarm_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/history_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewHistory.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/EditAlarm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/adapters/ImageCursorAdapter.java" />
@@ -1853,19 +1862,22 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/models/SharedConstants.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/view_alarm_context.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/view_alarms.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/db/controller/DBAccess.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/alarm_details_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/adapters/CustomAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/view_settings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/view_alarms.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/view_history.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewHistory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewSettings.java" />
       </list>
     </option>
@@ -2010,7 +2022,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="values-sw600dp-land" />
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2036,11 +2048,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="values-sw600dp" />
+              <option name="myItemId" value="alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2510,16 +2556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
@@ -2538,16 +2574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3148148" vertical-offset="0" max-vertical-offset="324">
           <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057921637" vertical-offset="0" max-vertical-offset="587">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2616,20 +2642,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/EditAlarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31564987" vertical-offset="0" max-vertical-offset="391">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3165" max-vertical-offset="5542">
-          <caret line="226" column="28" selection-start-line="226" selection-start-column="28" selection-end-line="226" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/models/SharedConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14848486" vertical-offset="138" max-vertical-offset="748">
@@ -2641,14 +2653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2482">
           <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53636366" vertical-offset="2968" max-vertical-offset="3298">
-          <caret line="185" column="31" selection-start-line="185" selection-start-column="31" selection-end-line="185" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2668,58 +2672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6272728" vertical-offset="102" max-vertical-offset="1258">
-          <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_history.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4074075" vertical-offset="20" max-vertical-offset="323">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/history_details_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5511551" vertical-offset="1006" max-vertical-offset="1309">
           <caret line="69" column="5" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_alarms.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4389439" vertical-offset="54" max-vertical-offset="357">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.021212121" vertical-offset="333" max-vertical-offset="1581">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/active_alarm_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1980197" vertical-offset="666" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2759,41 +2715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3627" max-vertical-offset="8619">
-          <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69044006" vertical-offset="565" max-vertical-offset="1224">
-          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="412" max-vertical-offset="1173">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="3281">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
@@ -2810,46 +2731,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_settings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.481482" vertical-offset="3417" max-vertical-offset="4182">
-          <caret line="224" column="52" selection-start-line="224" selection-start-column="52" selection-end-line="224" selection-end-column="52" />
-          <folding>
-            <element signature="e#1275#1303#0" expanded="true" />
-            <element signature="e#1341#1365#0" expanded="true" />
-            <element signature="e#2514#2536#0" expanded="true" />
-            <element signature="e#2628#2648#0" expanded="true" />
-            <element signature="e#3388#3407#0" expanded="true" />
-            <element signature="e#3449#3471#0" expanded="true" />
-            <element signature="e#4538#4560#0" expanded="true" />
-            <element signature="e#4660#4681#0" expanded="true" />
-            <element signature="e#4986#5008#0" expanded="true" />
-            <element signature="e#5108#5129#0" expanded="true" />
-            <element signature="e#5704#5728#0" expanded="true" />
-            <element signature="e#5762#5787#0" expanded="true" />
-            <element signature="e#6842#6864#0" expanded="true" />
-            <element signature="e#6972#6999#0" expanded="true" />
-            <element signature="e#7339#7361#0" expanded="true" />
-            <element signature="e#7469#7494#0" expanded="true" />
-            <element signature="e#8173#8195#0" expanded="true" />
-            <element signature="e#8303#8324#0" expanded="true" />
-            <element signature="e#8658#8680#0" expanded="true" />
-            <element signature="e#8788#8813#0" expanded="true" />
-            <element signature="e#9493#9515#0" expanded="true" />
-            <element signature="e#9623#9644#0" expanded="true" />
-            <element signature="e#9979#10001#0" expanded="true" />
-            <element signature="e#10109#10124#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="412" max-vertical-offset="1173">
+          <caret line="49" column="63" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05379747" vertical-offset="0" max-vertical-offset="632">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5417299" vertical-offset="4" max-vertical-offset="1224">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_settings.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4199">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding>
+            <element signature="e#1312#1340#0" expanded="true" />
+            <element signature="e#1378#1402#0" expanded="true" />
+            <element signature="e#2551#2573#0" expanded="true" />
+            <element signature="e#2665#2685#0" expanded="true" />
+            <element signature="e#3425#3444#0" expanded="true" />
+            <element signature="e#3486#3508#0" expanded="true" />
+            <element signature="e#4575#4597#0" expanded="true" />
+            <element signature="e#4697#4718#0" expanded="true" />
+            <element signature="e#5023#5045#0" expanded="true" />
+            <element signature="e#5145#5166#0" expanded="true" />
+            <element signature="e#5741#5765#0" expanded="true" />
+            <element signature="e#5799#5824#0" expanded="true" />
+            <element signature="e#6879#6901#0" expanded="true" />
+            <element signature="e#7009#7036#0" expanded="true" />
+            <element signature="e#7376#7398#0" expanded="true" />
+            <element signature="e#7506#7531#0" expanded="true" />
+            <element signature="e#8210#8232#0" expanded="true" />
+            <element signature="e#8340#8361#0" expanded="true" />
+            <element signature="e#8695#8717#0" expanded="true" />
+            <element signature="e#8825#8850#0" expanded="true" />
+            <element signature="e#9530#9552#0" expanded="true" />
+            <element signature="e#9660#9681#0" expanded="true" />
+            <element signature="e#10016#10038#0" expanded="true" />
+            <element signature="e#10146#10161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="3298">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="632">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/active_alarm_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/services/AlarmReceiverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23216996" vertical-offset="459" max-vertical-offset="5491">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_alarms.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="374">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_history.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="340">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="1700">
+          <caret line="90" column="89" selection-start-line="90" selection-start-column="89" selection-end-line="90" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="8670">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="66" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/EditAlarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2690" max-vertical-offset="3553">
+          <caret line="170" column="5" selection-start-line="170" selection-start-column="4" selection-end-line="175" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1585" max-vertical-offset="2244">
+          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="124" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5022762" vertical-offset="1632" max-vertical-offset="3485">
-          <caret line="196" column="89" selection-start-line="196" selection-start-column="89" selection-end-line="196" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.30349013" vertical-offset="2605" max-vertical-offset="3723">
+          <caret line="168" column="34" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

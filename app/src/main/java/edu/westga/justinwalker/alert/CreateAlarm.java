@@ -144,6 +144,9 @@ public class CreateAlarm extends FragmentActivity {
         else {
             this.alarmRingtone = RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI.toString();
         }
+
+        LinearLayout background = (LinearLayout) this.findViewById(R.id.createAlarmLayout);
+        background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
     }
 
     private void initializeFromDatabase() {
