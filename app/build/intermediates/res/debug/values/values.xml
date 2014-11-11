@@ -616,6 +616,7 @@
     <string name="edit_alarm">Edit Alarm</string>
     <string name="enter_email">Please enter an Email Address</string>
     <string name="everyday">Everyday</string>
+    <string name="google_account">Google Account: </string>
     <string name="hello_world">Hello world!</string>
     <string name="history">Alarm History</string>
     <string name="image_description">Image to be used for the alarm</string>

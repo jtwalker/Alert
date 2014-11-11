@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import edu.westga.justinwalker.alert.alarm.GenerateAlarm;
 import edu.westga.justinwalker.alert.models.SharedConstants;
 import yuku.ambilwarna.AmbilWarnaDialog;
 
@@ -23,6 +24,7 @@ public class ViewSettings extends Activity {
 
     private SharedPreferences settings;
     private Editor editor;
+    private GenerateAlarm alarmGenerator = new GenerateAlarm();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,7 +158,13 @@ public class ViewSettings extends Activity {
     }
 
     private void syncNow() {
+        this.storeSyncEmail();
 
+        this.alarmGenerator.createAlarmFromCalendar(this, this.getEmailFromPreferences());
+    }
+
+    private String getEmailFromPreferences() {
+        return this.settings.getString("syncemail", "");
     }
 
     private void changeBackgroundColor() {
@@ -167,7 +175,6 @@ public class ViewSettings extends Activity {
                 editor.putInt("backgroundcolor", color);
                 editor.commit();
                 refreshActivity();
-                Toast.makeText(getApplicationContext(), "" + color, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -187,7 +194,6 @@ public class ViewSettings extends Activity {
                 editor.putInt("fontcolor", color);
                 editor.commit();
                 refreshActivity();
-                Toast.makeText(getApplicationContext(), "" + color, Toast.LENGTH_LONG).show();
             }
 
             @Override

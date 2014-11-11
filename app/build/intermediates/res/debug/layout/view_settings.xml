@@ -55,15 +55,28 @@
                 android:layout_marginStart="20dp"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/syncEmailEditText"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textSize="@dimen/details_small"
-                    android:textColor="@color/text_color"
-                    android:hint="@string/sync_email"
-                    android:ems="10"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/details_small"
+                        android:textColor="@color/text_color"
+                        android:text="@string/google_account"/>
+
+                    <EditText
+                        android:id="@+id/syncEmailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:textSize="@dimen/details_small"
+                        android:textColor="@color/text_color"
+                        android:hint="@string/sync_email"
+                        android:ems="10"/>
+                </LinearLayout>
 
                 <View style="@style/Divider"/>
 

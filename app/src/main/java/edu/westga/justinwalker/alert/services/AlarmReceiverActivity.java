@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.text.format.Time;
 import android.view.View;
@@ -27,6 +28,7 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import edu.westga.justinwalker.alert.R;
+import edu.westga.justinwalker.alert.alarm.GenerateAlarm;
 import edu.westga.justinwalker.alert.db.controller.DBAccess;
 import edu.westga.justinwalker.alert.mailer.Mailer;
 import edu.westga.justinwalker.alert.models.SharedConstants;
@@ -59,13 +61,18 @@ public class AlarmReceiverActivity extends Activity {
 		
 		this.settings = getSharedPreferences(SharedConstants.USER_PREFS, 0);
 		this.editor = this.settings.edit();
-
-        this.fireNotification();
 		
 		this.initializeClickables();
         this.initializeFromSharedPreferences();
-        this.initializeFromDatabase();
-        this.checkShouldSnoozeBeEnabled();
+
+        if(requestCode != SharedConstants.CALENDAR_INTENT_CODE) {
+            this.fireNotification();
+            this.initializeFromDatabase();
+            this.checkShouldSnoozeBeEnabled();
+        }
+        else {
+            this.initializeCalendarAlarm();
+        }
 		
 		this.ringtone = MediaPlayer.create(this, this.ringtoneUri);
 
@@ -134,6 +141,17 @@ public class AlarmReceiverActivity extends Activity {
        this.alarmTime = this.dbAccess.getAlarmTime(this.requestCode);
        this.repeatingAlarm = this.dbAccess.getRepeating(this.requestCode);
        this.userEmailAddress = this.dbAccess.getAlarmEmail(this.requestCode);
+    }
+
+    /**
+     *
+     */
+    private void initializeCalendarAlarm() {
+        this.ringtoneUri = Settings.System.DEFAULT_RINGTONE_URI;
+        this.userEmailAddress = ""; //Since the database has to be ignored
+        this.repeatingAlarm = SharedConstants.REPEATING_FALSE;
+        ImageView imageView = (ImageView) findViewById(R.id.alarmEventImageView);
+        imageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.calendar));
     }
 
     /**
@@ -227,6 +245,16 @@ public class AlarmReceiverActivity extends Activity {
 
         this.dbAccess.insertHistory(this.requestCode, timeString, dateString, actionTaken);
     }
+
+    /**
+     *
+     */
+    private void checkForCalendarAlarm() {
+        if(this.requestCode == SharedConstants.CALENDAR_INTENT_CODE) {
+            GenerateAlarm alarmGenerator = new GenerateAlarm();
+            alarmGenerator.createAlarmFromCalendar(this, this.settings.getString("syncemail", ""));
+        }
+    }
 	
 	/**
 	 * 
@@ -242,6 +270,7 @@ public class AlarmReceiverActivity extends Activity {
 				sendEmail(SharedConstants.DISMISS_PRESSED);
                 updateHistory(SharedConstants.DISMISS_PRESSED);
                 checkAndSetRepeatingAlarm();
+                checkForCalendarAlarm();
 				finish();
 				break;
 			case R.id.silenceAlarmButton:

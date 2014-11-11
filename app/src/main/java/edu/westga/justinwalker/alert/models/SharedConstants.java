@@ -4,6 +4,7 @@ import edu.westga.justinwalker.alert.db.AlarmContract.Alarms;
 
 public class SharedConstants {
 
+    public static final int CALENDAR_INTENT_CODE = 999999999;
 	public static final int ALARM_TRUE = 1;
 	public static final int ALARM_FALSE = 0;
 	public static final String USER_PREFS = "UserPrefsFils";

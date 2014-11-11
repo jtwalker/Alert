@@ -959,7 +959,8 @@ containing a value of this type.
         public static final int ambilwarna_cursor=0x7f02005c;
         public static final int ambilwarna_hue=0x7f02005d;
         public static final int ambilwarna_target=0x7f02005e;
-        public static final int ic_launcher=0x7f02005f;
+        public static final int calendar=0x7f02005f;
+        public static final int ic_launcher=0x7f020060;
     }
     public static final class id {
         public static final int action_alarm_history=0x7f07008d;
@@ -1201,23 +1202,24 @@ containing a value of this type.
         public static final int edit_alarm=0x7f0a002a;
         public static final int enter_email=0x7f0a002b;
         public static final int everyday=0x7f0a002c;
-        public static final int hello_world=0x7f0a002d;
-        public static final int history=0x7f0a002e;
-        public static final int image_description=0x7f0a002f;
-        public static final int reset=0x7f0a0030;
-        public static final int reset_theme=0x7f0a0031;
-        public static final int ringtone=0x7f0a0032;
-        public static final int settings=0x7f0a0033;
-        public static final int silence=0x7f0a0034;
-        public static final int snooze=0x7f0a0035;
-        public static final int sync_alarms=0x7f0a0036;
-        public static final int sync_button=0x7f0a0037;
-        public static final int sync_email=0x7f0a0038;
-        public static final int sync_with_calendar=0x7f0a0039;
-        public static final int title_activity_alarm_receiver=0x7f0a003a;
-        public static final int title_activity_set_alarm=0x7f0a003b;
-        public static final int view_alarms=0x7f0a003c;
-        public static final int view_history=0x7f0a003d;
+        public static final int google_account=0x7f0a002d;
+        public static final int hello_world=0x7f0a002e;
+        public static final int history=0x7f0a002f;
+        public static final int image_description=0x7f0a0030;
+        public static final int reset=0x7f0a0031;
+        public static final int reset_theme=0x7f0a0032;
+        public static final int ringtone=0x7f0a0033;
+        public static final int settings=0x7f0a0034;
+        public static final int silence=0x7f0a0035;
+        public static final int snooze=0x7f0a0036;
+        public static final int sync_alarms=0x7f0a0037;
+        public static final int sync_button=0x7f0a0038;
+        public static final int sync_email=0x7f0a0039;
+        public static final int sync_with_calendar=0x7f0a003a;
+        public static final int title_activity_alarm_receiver=0x7f0a003b;
+        public static final int title_activity_set_alarm=0x7f0a003c;
+        public static final int view_alarms=0x7f0a003d;
+        public static final int view_history=0x7f0a003e;
     }
     public static final class style {
         /** 
