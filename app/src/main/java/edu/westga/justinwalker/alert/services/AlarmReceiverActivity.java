@@ -107,6 +107,34 @@ public class AlarmReceiverActivity extends Activity {
 		}*/
 	}
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        int notificationRequestCode = intent.getExtras().getInt("requestCode");
+
+        if(notificationRequestCode == 997) {
+            ringtone.stop();
+            silencePressed = true;
+        }
+        else if(notificationRequestCode == 998) {
+            ringtone.stop();
+            silencePressed = false;
+            sendEmail(SharedConstants.SNOOZE_PRESSED);
+            updateHistory(SharedConstants.SNOOZE_PRESSED);
+            snooze();
+            finish();
+        }
+        else if(notificationRequestCode == 999) {
+            silencePressed = false;
+            editor.putBoolean("dismiss", true);
+            editor.commit();
+            sendEmail(SharedConstants.DISMISS_PRESSED);
+            updateHistory(SharedConstants.DISMISS_PRESSED);
+            checkAndSetRepeatingAlarm();
+            checkForCalendarAlarm();
+            finish();
+        }
+    }
+
 	/**
 	 * 
 	 */
@@ -203,13 +231,10 @@ public class AlarmReceiverActivity extends Activity {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 1;
 
-        Intent snoozeIntent = new Intent(this, AlarmReceiverActivity.class);
-        snoozeIntent.putExtra("requestcode", 999);
-        PendingIntent snoozePending = PendingIntent.getActivity(this, 999, snoozeIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Action snoozeAction = new NotificationCompat.Action.Builder(R.drawable.ic_launcher, "Snooze", snoozePending).build();
-
         ArrayList<NotificationCompat.Action> actions = new ArrayList<NotificationCompat.Action>();
-        actions.add(snoozeAction);
+        actions.add(this.createWearNotificationIntent(997, "Silence", R.drawable.ic_launcher));
+        actions.add(this.createWearNotificationIntent(998, "Snooze", R.drawable.ic_launcher));
+        actions.add(this.createWearNotificationIntent(999, "Dismiss", R.drawable.ic_launcher));
 
         Notification notification = new NotificationCompat.Builder(this)
                 .setContentText(alarmTime.hour + ":" + alarmTime.minute)
@@ -222,6 +247,17 @@ public class AlarmReceiverActivity extends Activity {
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(001, notification);
+    }
+
+    /**
+     *
+     */
+    private NotificationCompat.Action createWearNotificationIntent(int requestCode, String title, int notificationImage) {
+        Intent intent = new Intent(this, AlarmReceiverActivity.class);
+        intent.putExtra("requestCode", requestCode);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        return new NotificationCompat.Action.Builder(notificationImage, title, pendingIntent).build();
+
     }
 
 	/**
