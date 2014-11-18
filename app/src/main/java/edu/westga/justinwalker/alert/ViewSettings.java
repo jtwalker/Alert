@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import edu.westga.justinwalker.alert.alarm.GenerateAlarm;
@@ -62,6 +63,7 @@ public class ViewSettings extends Activity {
         Button backgroundColorButton = (Button) this.findViewById(R.id.backgroundColorButton);
         Button fontColorButton = (Button) this.findViewById(R.id.fontColorButton);
         Button resetColorButton = (Button) this.findViewById(R.id.resetColorButton);
+        Button saveSettingsButton = (Button) this.findViewById(R.id.saveSettingsButton);
 
         syncLayout.setOnClickListener(this.inputClickListener);
         autoSyncLayout.setOnClickListener(this.inputClickListener);
@@ -69,6 +71,7 @@ public class ViewSettings extends Activity {
         backgroundColorButton.setOnClickListener(this.inputClickListener);
         fontColorButton.setOnClickListener(this.inputClickListener);
         resetColorButton.setOnClickListener(this.inputClickListener);
+        saveSettingsButton.setOnClickListener(this.inputClickListener);
     }
 
     private void initializeFromSharedPreferences() {
@@ -91,6 +94,11 @@ public class ViewSettings extends Activity {
 
         LinearLayout background = (LinearLayout) this.findViewById(R.id.settingsLayout);
         background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
+
+        SeekBar volumeSeekBar = (SeekBar) this.findViewById(R.id.volumeSeekBar);
+        float volume = settings.getFloat("volume", (float) 0.5);
+        int seekBarProgress = (int) Math.ceil(volume * volumeSeekBar.getSecondaryProgress());
+        volumeSeekBar.setProgress(seekBarProgress);
     }
 
     private void storeSyncEmail() {
@@ -120,6 +128,9 @@ public class ViewSettings extends Activity {
                     break;
                 case R.id.resetColorButton:
                     resetColor();
+                    break;
+                case R.id.saveSettingsButton:
+                    saveSettings();
                     break;
                 default:
                     Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
@@ -211,6 +222,13 @@ public class ViewSettings extends Activity {
         editor.commit();
         this.refreshActivity();
         Toast.makeText(getApplicationContext(), "Theme Reset", Toast.LENGTH_SHORT).show();
+    }
+
+    private void saveSettings() {
+        SeekBar volumeControl = (SeekBar) this.findViewById(R.id.volumeSeekBar);
+        float volume = (float) volumeControl.getProgress() / volumeControl.getSecondaryProgress();
+        editor.putFloat("volume", volume);
+        editor.commit();
     }
 
     private void refreshActivity() {

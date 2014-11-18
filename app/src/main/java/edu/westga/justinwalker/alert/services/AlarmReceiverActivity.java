@@ -2,6 +2,7 @@ package edu.westga.justinwalker.alert.services;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.text.format.Time;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,6 +50,7 @@ public class AlarmReceiverActivity extends Activity {
     private String alarmTime;
     private String repeatingAlarm;
     private String userEmailAddress;
+    private float alarmVolume;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,8 @@ public class AlarmReceiverActivity extends Activity {
         this.initializeFromSharedPreferences();
 
         if(requestCode != SharedConstants.CALENDAR_INTENT_CODE) {
-            this.fireNotification();
+            //this.fireNotification();
+            this.fireAlarmNotification();
             this.initializeFromDatabase();
             this.checkShouldSnoozeBeEnabled();
         }
@@ -75,6 +79,7 @@ public class AlarmReceiverActivity extends Activity {
         }
 		
 		this.ringtone = MediaPlayer.create(this, this.ringtoneUri);
+        this.ringtone.setVolume(this.alarmVolume, this.alarmVolume);
 
 		this.silencePressed = this.settings.getBoolean("silenced", false);
 		
@@ -121,6 +126,8 @@ public class AlarmReceiverActivity extends Activity {
     private void initializeFromSharedPreferences() {
         LinearLayout background = (LinearLayout) this.findViewById(R.id.activeAlarmMainLinearLayout);
         background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
+
+        this.alarmVolume = this.settings.getFloat("volume", (float) 0.5);
     }
 
     /**
@@ -186,7 +193,37 @@ public class AlarmReceiverActivity extends Activity {
         NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotifyMgr.notify(mNotificationId, mBuilder.build());
     }
-	
+
+    /**
+     *
+     */
+	private void fireAlarmNotification() {
+        Time alarmTime = new Time();
+        alarmTime.setToNow();
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 1;
+
+        Intent snoozeIntent = new Intent(this, AlarmReceiverActivity.class);
+        snoozeIntent.putExtra("requestcode", 999);
+        PendingIntent snoozePending = PendingIntent.getActivity(this, 999, snoozeIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Action snoozeAction = new NotificationCompat.Action.Builder(R.drawable.ic_launcher, "Snooze", snoozePending).build();
+
+        ArrayList<NotificationCompat.Action> actions = new ArrayList<NotificationCompat.Action>();
+        actions.add(snoozeAction);
+
+        Notification notification = new NotificationCompat.Builder(this)
+                .setContentText(alarmTime.hour + ":" + alarmTime.minute)
+                .setContentTitle("Alarm!")
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setLargeIcon(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(this.requestCode), options))
+                .extend(new NotificationCompat.WearableExtender().addActions(actions))
+                .setVibrate(new long[]{0, 1000, 200, 250, 150, 150, 75, 150, 75, 150})
+                .build();
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+        notificationManagerCompat.notify(001, notification);
+    }
+
 	/**
 	 * 
 	 */

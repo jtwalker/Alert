@@ -57,6 +57,8 @@
     <string name="change_font">Change Font Color</string>
     <string name="reset_theme">Reset to Default Theme</string>
     <string name="reset">Reset</string>
+    <string name="adjust_volume">Adjust Alarm Volume</string>
+    <string name="save">Save</string>
 
     <color name="background_color">#333333</color>
     <color name="text_color">#FFFFFF</color>

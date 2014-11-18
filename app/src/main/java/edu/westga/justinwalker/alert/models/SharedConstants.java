@@ -31,8 +31,9 @@ public class SharedConstants {
 
     public static final String ALERT_USERNAME = "alert.update.noreply@gmail.com";
     public static final String ALERT_PASSWORD = "1800alertme";
+    public static final float INITIAL_VOLUME = (float) 0.5;
 
-	private SharedConstants() {
+    private SharedConstants() {
 
 	}
 

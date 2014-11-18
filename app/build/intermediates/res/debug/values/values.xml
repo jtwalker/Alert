@@ -585,6 +585,7 @@
     <eat-comment />
 
     <string name="action_settings">Settings</string>
+    <string name="adjust_volume">Adjust Alarm Volume</string>
     <string name="alarm_email">Email?</string>
     <string name="alarm_event">Alarm Event</string>
     <string name="alarm_name">Alarm Name</string>
@@ -623,6 +624,7 @@
     <string name="reset">Reset</string>
     <string name="reset_theme">Reset to Default Theme</string>
     <string name="ringtone">Click to select ringtone</string>
+    <string name="save">Save</string>
     <string name="settings">User Settings</string>
     <string name="silence">Silence</string>
     <string name="snooze">Snooze</string>
