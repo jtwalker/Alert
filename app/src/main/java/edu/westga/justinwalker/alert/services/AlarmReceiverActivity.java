@@ -3,7 +3,6 @@ package edu.westga.justinwalker.alert.services;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -69,7 +68,6 @@ public class AlarmReceiverActivity extends Activity {
         this.initializeFromSharedPreferences();
 
         if(requestCode != SharedConstants.CALENDAR_INTENT_CODE) {
-            //this.fireNotification();
             this.fireAlarmNotification();
             this.initializeFromDatabase();
             this.checkShouldSnoozeBeEnabled();
@@ -111,27 +109,14 @@ public class AlarmReceiverActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         int notificationRequestCode = intent.getExtras().getInt("requestCode");
 
-        if(notificationRequestCode == 997) {
-            ringtone.stop();
-            silencePressed = true;
+        if(notificationRequestCode == SharedConstants.SILENCE_CODE) {
+            this.handleSilenceActions();
         }
-        else if(notificationRequestCode == 998) {
-            ringtone.stop();
-            silencePressed = false;
-            sendEmail(SharedConstants.SNOOZE_PRESSED);
-            updateHistory(SharedConstants.SNOOZE_PRESSED);
-            snooze();
-            finish();
+        else if(notificationRequestCode == SharedConstants.SNOOZE_CODE) {
+            this.handleSnoozeActions();
         }
-        else if(notificationRequestCode == 999) {
-            silencePressed = false;
-            editor.putBoolean("dismiss", true);
-            editor.commit();
-            sendEmail(SharedConstants.DISMISS_PRESSED);
-            updateHistory(SharedConstants.DISMISS_PRESSED);
-            checkAndSetRepeatingAlarm();
-            checkForCalendarAlarm();
-            finish();
+        else if(notificationRequestCode == SharedConstants.DISMISS_CODE) {
+            this.handleDismissActions();
         }
     }
 
@@ -204,49 +189,27 @@ public class AlarmReceiverActivity extends Activity {
     /**
      *
      */
-    private void fireNotification() {
-        Time alarmTime = new Time();
-        alarmTime.setToNow();
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 1;
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.ic_launcher)
-                        .setContentTitle("ALARM!!")
-                        .setContentText(alarmTime.hour + ":" + alarmTime.minute)
-                        .setLargeIcon(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(this.requestCode), options))
-                        .setVibrate(new long[]{0, 1000, 200, 250, 150, 150, 75, 150, 75, 150});
-
-        int mNotificationId = 001;
-        NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotifyMgr.notify(mNotificationId, mBuilder.build());
-    }
-
-    /**
-     *
-     */
 	private void fireAlarmNotification() {
-        Time alarmTime = new Time();
-        alarmTime.setToNow();
+        Calendar cal = Calendar.getInstance();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 1;
 
         ArrayList<NotificationCompat.Action> actions = new ArrayList<NotificationCompat.Action>();
-        actions.add(this.createWearNotificationIntent(997, "Silence", R.drawable.ic_launcher));
-        actions.add(this.createWearNotificationIntent(998, "Snooze", R.drawable.ic_launcher));
-        actions.add(this.createWearNotificationIntent(999, "Dismiss", R.drawable.ic_launcher));
+        actions.add(this.createWearNotificationIntent(SharedConstants.SILENCE_CODE, "Silence", R.drawable.mute));
+        actions.add(this.createWearNotificationIntent(SharedConstants.SNOOZE_CODE, "Snooze", R.drawable.zzz));
+        actions.add(this.createWearNotificationIntent(SharedConstants.DISMISS_CODE, "Dismiss", R.drawable.cancel));
 
         Notification notification = new NotificationCompat.Builder(this)
-                .setContentText(alarmTime.hour + ":" + alarmTime.minute)
+                .setContentText(new SimpleDateFormat("HH:mm").format(cal.getTime()))
                 .setContentTitle("Alarm!")
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.alarm)
                 .setLargeIcon(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(this.requestCode), options))
                 .extend(new NotificationCompat.WearableExtender().addActions(actions))
                 .setVibrate(new long[]{0, 1000, 200, 250, 150, 150, 75, 150, 75, 150})
                 .build();
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        notificationManagerCompat.notify(001, notification);
+        notificationManagerCompat.notify(SharedConstants.NOTIFICATION_CODE, notification);
     }
 
     /**
@@ -337,26 +300,13 @@ public class AlarmReceiverActivity extends Activity {
 		public void onClick(View view) {
 			switch (view.getId()) {
 			case R.id.dismissAlarmButton:
-				silencePressed = false;
-				editor.putBoolean("dismiss", true);
-				editor.commit();
-				sendEmail(SharedConstants.DISMISS_PRESSED);
-                updateHistory(SharedConstants.DISMISS_PRESSED);
-                checkAndSetRepeatingAlarm();
-                checkForCalendarAlarm();
-				finish();
+				handleDismissActions();
 				break;
 			case R.id.silenceAlarmButton:
-				ringtone.stop();
-				silencePressed = true;
+				handleSilenceActions();
 				break;
 			case R.id.snoozeAlarmButton:
-				ringtone.stop();
-				silencePressed = false;
-                sendEmail(SharedConstants.SNOOZE_PRESSED);
-                updateHistory(SharedConstants.SNOOZE_PRESSED);
-				snooze();
-				finish();
+				handleSnoozeActions();
 				break;
 			default:
 				Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
@@ -364,6 +314,40 @@ public class AlarmReceiverActivity extends Activity {
 			}
 		}
 	};
+
+    /**
+     *
+     */
+    private void handleSnoozeActions() {
+        this.ringtone.stop();
+        this.silencePressed = false;
+        sendEmail(SharedConstants.SNOOZE_PRESSED);
+        updateHistory(SharedConstants.SNOOZE_PRESSED);
+        snooze();
+        finish();
+    }
+
+    /**
+     *
+     */
+    private void handleSilenceActions() {
+        this.ringtone.stop();
+        this.silencePressed = true;
+    }
+
+    /**
+     *
+     */
+    private void handleDismissActions() {
+        this.silencePressed = false;
+        this.editor.putBoolean("dismiss", true);
+        this.editor.commit();
+        sendEmail(SharedConstants.DISMISS_PRESSED);
+        updateHistory(SharedConstants.DISMISS_PRESSED);
+        checkAndSetRepeatingAlarm();
+        checkForCalendarAlarm();
+        finish();
+    }
 
     /**
      * Gets the difference in the days of the week. For example, if I pass in Monday and today is Tuesday, -1 should be returned.

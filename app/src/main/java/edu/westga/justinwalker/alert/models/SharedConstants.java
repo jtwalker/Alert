@@ -1,29 +1,14 @@
 package edu.westga.justinwalker.alert.models;
 
-import edu.westga.justinwalker.alert.db.AlarmContract.Alarms;
-
 public class SharedConstants {
 
     public static final int CALENDAR_INTENT_CODE = 999999999;
 	public static final int ALARM_TRUE = 1;
 	public static final int ALARM_FALSE = 0;
 	public static final String USER_PREFS = "UserPrefsFils";
-	public static final String[] ALARM_COLUMNS = new String[] { Alarms.ID,
-			Alarms.ALARM_ENABLED, Alarms.ALARM_NAME, Alarms.ALARM_DATE,
-			Alarms.ALARM_TIME, Alarms.ALARM_RINGTONE, Alarms.ALARM_PICTURE,
-			Alarms.ALARM_REPEAT, Alarms.ALARM_SNOOZE, Alarms.ALARM_NOTIFY,
-			Alarms.ALARM_EMAIL };
     public static final String REPEATING_FALSE = "false";
     public static final String ENABLED = "Enabled";
     public static final String DISABLED = "Disabled";
-
-    public static final String MONDAY = "Mon";
-    public static final String TUESDAY = "Tues";
-    public static final String WEDNESDAY = "Wed";
-    public static final String THURSDAY = "Thurs";
-    public static final String FRIDAY = "Fri";
-    public static final String SATURDAY = "Sat";
-    public static final String SUNDAY = "Sun";
 
     public static final String SNOOZE_PRESSED = "Snooze Pressed";
     public static final String DISMISS_PRESSED = "Dismiss Pressed";
@@ -31,7 +16,11 @@ public class SharedConstants {
 
     public static final String ALERT_USERNAME = "alert.update.noreply@gmail.com";
     public static final String ALERT_PASSWORD = "1800alertme";
-    public static final float INITIAL_VOLUME = (float) 0.5;
+
+    public static final int SILENCE_CODE = 997;
+    public static final int SNOOZE_CODE = 998;
+    public static final int DISMISS_CODE = 999;
+    public static final int NOTIFICATION_CODE = 001;
 
     private SharedConstants() {
 
