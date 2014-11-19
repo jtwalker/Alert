@@ -961,9 +961,14 @@ containing a value of this type.
         public static final int ambilwarna_target=0x7f02005e;
         public static final int calendar=0x7f02005f;
         public static final int cancel=0x7f020060;
-        public static final int ic_launcher=0x7f020061;
-        public static final int mute=0x7f020062;
-        public static final int zzz=0x7f020063;
+        public static final int ic_action_add_alarm=0x7f020061;
+        public static final int ic_action_alarms=0x7f020062;
+        public static final int ic_action_cancel=0x7f020063;
+        public static final int ic_action_pause_over_video=0x7f020064;
+        public static final int ic_action_volume_muted=0x7f020065;
+        public static final int ic_launcher=0x7f020066;
+        public static final int mute=0x7f020067;
+        public static final int zzz=0x7f020068;
     }
     public static final class id {
         public static final int action_alarm_history=0x7f07008f;

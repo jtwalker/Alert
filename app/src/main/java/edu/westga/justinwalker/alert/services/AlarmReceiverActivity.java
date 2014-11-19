@@ -7,8 +7,10 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -191,28 +193,31 @@ public class AlarmReceiverActivity extends Activity {
      */
 	private void fireAlarmNotification() {
         int snoozeEnabled = this.dbAccess.getSnooze(this.requestCode);
+        String alarmImage = this.dbAccess.getAlarmImage(this.requestCode);
         Calendar cal = Calendar.getInstance();
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 1;
 
         ArrayList<NotificationCompat.Action> actions = new ArrayList<NotificationCompat.Action>();
-        actions.add(this.createWearNotificationIntent(SharedConstants.SILENCE_CODE, "Silence", R.drawable.mute));
+        actions.add(this.createWearNotificationIntent(SharedConstants.SILENCE_CODE, "Silence", R.drawable.ic_action_volume_muted));
         if(snoozeEnabled == SharedConstants.ALARM_TRUE) {
-            actions.add(this.createWearNotificationIntent(SharedConstants.SNOOZE_CODE, "Snooze", R.drawable.zzz));
+            actions.add(this.createWearNotificationIntent(SharedConstants.SNOOZE_CODE, "Snooze", R.drawable.ic_action_pause_over_video));
         }
-        actions.add(this.createWearNotificationIntent(SharedConstants.DISMISS_CODE, "Dismiss", R.drawable.cancel));
+        actions.add(this.createWearNotificationIntent(SharedConstants.DISMISS_CODE, "Dismiss", R.drawable.ic_action_cancel));
 
         Notification notification = new NotificationCompat.Builder(this)
                 .setContentText(new SimpleDateFormat("HH:mm").format(cal.getTime()))
                 .setContentTitle("Alarm!")
-                .setSmallIcon(R.drawable.alarm)
-                .setLargeIcon(BitmapFactory.decodeFile(this.dbAccess.getAlarmImage(this.requestCode), options))
-                .extend(new NotificationCompat.WearableExtender().addActions(actions))
+                .setOnlyAlertOnce(true)
+                .setSmallIcon(R.drawable.ic_action_alarms)
+                .extend(new NotificationCompat.WearableExtender().addActions(actions).setBackground(BitmapFactory.decodeFile(alarmImage)))
                 .setVibrate(new long[]{0, 1000, 200, 250, 150, 150, 75, 150, 75, 150})
                 .build();
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(SharedConstants.NOTIFICATION_CODE, notification);
+    }
+
+    private Bitmap convertToThumbnail(String imagePath, int width, int height) {
+        return ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(imagePath), width, height);
     }
 
     /**
