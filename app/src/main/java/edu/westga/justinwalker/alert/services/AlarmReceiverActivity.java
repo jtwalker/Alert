@@ -190,13 +190,16 @@ public class AlarmReceiverActivity extends Activity {
      *
      */
 	private void fireAlarmNotification() {
+        int snoozeEnabled = this.dbAccess.getSnooze(this.requestCode);
         Calendar cal = Calendar.getInstance();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 1;
 
         ArrayList<NotificationCompat.Action> actions = new ArrayList<NotificationCompat.Action>();
         actions.add(this.createWearNotificationIntent(SharedConstants.SILENCE_CODE, "Silence", R.drawable.mute));
-        actions.add(this.createWearNotificationIntent(SharedConstants.SNOOZE_CODE, "Snooze", R.drawable.zzz));
+        if(snoozeEnabled == SharedConstants.ALARM_TRUE) {
+            actions.add(this.createWearNotificationIntent(SharedConstants.SNOOZE_CODE, "Snooze", R.drawable.zzz));
+        }
         actions.add(this.createWearNotificationIntent(SharedConstants.DISMISS_CODE, "Dismiss", R.drawable.cancel));
 
         Notification notification = new NotificationCompat.Builder(this)
@@ -321,9 +324,10 @@ public class AlarmReceiverActivity extends Activity {
     private void handleSnoozeActions() {
         this.ringtone.stop();
         this.silencePressed = false;
-        sendEmail(SharedConstants.SNOOZE_PRESSED);
-        updateHistory(SharedConstants.SNOOZE_PRESSED);
-        snooze();
+        this.sendEmail(SharedConstants.SNOOZE_PRESSED);
+        this.updateHistory(SharedConstants.SNOOZE_PRESSED);
+        this.snooze();
+        this.clearNotification();
         finish();
     }
 
@@ -342,11 +346,17 @@ public class AlarmReceiverActivity extends Activity {
         this.silencePressed = false;
         this.editor.putBoolean("dismiss", true);
         this.editor.commit();
-        sendEmail(SharedConstants.DISMISS_PRESSED);
-        updateHistory(SharedConstants.DISMISS_PRESSED);
-        checkAndSetRepeatingAlarm();
-        checkForCalendarAlarm();
+        this.sendEmail(SharedConstants.DISMISS_PRESSED);
+        this.updateHistory(SharedConstants.DISMISS_PRESSED);
+        this.checkAndSetRepeatingAlarm();
+        this.checkForCalendarAlarm();
+        this.clearNotification();
         finish();
+    }
+
+    public void clearNotification() {
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+        notificationManagerCompat.cancel(SharedConstants.NOTIFICATION_CODE);
     }
 
     /**
