@@ -261,7 +261,7 @@ public class CreateAlarm extends FragmentActivity {
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_RINGTONE);
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Pick the Alarm Ringtone");
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
-        //this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, this.ringtoneUri);
+        this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, Uri.parse(this.alarmRingtone));
         this.ringtonePicker.getBooleanExtra(RingtoneManager.EXTRA_RINGTONE_INCLUDE_DRM, true);
 
 //        String uri = null;
@@ -331,7 +331,6 @@ public class CreateAlarm extends FragmentActivity {
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     String picturePath = cursor.getString(columnIndex);
                     cursor.close();
-                    // String picturePath contains the path of selected Image
                     ImageView imageView = (ImageView) findViewById(R.id.alarmImage);
                     imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
                     this.alarmImage = picturePath;
