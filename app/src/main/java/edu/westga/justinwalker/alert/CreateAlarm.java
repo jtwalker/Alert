@@ -49,7 +49,6 @@ public class CreateAlarm extends FragmentActivity {
     private String alarmImage;
     private SharedPreferences settings;
     private Editor editor;
-    private String ringtoneUri;
     private String alarmRingtone;
     private String repeatingAlarm;
     private String alarmName;
@@ -342,7 +341,7 @@ public class CreateAlarm extends FragmentActivity {
                 else if(requestCode == RINGTONE_REQUEST_CODE) {
                     Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
 
-                    this.ringtoneUri = uri.toString();
+                    this.alarmRingtone = uri.toString();
 
                     TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
 
@@ -350,8 +349,7 @@ public class CreateAlarm extends FragmentActivity {
                     String ringtoneName= tempRingtone.getTitle(this);
                     ringtoneView.setText(ringtoneName);
 
-                    this.alarmRingtone = this.ringtoneUri;
-                    this.editor.putString("ringtone", this.ringtoneUri);
+                    this.editor.putString("ringtone", this.alarmRingtone);
                     this.editor.commit();
                 }
                 break;
