@@ -11,9 +11,11 @@
     tools:context=".MainActivity"
     tools:deviceIds="wear_square">
 
-    <ImageView
+
+    <AnalogClock
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ic_launcher" />
-
+        android:id="@+id/analogClock"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </LinearLayout>

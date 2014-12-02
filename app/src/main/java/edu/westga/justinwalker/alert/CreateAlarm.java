@@ -13,6 +13,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.app.FragmentActivity;
 import android.text.format.Time;
 import android.view.Menu;
@@ -132,18 +133,23 @@ public class CreateAlarm extends FragmentActivity {
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
         }
 
+
+        Ringtone tempRingtone;
+
         if(this.settings.contains("ringtone")) {
             this.alarmRingtone = this.settings.getString("ringtone", "");
             Uri uri = Uri.parse(this.settings.getString("ringtone", ""));
-            Ringtone tempRingtone = RingtoneManager.getRingtone(this, uri);
-            String ringtoneName = tempRingtone.getTitle(this);
-            TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
-            ringtoneView.setText(ringtoneName);
-            tempRingtone.stop();
+            tempRingtone = RingtoneManager.getRingtone(this, uri);
         }
         else {
-            this.alarmRingtone = RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI.toString();
+            tempRingtone = RingtoneManager.getRingtone(this, Settings.System.DEFAULT_RINGTONE_URI);
+            this.alarmRingtone = Settings.System.DEFAULT_RINGTONE_URI.toString();
         }
+
+        String ringtoneName = tempRingtone.getTitle(this);
+        TextView ringtoneView = (TextView) this.findViewById(R.id.ringtone);
+        ringtoneView.setText(ringtoneName);
+        tempRingtone.stop();
 
         LinearLayout background = (LinearLayout) this.findViewById(R.id.createAlarmLayout);
         background.setBackgroundColor(settings.getInt("backgroundcolor", getResources().getColor(R.color.background_color)));
@@ -206,9 +212,7 @@ public class CreateAlarm extends FragmentActivity {
 
         this.checkForRepeatingAlarms();
         this.checkForEmail();
-		
-		//Should be an if statement once edit alarms is enabled
-		//Will also have random other options but not yet
+
         String alarmTime = timeOfAlarm.toMillis(false) + "";
         if(getIntent().getExtras().getBoolean("edit")) {
             requestCode = getIntent().getExtras().getInt("requestCode");
@@ -228,8 +232,6 @@ public class CreateAlarm extends FragmentActivity {
 		Time now = new Time();
 		now.setToNow();
 		if(timeOfAlarm.before(now)) {
-			//Increase alarm time by a day
-			//Going to need massive loops....
 			timeOfAlarm.monthDay++;
 			Toast.makeText(getApplicationContext(), timeOfAlarm.month + " " + timeOfAlarm.monthDay + " " + timeOfAlarm.year, Toast.LENGTH_SHORT).show();
 		}
@@ -260,10 +262,11 @@ public class CreateAlarm extends FragmentActivity {
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_RINGTONE);
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Pick the Alarm Ringtone");
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
+        //this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, this.ringtoneUri);
         this.ringtonePicker.getBooleanExtra(RingtoneManager.EXTRA_RINGTONE_INCLUDE_DRM, true);
 
-        String uri = null;
-        this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, (Uri) null);
+//        String uri = null;
+//        this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, (Uri) null);
 
         startActivityForResult(ringtonePicker, RINGTONE_REQUEST_CODE);
     }

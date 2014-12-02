@@ -396,6 +396,7 @@ containing a value of this type.
         public static final int action_error=0x7f05000b;
         public static final int action_success=0x7f05000d;
         public static final int all=0x7f050004;
+        public static final int analogClock=0x7f050012;
         public static final int animation=0x7f05000e;
         public static final int bottom=0x7f050003;
         public static final int dismiss_overlay_button=0x7f050011;
@@ -409,8 +410,8 @@ containing a value of this type.
         public static final int right=0x7f050002;
         public static final int satellite=0x7f050007;
         public static final int terrain=0x7f050008;
-        public static final int text=0x7f050013;
-        public static final int title=0x7f050012;
+        public static final int text=0x7f050014;
+        public static final int title=0x7f050013;
         public static final int top=0x7f050001;
         public static final int watch_view_stub=0x7f05000a;
     }
