@@ -99,12 +99,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CreateAlarm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CreateAlarm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.837681" vertical-offset="2863" max-vertical-offset="8704">
-              <caret line="263" column="113" selection-start-line="263" selection-start-column="113" selection-end-line="263" selection-end-column="113" />
-              <folding />
+            <state vertical-scroll-proportion="-7.035714" vertical-offset="4682" max-vertical-offset="8687">
+              <caret line="324" column="43" selection-start-line="324" selection-start-column="29" selection-end-line="324" selection-end-column="43" />
+              <folding>
+                <element signature="e#17782#17841#0" expanded="true" />
+                <element signature="e#17917#17977#0" expanded="true" />
+                <element signature="e#18053#18112#0" expanded="true" />
+                <element signature="e#18188#18249#0" expanded="true" />
+                <element signature="e#18325#18384#0" expanded="true" />
+                <element signature="e#18460#18519#0" expanded="true" />
+                <element signature="e#18798#18807#0" expanded="true" />
+                <element signature="e#20061#20893#0" expanded="true" />
+                <element signature="e#20889#20890#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewAlarms.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5726257" vertical-offset="2787" max-vertical-offset="3145">
+              <caret line="203" column="58" selection-start-line="203" selection-start-column="58" selection-end-line="203" selection-end-column="58" />
+              <folding>
+                <element signature="e#3691#3712#0" expanded="true" />
+                <element signature="e#5809#5844#0" expanded="true" />
+                <element signature="e#5853#5889#0" expanded="true" />
+                <element signature="e#5914#5949#0" expanded="true" />
+                <element signature="e#5958#5995#0" expanded="true" />
+                <element signature="e#6020#6055#0" expanded="true" />
+                <element signature="e#6064#6099#0" expanded="true" />
+                <element signature="e#6108#6143#0" expanded="true" />
+                <element signature="e#6307#6335#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1811,7 +1841,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/create_alarm.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/view_alarms.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/view_history.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewHistory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/alarm/GenerateAlarm.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
@@ -1824,6 +1853,7 @@
         <option value="$PROJECT_DIR$/Wear/src/main/res/layout/rect_activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java" />
       </list>
     </option>
   </component>
@@ -2218,7 +2248,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34353742" sideWeight="0.59228444" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34353742" sideWeight="0.59228444" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2188889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2511,13 +2541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/EditAlarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/alarm/GenerateAlarm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="986">
@@ -2611,13 +2634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="722" max-vertical-offset="3094">
-          <caret line="158" column="35" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/adapters/CustomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="2431">
@@ -2694,11 +2710,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/EditAlarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6201117" vertical-offset="33" max-vertical-offset="391">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/CreateAlarm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.837681" vertical-offset="2863" max-vertical-offset="8704">
-          <caret line="263" column="113" selection-start-line="263" selection-start-column="113" selection-end-line="263" selection-end-column="113" />
-          <folding />
+        <state vertical-scroll-proportion="-7.035714" vertical-offset="4682" max-vertical-offset="8687">
+          <caret line="324" column="43" selection-start-line="324" selection-start-column="29" selection-end-line="324" selection-end-column="43" />
+          <folding>
+            <element signature="e#17782#17841#0" expanded="true" />
+            <element signature="e#17917#17977#0" expanded="true" />
+            <element signature="e#18053#18112#0" expanded="true" />
+            <element signature="e#18188#18249#0" expanded="true" />
+            <element signature="e#18325#18384#0" expanded="true" />
+            <element signature="e#18460#18519#0" expanded="true" />
+            <element signature="e#18798#18807#0" expanded="true" />
+            <element signature="e#20061#20893#0" expanded="true" />
+            <element signature="e#20889#20890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/westga/justinwalker/alert/ViewAlarms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5726257" vertical-offset="2787" max-vertical-offset="3145">
+          <caret line="203" column="58" selection-start-line="203" selection-start-column="58" selection-end-line="203" selection-end-column="58" />
+          <folding>
+            <element signature="e#3691#3712#0" expanded="true" />
+            <element signature="e#5809#5844#0" expanded="true" />
+            <element signature="e#5853#5889#0" expanded="true" />
+            <element signature="e#5914#5949#0" expanded="true" />
+            <element signature="e#5958#5995#0" expanded="true" />
+            <element signature="e#6020#6055#0" expanded="true" />
+            <element signature="e#6064#6099#0" expanded="true" />
+            <element signature="e#6108#6143#0" expanded="true" />
+            <element signature="e#6307#6335#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

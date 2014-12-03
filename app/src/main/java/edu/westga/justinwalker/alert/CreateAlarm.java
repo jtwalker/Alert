@@ -87,7 +87,6 @@ public class CreateAlarm extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //Cannot inherit because of this
         this.setSharedPreferences();
     }
 
@@ -264,9 +263,6 @@ public class CreateAlarm extends FragmentActivity {
         this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, Uri.parse(this.alarmRingtone));
         this.ringtonePicker.getBooleanExtra(RingtoneManager.EXTRA_RINGTONE_INCLUDE_DRM, true);
 
-//        String uri = null;
-//        this.ringtonePicker.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, (Uri) null);
-
         startActivityForResult(ringtonePicker, RINGTONE_REQUEST_CODE);
     }
 
@@ -277,10 +273,13 @@ public class CreateAlarm extends FragmentActivity {
         LinearLayout daysOfTheWeek = (LinearLayout) this.findViewById(R.id.daysOfTheWeekLayout);
         if(daysOfTheWeek.getVisibility() != View.GONE) {
             daysOfTheWeek.setVisibility(View.GONE);
+            this.editor.putBoolean("repeatingfield", false);
         }
         else {
             daysOfTheWeek.setVisibility(View.VISIBLE);
+            this.editor.putBoolean("repeatingfield", true);
         }
+        this.editor.commit();
     }
 
     /**
