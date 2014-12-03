@@ -142,13 +142,20 @@ public class ViewSettings extends Activity {
     private void changeCheckBoxCheck() {
         CheckBox checkBox = (CheckBox) this.findViewById(R.id.syncCheckBox);
         LinearLayout syncDetailsLayout = (LinearLayout) this.findViewById(R.id.syncDetailsLayout);
+        EditText emailText = (EditText) this.findViewById(R.id.syncEmailEditText);
         if(checkBox.isChecked()) {
             checkBox.setChecked(false);
             syncDetailsLayout.setVisibility(View.GONE);
+            //Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
+            this.alarmGenerator.cancelAlarmFromCalendar(this);
         }
         else {
             checkBox.setChecked(true);
             syncDetailsLayout.setVisibility(View.VISIBLE);
+            if(!emailText.getText().toString().equals("")) {
+                this.alarmGenerator.createAlarmFromCalendar(this, emailText.getText().toString());
+                //Toast.makeText(this, "Enable", Toast.LENGTH_SHORT).show();
+            }
         }
 
         this.editor.putBoolean("sync", checkBox.isChecked());

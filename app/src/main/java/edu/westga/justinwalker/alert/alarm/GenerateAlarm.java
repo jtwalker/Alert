@@ -1,5 +1,6 @@
 package edu.westga.justinwalker.alert.alarm;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -48,5 +49,13 @@ public class GenerateAlarm {
         }
 
         mCursor.close();
+    }
+
+    public void cancelAlarmFromCalendar(Context context) {
+        Intent intent = new Intent(context, AlarmReceiverActivity.class);
+        intent.putExtra("requestCode", SharedConstants.CALENDAR_INTENT_CODE);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, SharedConstants.CALENDAR_INTENT_CODE, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Activity.ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
     }
 }
